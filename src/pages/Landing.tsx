@@ -232,28 +232,28 @@ const Landing = () => {
       <section className="relative z-10 pt-24 pb-24 px-6 overflow-hidden">
         <div className="mx-auto max-w-[1200px] relative">
           <p className="text-[13px] uppercase tracking-[0.15em] text-muted-foreground mb-4">
-            Built for speed
+            Built for conviction
           </p>
-          <h2 className="text-[clamp(1.8rem,3vw,2.5rem)] font-[500] tracking-[-0.03em] text-foreground max-w-[500px] leading-[1.15]">
-            Less process.<br />More progress.
+          <h2 className="text-[clamp(1.8rem,3vw,2.5rem)] font-[500] tracking-[-0.03em] text-foreground max-w-[560px] leading-[1.15]">
+            One workspace.<br />Every signal.
           </h2>
 
           <div className="mt-16 border border-border">
             <div className="grid grid-cols-1 md:grid-cols-3">
               {[
                 {
-                  title: "Priority triage",
-                  desc: "Four severity levels. SLA deadlines. One glance tells you what to fix next — and when you're out of time.",
+                  title: "Integrated deal workspace",
+                  desc: "Pipelines, data rooms, portals, communications and planning — every artefact for every deal in one place, with full context preserved.",
                   graphic: "bars",
                 },
                 {
-                  title: "Team workflows",
-                  desc: "Assign, reassign, comment, resolve. Every state change leaves a trail. Nothing slips through.",
+                  title: "AI agents on primary analysis",
+                  desc: "Agents read the room: filings, memos, calls, comparables. They surface the questions worth asking before your team spends a single hour.",
                   graphic: "flow",
                 },
                 {
-                  title: "Real-time analytics",
-                  desc: "Resolution time. Severity trends. Team velocity. Numbers that tell you something — not dashboards for dashboards' sake.",
+                  title: "Team conviction, tracked",
+                  desc: "Structured evaluations, side-by-side scoring, and shared rationale — so your partners see how conviction is built, not just the verdict.",
                   graphic: "chart",
                 },
               ].map((feature, i) => (

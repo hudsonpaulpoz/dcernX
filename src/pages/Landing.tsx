@@ -148,7 +148,7 @@ const Landing = () => {
                   </div>
                   <div className="flex-1">
                     {[
-                      { priority: "bg-destructive", id: "TRG-142", title: "w-[180px]", status: "bg-warning" },
+                      { priority: "bg-destructive", id: "DCX-125", title: "w-[180px]", status: "bg-warning" },
                       { priority: "bg-destructive", id: "TRG-139", title: "w-[220px]", status: "bg-destructive" },
                       { priority: "bg-warning", id: "TRG-138", title: "w-[160px]", status: "bg-primary" },
                       { priority: "bg-primary", id: "TRG-135", title: "w-[200px]", status: "bg-success" },

@@ -148,7 +148,7 @@ const Landing = () => {
                   </div>
                   <div className="flex-1">
                     {[
-                      { priority: "bg-destructive", id: "TRG-142", title: "w-[180px]", status: "bg-warning" },
+                      { priority: "bg-destructive", id: "DCX-125", title: "w-[180px]", status: "bg-warning" },
                       { priority: "bg-destructive", id: "TRG-139", title: "w-[220px]", status: "bg-destructive" },
                       { priority: "bg-warning", id: "TRG-138", title: "w-[160px]", status: "bg-primary" },
                       { priority: "bg-primary", id: "TRG-135", title: "w-[200px]", status: "bg-success" },
@@ -159,7 +159,7 @@ const Landing = () => {
                       <div key={i} className={`relative flex items-center gap-3 px-4 h-9 border-b border-border transition-colors`}>
                         {i === 1 && (
                           <div className="absolute inset-0" style={{
-                            backgroundImage: `repeating-linear-gradient(-45deg, ${diagonalLineColor} / 0.3) 0px, ${diagonalLineColor} / 0.3) 1px, transparent 1px, transparent 6px)`,
+                            backgroundImage: `repeating-linear-gradient(-45deg, ${diagonalLineColor} / 0.3) 0px, ${diagonalLineColor} / 0.3) 1px, transparent 1px, transparent 6px)\n`,
                           }} />
                         )}
                         <div className="h-3.5 w-3.5 rounded border border-border flex items-center justify-center shrink-0">

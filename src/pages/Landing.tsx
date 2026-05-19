@@ -159,7 +159,7 @@ const Landing = () => {
                       <div key={i} className={`relative flex items-center gap-3 px-4 h-9 border-b border-border transition-colors`}>
                         {i === 1 && (
                           <div className="absolute inset-0" style={{
-                            backgroundImage: `repeating-linear-gradient(-45deg, ${diagonalLineColor} / 0.3) 0px, ${diagonalLineColor} / 0.3) 1px, transparent 1px, transparent 6px)`,
+                            backgroundImage: `repeating-linear-gradient(-45deg, ${diagonalLineColor} / 0.3) 0px, ${diagonalLineColor} / 0.3) 1px, transparent 1px, transparent 6px)\n`,
                           }} />
                         )}
                         <div className="h-3.5 w-3.5 rounded border border-border flex items-center justify-center shrink-0">

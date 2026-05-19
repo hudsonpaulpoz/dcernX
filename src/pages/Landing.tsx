@@ -51,7 +51,7 @@ const Landing = () => {
         <div className="mx-auto flex h-[56px] max-w-[1200px] items-center justify-between">
           <Link to="/" className="flex items-center gap-2 -ml-0.5">
             <StackedLogo size={16} />
-            <span className="text-[14px] font-bold text-foreground tracking-[0.08em] uppercase">Triage</span>
+            <span className="text-[14px] font-bold text-foreground tracking-[0.08em] uppercase">DcernX</span>
           </Link>
           <div className="flex items-center gap-2">
             <button
@@ -84,15 +84,15 @@ const Landing = () => {
             {/* Left column — text */}
             <div className="relative z-[3] flex-1 min-w-0 max-w-[540px]">
               <h1 className="text-[clamp(2rem,4vw,3.2rem)] font-[500] leading-[1.08] tracking-[-0.04em] text-foreground max-w-[540px]">
-                Bug tracking for teams that ship fast
+                The discernment layer for investment firms
               </h1>
-              <p className="mt-6 text-base leading-relaxed text-muted-foreground max-w-[420px]">
-                Purpose-built for engineering teams. Triage, track, and resolve issues without slowing down.
+              <p className="mt-6 text-base leading-relaxed text-muted-foreground max-w-[460px]">
+                One workspace for deal pipelines, data rooms, communications and evaluations — with AI agents doing primary analysis so your team builds conviction faster.
               </p>
               <div className="mt-10 flex items-center gap-4">
                 <Link to="/auth">
                   <button className="group relative inline-flex items-center gap-2 px-6 py-3 text-[14px] font-medium bg-foreground text-background transition-all duration-200 hover:bg-foreground/90">
-                    Get started free
+                    Request access
                     <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
                   </button>
                 </Link>
@@ -232,28 +232,28 @@ const Landing = () => {
       <section className="relative z-10 pt-24 pb-24 px-6 overflow-hidden">
         <div className="mx-auto max-w-[1200px] relative">
           <p className="text-[13px] uppercase tracking-[0.15em] text-muted-foreground mb-4">
-            Built for speed
+            Built for conviction
           </p>
-          <h2 className="text-[clamp(1.8rem,3vw,2.5rem)] font-[500] tracking-[-0.03em] text-foreground max-w-[500px] leading-[1.15]">
-            Less process.<br />More progress.
+          <h2 className="text-[clamp(1.8rem,3vw,2.5rem)] font-[500] tracking-[-0.03em] text-foreground max-w-[560px] leading-[1.15]">
+            One workspace.<br />Every signal.
           </h2>
 
           <div className="mt-16 border border-border">
             <div className="grid grid-cols-1 md:grid-cols-3">
               {[
                 {
-                  title: "Priority triage",
-                  desc: "Four severity levels. SLA deadlines. One glance tells you what to fix next — and when you're out of time.",
+                  title: "Integrated deal workspace",
+                  desc: "Pipelines, data rooms, portals, communications and planning — every artefact for every deal in one place, with full context preserved.",
                   graphic: "bars",
                 },
                 {
-                  title: "Team workflows",
-                  desc: "Assign, reassign, comment, resolve. Every state change leaves a trail. Nothing slips through.",
+                  title: "AI agents on primary analysis",
+                  desc: "Agents read the room: filings, memos, calls, comparables. They surface the questions worth asking before your team spends a single hour.",
                   graphic: "flow",
                 },
                 {
-                  title: "Real-time analytics",
-                  desc: "Resolution time. Severity trends. Team velocity. Numbers that tell you something — not dashboards for dashboards' sake.",
+                  title: "Team conviction, tracked",
+                  desc: "Structured evaluations, side-by-side scoring, and shared rationale — so your partners see how conviction is built, not just the verdict.",
                   graphic: "chart",
                 },
               ].map((feature, i) => (
@@ -331,13 +331,13 @@ const Landing = () => {
         <div className="mx-auto max-w-[1200px] relative">
           <div className="border border-border bg-background p-10 max-w-[720px] mx-auto">
             <blockquote className="text-[20px] font-[400] leading-[1.5] tracking-[-0.01em] text-foreground/85">
-              "We replaced three tools with one. Mean time to resolution dropped 40% in the first month. The team actually uses it — that's the real win."
+              "DcernX collapsed our diligence stack into one room. The agents handle the first pass; the partners spend their time where it counts — building conviction together."
             </blockquote>
             <div className="mt-6 flex items-center gap-3">
               <img src={testimonialAvatarAsset.url} alt="Jamie Kim" className="h-8 w-8 rounded-full object-cover" />
               <div>
                 <span className="text-[13px] font-medium text-foreground">Jamie Kim</span>
-                <span className="text-[13px] text-muted-foreground ml-2">Engineering Lead, Acme Corp</span>
+                <span className="text-[13px] text-muted-foreground ml-2">Partner, Northbound Capital</span>
               </div>
             </div>
           </div>
@@ -350,18 +350,18 @@ const Landing = () => {
       {/* CTA */}
       <section className="relative z-10 pt-32 pb-40 px-6 overflow-hidden">
         <div className="mx-auto max-w-[1200px] text-center relative">
-          <h2 className="text-[clamp(2rem,4vw,3.2rem)] font-[500] tracking-[-0.035em] text-foreground leading-[1.1] mx-auto max-w-[560px]">
-            Your bugs aren't going to track themselves.
+          <h2 className="text-[clamp(2rem,4vw,3.2rem)] font-[500] tracking-[-0.035em] text-foreground leading-[1.1] mx-auto max-w-[620px]">
+            Stop guessing. Start discerning.
           </h2>
-          <p className="mt-5 text-[15px] text-muted-foreground max-w-[400px] mx-auto">
-            Two minutes to set up. No credit card. No sales call.<br />Just fewer bugs, starting now.
+          <p className="mt-5 text-[15px] text-muted-foreground max-w-[440px] mx-auto">
+            Bring DcernX into your next deal cycle. Built for investment firms that take conviction seriously.
           </p>
           <div className="mt-10 flex justify-center">
             <Link to="/auth">
               <button
                 className="group relative inline-flex items-center gap-2.5 px-8 py-3.5 text-[15px] font-medium transition-all duration-200 border border-foreground/40 text-foreground hover:bg-foreground hover:text-background hover:border-foreground"
               >
-                Start tracking now
+                Request access
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
               </button>
             </Link>
@@ -374,7 +374,7 @@ const Landing = () => {
         <div className="mx-auto max-w-[1200px] px-6 py-6 flex items-center justify-between">
           <div className="flex items-center gap-2 -ml-0.5">
             <StackedLogo size={16} />
-            <span className="text-[12px] font-bold text-foreground uppercase tracking-[0.08em]">Triage</span>
+            <span className="text-[12px] font-bold text-foreground uppercase tracking-[0.08em]">DcernX</span>
           </div>
           <span className="text-[12px] text-muted-foreground">© {new Date().getFullYear()}</span>
         </div>

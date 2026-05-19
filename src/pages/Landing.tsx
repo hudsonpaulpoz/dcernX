@@ -84,15 +84,15 @@ const Landing = () => {
             {/* Left column — text */}
             <div className="relative z-[3] flex-1 min-w-0 max-w-[540px]">
               <h1 className="text-[clamp(2rem,4vw,3.2rem)] font-[500] leading-[1.08] tracking-[-0.04em] text-foreground max-w-[540px]">
-                Bug tracking for teams that ship fast
+                The discernment layer for investment firms
               </h1>
-              <p className="mt-6 text-base leading-relaxed text-muted-foreground max-w-[420px]">
-                Purpose-built for engineering teams. Triage, track, and resolve issues without slowing down.
+              <p className="mt-6 text-base leading-relaxed text-muted-foreground max-w-[460px]">
+                One workspace for deal pipelines, data rooms, communications and evaluations — with AI agents doing primary analysis so your team builds conviction faster.
               </p>
               <div className="mt-10 flex items-center gap-4">
                 <Link to="/auth">
                   <button className="group relative inline-flex items-center gap-2 px-6 py-3 text-[14px] font-medium bg-foreground text-background transition-all duration-200 hover:bg-foreground/90">
-                    Get started free
+                    Request access
                     <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
                   </button>
                 </Link>

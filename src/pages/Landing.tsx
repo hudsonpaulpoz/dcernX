@@ -242,7 +242,7 @@ const Landing = () => {
             From scattered signals<br />to one source of conviction.
           </h2>
           <p className="mt-5 text-[15px] text-muted-foreground max-w-[560px]">
-            Top funds now screen ~100,000 applications a year at ~$442 per review, for a 0.6% acceptance rate. DcernX replaces the scattered stack of inboxes, decks, spreadsheets and chat threads with one structured record per opportunity.
+            Decks, inboxes, spreadsheets, data rooms, WhatsApp threads and call notes — DcernX replaces the scattered stack with one structured record per opportunity: what came in, who reviewed it, what evidence exists, what risks remain, and why a decision was made.
           </p>
 
           <div className="mt-16 border border-border">

@@ -15,6 +15,7 @@ import BugList from "./pages/BugList";
 import Analytics from "./pages/Analytics";
 import Settings from "./pages/Settings";
 import NotFound from "./pages/NotFound";
+import { Privacy, Terms } from "./pages/Legal";
 
 const queryClient = new QueryClient();
 

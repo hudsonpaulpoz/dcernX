@@ -358,10 +358,10 @@ const Landing = () => {
       <section className="relative z-10 pt-32 pb-40 px-6 overflow-hidden">
         <div className="mx-auto max-w-[1200px] text-center relative">
           <h2 className="text-[clamp(2rem,4vw,3.2rem)] font-[500] tracking-[-0.035em] text-foreground leading-[1.1] mx-auto max-w-[680px]">
-            Set up your workspace in 10 minutes.
+            Bring your next deal cycle into focus.
           </h2>
-          <p className="mt-5 text-[15px] text-muted-foreground max-w-[500px] mx-auto">
-            Run a deal flow, diligence, accelerator or AI review pilot — free for 4 months. Introductory plans from €500/month, billed annually.
+          <p className="mt-5 text-[15px] text-muted-foreground max-w-[520px] mx-auto">
+            Stand up your workspace in under ten minutes. Complimentary for the first four months — introductory plans from €500 per month, billed annually.
           </p>
           <div className="mt-10 flex justify-center">
             <Link to="/auth">

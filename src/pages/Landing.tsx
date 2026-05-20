@@ -238,26 +238,29 @@ const Landing = () => {
           <p className="text-[13px] uppercase tracking-[0.15em] text-muted-foreground mb-4">
             Built for conviction
           </p>
-          <h2 className="text-[clamp(1.8rem,3vw,2.5rem)] font-[500] tracking-[-0.03em] text-foreground max-w-[560px] leading-[1.15]">
-            One workspace.<br />Every signal.
+          <h2 className="text-[clamp(1.8rem,3vw,2.5rem)] font-[500] tracking-[-0.03em] text-foreground max-w-[640px] leading-[1.15]">
+            30x more inflow.<br />20x lower yield. One operating layer.
           </h2>
+          <p className="mt-5 text-[15px] text-muted-foreground max-w-[560px]">
+            Top funds now screen ~100,000 applications a year at ~$442 per review, for a 0.6% acceptance rate. DcernX replaces the scattered stack of inboxes, decks, spreadsheets and chat threads with one structured record per opportunity.
+          </p>
 
           <div className="mt-16 border border-border">
             <div className="grid grid-cols-1 md:grid-cols-3">
               {[
                 {
-                  title: "Integrated deal workspace",
-                  desc: "Pipelines, data rooms, portals, communications and planning — every artefact for every deal in one place, with full context preserved.",
+                  title: "Structured intake & scoring",
+                  desc: "Every inbound startup lands in one pipeline with source, stage, evidence and reviewer assignments — so good companies stop getting buried in noise.",
                   graphic: "bars",
                 },
                 {
                   title: "AI agents on primary analysis",
-                  desc: "Agents read the room: filings, memos, calls, comparables. They surface the questions worth asking before your team spends a single hour.",
+                  desc: "Agents enrich each deal across risk, strategy, financials, compliance, legal, competition, negative media and external benchmarks before your team spends an hour.",
                   graphic: "flow",
                 },
                 {
-                  title: "Team conviction, tracked",
-                  desc: "Structured evaluations, side-by-side scoring, and shared rationale — so your partners see how conviction is built, not just the verdict.",
+                  title: "Decision provenance & audit",
+                  desc: "Evaluations, open questions, risks, rationale and conviction scores — fully traceable for partners, ICs, LPs and public funders.",
                   graphic: "chart",
                 },
               ].map((feature, i) => (

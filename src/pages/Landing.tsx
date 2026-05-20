@@ -236,31 +236,31 @@ const Landing = () => {
       <section className="relative z-10 pt-24 pb-24 px-6 overflow-hidden">
         <div className="mx-auto max-w-[1200px] relative">
           <p className="text-[13px] uppercase tracking-[0.15em] text-muted-foreground mb-4">
-            Built for conviction
+            Designed for modern investment teams
           </p>
           <h2 className="text-[clamp(1.8rem,3vw,2.5rem)] font-[500] tracking-[-0.03em] text-foreground max-w-[640px] leading-[1.15]">
-            From scattered signals<br />to one source of conviction.
+            A single source of truth<br />for every opportunity.
           </h2>
           <p className="mt-5 text-[15px] text-muted-foreground max-w-[560px]">
-            Decks, inboxes, spreadsheets, data rooms, WhatsApp threads and call notes — DcernX replaces the scattered stack with one structured record per opportunity: what came in, who reviewed it, what evidence exists, what risks remain, and why a decision was made.
+            Decks, inboxes, data rooms, call notes and chat threads are consolidated into one auditable record per deal — preserving the evidence, reviews and rationale your team relies on to act with confidence.
           </p>
 
           <div className="mt-16 border border-border">
             <div className="grid grid-cols-1 md:grid-cols-3">
               {[
                 {
-                  title: "Structured intake & scoring",
-                  desc: "Every inbound startup lands in one pipeline with source, stage, evidence and reviewer assignments — so good companies stop getting buried in noise.",
+                  title: "Unified deal workspace",
+                  desc: "Sourcing, stages, data rooms, communications and documents in one place — every artefact for every deal, with full context preserved end to end.",
                   graphic: "bars",
                 },
                 {
-                  title: "AI agents on primary analysis",
-                  desc: "Agents enrich each deal across risk, strategy, financials, compliance, legal, competition, negative media and external benchmarks before your team spends an hour.",
+                  title: "AI-assisted primary analysis",
+                  desc: "Purpose-built agents enrich each opportunity across risk, strategy, financials, compliance, legal, competition and benchmarks — surfacing the questions worth asking first.",
                   graphic: "flow",
                 },
                 {
-                  title: "Decision provenance & audit",
-                  desc: "Evaluations, open questions, risks, rationale and conviction scores — fully traceable for partners, ICs, LPs and public funders.",
+                  title: "Defensible decision records",
+                  desc: "Structured evaluations, scoring, rationale and conviction scores — fully traceable for partners, investment committees, LPs and public funders.",
                   graphic: "chart",
                 },
               ].map((feature, i) => (

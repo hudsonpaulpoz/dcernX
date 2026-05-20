@@ -2,8 +2,7 @@
 import { writeFileSync } from "fs";
 import { resolve } from "path";
 
-// TODO: replace with your project URL once a custom domain is set.
-const BASE_URL = "";
+const BASE_URL = "https://dcernx.com";
 
 interface SitemapEntry {
   path: string;

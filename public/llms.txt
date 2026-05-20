@@ -1,0 +1,33 @@
+# DcernX
+
+> DcernX is the AI operating system for venture capital firms, accelerators, venture studios and startup funding programs — unifying deal flow, due diligence, expert review and conviction memos in a single workspace.
+
+DcernX is built by P101 Limited (UK, company no. 17063831) for private investment teams who need to run more deals with sharper conviction. The platform combines structured pipeline management with AI-assisted primary analysis across seven dimensions: strategy, competition, negative media, regulatory, compliance, financial and risk.
+
+Who it's for:
+- Venture capital firms (early-stage, growth, multi-stage)
+- Accelerators and incubators running cohorts
+- Venture studios building and backing companies
+- Startup funding programs, family offices and corporate venture teams
+
+What it does:
+- Centralises sourcing, intake, screening and pipeline
+- Runs AI primary analysis on any prospective company in minutes
+- Coordinates expert reviews, founder communications and IC decision records
+- Operates as a data processor on customer data — GDPR-compliant, no training on customer data, no behavioural profiling
+
+## Pages
+
+- [Home](https://dcernx.com/): Overview of the DcernX operating system for private investment teams.
+- [AI-Assisted Primary Analysis](https://dcernx.com/ai-analysis): How DcernX runs seven structured AI analyses — strategy, competition, negative media, regulatory, compliance, financial and risk — on any prospective deal.
+- [Try AI Analysis Free](https://dcernx.com/ai-analysis/try): Run a live, free primary analysis on any company. No account required.
+
+## Legal
+
+- [Privacy Policy](https://dcernx.com/privacy): How DcernX handles information. GDPR-compliant, minimal PII collection, customer data processed solely on behalf of customers.
+- [Terms of Service](https://dcernx.com/terms): Terms governing use of the DcernX platform, operated by P101 Limited under English law.
+
+## Optional
+
+- [Sitemap](https://dcernx.com/sitemap.xml): Machine-readable index of indexable pages.
+- Contact: hudson@p101limited.com

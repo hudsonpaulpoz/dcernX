@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { ArrowLeft, Loader2, Sparkles } from "lucide-react";
 import ReactMarkdown from "react-markdown";
 import { StackedLogo } from "@/components/StackedLogo";
+import { Seo } from "@/components/Seo";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 

@@ -4,6 +4,7 @@ import { Logo3D } from "@/components/Logo3D";
 import testimonialAvatarAsset from "@/assets/testimonial-avatar.jpg.asset.json";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
+import { Seo } from "@/components/Seo";
 
 import { StackedLogo } from "@/components/StackedLogo";
 
@@ -46,6 +47,23 @@ const Landing = () => {
 
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
+      <Seo
+        title="DcernX — Deal Flow & Diligence OS for VCs, Accelerators & Venture Studios"
+        description="DcernX is the AI operating system for venture capital firms, accelerators, venture studios and startup funding programs. Unify sourcing, diligence, expert review and decision records — and run primary analysis on any company in minutes."
+        path="/"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          name: "DcernX",
+          url: "/",
+          publisher: { "@type": "Organization", name: "P101 Limited" },
+          potentialAction: {
+            "@type": "SearchAction",
+            target: "/ai-analysis/try?company={query}",
+            "query-input": "required name=query",
+          },
+        }}
+      />
       {/* Nav */}
       <nav className="fixed top-0 z-50 w-full bg-background border-b border-border px-6">
         <div className="mx-auto flex h-[56px] max-w-[1200px] items-center justify-between">

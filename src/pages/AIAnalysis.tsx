@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { ArrowRight, Brain, Building2, FileSearch, Scale, ShieldCheck, LineChart, AlertTriangle, Newspaper } from "lucide-react";
 import { StackedLogo } from "@/components/StackedLogo";
+import { Seo } from "@/components/Seo";
 
 const analyses = [
   {
@@ -43,6 +44,33 @@ const analyses = [
 export default function AIAnalysis() {
   return (
     <div className="min-h-screen bg-background text-foreground">
+      <Seo
+        title="AI Due Diligence for VCs & Accelerators — Strategy, Competition, Regulatory, Financial & Risk Analysis | DcernX"
+        description="DcernX runs seven AI-assisted primary analyses on any prospective deal: strategy, competition, negative media, regulatory, compliance, financial and risk. Built for VCs, accelerators, venture studios and startup funding teams."
+        path="/ai-analysis"
+        jsonLd={[
+          {
+            "@context": "https://schema.org",
+            "@type": "Service",
+            name: "DcernX AI-Assisted Primary Analysis",
+            serviceType: "AI Due Diligence",
+            provider: { "@type": "Organization", name: "P101 Limited" },
+            audience: {
+              "@type": "Audience",
+              audienceType: "Venture capital firms, accelerators, venture studios, startup funding programs, family offices, corporate venture",
+            },
+            description: "Seven structured AI analyses — strategy, competition, negative media, regulatory, compliance, financial and risk — produced as a decision-useful brief for investment teams.",
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Home", item: "/" },
+              { "@type": "ListItem", position: 2, name: "AI Analysis", item: "/ai-analysis" },
+            ],
+          },
+        ]}
+      />
       {/* Nav */}
       <nav className="sticky top-0 z-50 w-full bg-background border-b border-border px-6">
         <div className="mx-auto flex h-[56px] max-w-[1200px] items-center justify-between">

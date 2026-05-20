@@ -84,13 +84,13 @@ const Landing = () => {
             {/* Left column — text */}
             <div className="relative z-[3] flex-1 min-w-0 max-w-[540px]">
               <p className="text-[12px] uppercase tracking-[0.18em] text-muted-foreground mb-5">
-                Conviction management for investment firms
+                The operating system for private investment teams
               </p>
               <h1 className="text-[clamp(2rem,4vw,3.2rem)] font-[500] leading-[1.08] tracking-[-0.04em] text-foreground max-w-[540px]">
-                Turn deal flow into evidence-backed decisions.
+                Run every deal with clarity and conviction.
               </h1>
               <p className="mt-6 text-base leading-relaxed text-muted-foreground max-w-[480px]">
-                DcernX is the AI operating system for VCs, accelerators and startup programs — unifying intake, diligence, expert reviews, communications and decision records into one structured workspace.
+                DcernX brings sourcing, diligence, expert review, communications and decision records into a single, structured workspace — so partners spend less time reconstructing context, and more time making sharper calls.
               </p>
               <div className="mt-10 flex items-center gap-4">
                 <Link to="/auth">
@@ -99,7 +99,7 @@ const Landing = () => {
                     <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
                   </button>
                 </Link>
-                <span className="text-[13px] text-muted-foreground">Free for 4 months</span>
+                <span className="text-[13px] text-muted-foreground">Complimentary for 4 months</span>
               </div>
             </div>
 

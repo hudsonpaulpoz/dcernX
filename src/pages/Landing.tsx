@@ -357,18 +357,18 @@ const Landing = () => {
       {/* CTA */}
       <section className="relative z-10 pt-32 pb-40 px-6 overflow-hidden">
         <div className="mx-auto max-w-[1200px] text-center relative">
-          <h2 className="text-[clamp(2rem,4vw,3.2rem)] font-[500] tracking-[-0.035em] text-foreground leading-[1.1] mx-auto max-w-[620px]">
-            Stop guessing. Start discerning.
+          <h2 className="text-[clamp(2rem,4vw,3.2rem)] font-[500] tracking-[-0.035em] text-foreground leading-[1.1] mx-auto max-w-[680px]">
+            Set up your workspace in 10 minutes.
           </h2>
-          <p className="mt-5 text-[15px] text-muted-foreground max-w-[440px] mx-auto">
-            Bring DcernX into your next deal cycle. Built for investment firms that take conviction seriously.
+          <p className="mt-5 text-[15px] text-muted-foreground max-w-[500px] mx-auto">
+            Run a deal flow, diligence, accelerator or AI review pilot — free for 4 months. Introductory plans from €500/month, billed annually.
           </p>
           <div className="mt-10 flex justify-center">
             <Link to="/auth">
               <button
                 className="group relative inline-flex items-center gap-2.5 px-8 py-3.5 text-[15px] font-medium transition-all duration-200 border border-foreground/40 text-foreground hover:bg-foreground hover:text-background hover:border-foreground"
               >
-                Request access
+                Start free pilot
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
               </button>
             </Link>

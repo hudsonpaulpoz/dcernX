@@ -8,7 +8,7 @@ const COMPANY = {
   product: "DcernX",
   jurisdiction: "England and Wales",
   number: "17063831",
-  contact: "privacy@dcernx.com",
+  contact: "hudson@p101limited.com",
 };
 
 const LAST_UPDATED = "20 May 2026";

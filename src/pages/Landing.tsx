@@ -239,7 +239,7 @@ const Landing = () => {
             Built for conviction
           </p>
           <h2 className="text-[clamp(1.8rem,3vw,2.5rem)] font-[500] tracking-[-0.03em] text-foreground max-w-[640px] leading-[1.15]">
-            30x more inflow.<br />20x lower yield. One operating layer.
+            From scattered signals<br />to one source of conviction.
           </h2>
           <p className="mt-5 text-[15px] text-muted-foreground max-w-[560px]">
             Top funds now screen ~100,000 applications a year at ~$442 per review, for a 0.6% acceptance rate. DcernX replaces the scattered stack of inboxes, decks, spreadsheets and chat threads with one structured record per opportunity.

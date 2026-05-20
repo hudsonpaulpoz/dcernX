@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { ArrowLeft, Loader2, Sparkles } from "lucide-react";
 import ReactMarkdown from "react-markdown";
 import { StackedLogo } from "@/components/StackedLogo";
+import { Seo } from "@/components/Seo";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 
@@ -56,6 +57,11 @@ export default function AIAnalysisTry() {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
+      <Seo
+        title="Try AI Due Diligence Free — Run a Live Primary Analysis on Any Company | DcernX"
+        description="Run a free, live AI primary analysis on any company — strategy, competition, regulatory, compliance, financial and risk. Built for VC, accelerator and venture studio teams. No account required."
+        path="/ai-analysis/try"
+      />
       {/* Nav */}
       <nav className="sticky top-0 z-50 w-full bg-background border-b border-border px-6">
         <div className="mx-auto flex h-[56px] max-w-[1200px] items-center justify-between">

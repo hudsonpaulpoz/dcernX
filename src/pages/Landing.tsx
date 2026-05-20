@@ -377,12 +377,20 @@ const Landing = () => {
 
       {/* Footer */}
       <div className="relative z-10 border-t border-border">
-        <div className="mx-auto max-w-[1200px] px-6 py-6 flex items-center justify-between">
+        <div className="mx-auto max-w-[1200px] px-6 py-6 flex flex-wrap items-center justify-between gap-3">
           <div className="flex items-center gap-2 -ml-0.5">
             <StackedLogo size={16} />
             <span className="text-[12px] font-bold text-foreground uppercase tracking-[0.08em]">DcernX</span>
           </div>
-          <span className="text-[12px] text-muted-foreground">© {new Date().getFullYear()}</span>
+          <div className="flex items-center gap-5">
+            <Link to="/privacy" className="text-[12px] text-muted-foreground hover:text-foreground transition-colors">
+              Privacy
+            </Link>
+            <Link to="/terms" className="text-[12px] text-muted-foreground hover:text-foreground transition-colors">
+              Terms
+            </Link>
+            <span className="text-[12px] text-muted-foreground">© {new Date().getFullYear()} P101 Limited</span>
+          </div>
         </div>
       </div>
     </div>

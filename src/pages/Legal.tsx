@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { StackedLogo } from "@/components/StackedLogo";
+import { Seo } from "@/components/Seo";
 
 type Section = { heading: string; body: (string | string[])[] };
 
@@ -309,19 +310,33 @@ function LegalShell({
 }
 
 export const Privacy = () => (
-  <LegalShell
-    eyebrow="Legal"
-    title="Privacy Policy"
-    intro={`This policy explains how ${COMPANY.name}, the company behind ${COMPANY.product}, handles information across the Service. ${COMPANY.product} is built for private investment teams, and we have deliberately designed it to minimise the personal data we collect about you directly. Most data inside the Service is uploaded by our customers, who remain in control of it at all times.`}
-    sections={privacySections}
-  />
+  <>
+    <Seo
+      title="Privacy Policy | DcernX"
+      description="How P101 Limited (DcernX) handles information across the platform. GDPR-compliant, minimal PII, customer data processed solely on behalf of our customers."
+      path="/privacy"
+    />
+    <LegalShell
+      eyebrow="Legal"
+      title="Privacy Policy"
+      intro={`This policy explains how ${COMPANY.name}, the company behind ${COMPANY.product}, handles information across the Service. ${COMPANY.product} is built for private investment teams, and we have deliberately designed it to minimise the personal data we collect about you directly. Most data inside the Service is uploaded by our customers, who remain in control of it at all times.`}
+      sections={privacySections}
+    />
+  </>
 );
 
 export const Terms = () => (
-  <LegalShell
-    eyebrow="Legal"
-    title="Terms of Service"
-    intro={`These Terms set out the agreement between ${COMPANY.name} and the organisations and individuals who use ${COMPANY.product}. They cover how the Service is provided, the responsibilities of each party, and the legal framework that applies to our relationship.`}
-    sections={termsSections}
-  />
+  <>
+    <Seo
+      title="Terms of Service | DcernX"
+      description="The terms of service governing use of DcernX, operated by P101 Limited, registered in England and Wales (company no. 17063831)."
+      path="/terms"
+    />
+    <LegalShell
+      eyebrow="Legal"
+      title="Terms of Service"
+      intro={`These Terms set out the agreement between ${COMPANY.name} and the organisations and individuals who use ${COMPANY.product}. They cover how the Service is provided, the responsibilities of each party, and the legal framework that applies to our relationship.`}
+      sections={termsSections}
+    />
+  </>
 );

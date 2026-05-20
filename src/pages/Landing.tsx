@@ -308,6 +308,15 @@ const Landing = () => {
                   </div>
                   <h3 className="text-[15px] font-medium text-foreground mb-2">{feature.title}</h3>
                   <p className="text-[13px] leading-[1.6] text-muted-foreground">{feature.desc}</p>
+                  {i === 1 && (
+                    <Link
+                      to="/ai-analysis"
+                      className="mt-4 inline-flex items-center gap-1.5 text-[12px] font-medium text-foreground hover:text-foreground/70 transition-colors"
+                    >
+                      Explore the seven analyses
+                      <ArrowRight className="h-3 w-3" />
+                    </Link>
+                  )}
                 </div>
               ))}
             </div>

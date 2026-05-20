@@ -52,6 +52,45 @@ export type Database = {
           },
         ]
       }
+      analysis_requests: {
+        Row: {
+          company_linkedin: string | null
+          company_website: string | null
+          created_at: string
+          document_paths: string[]
+          id: string
+          pitch_deck_path: string | null
+          requester_email: string
+          requester_linkedin: string | null
+          requester_name: string
+          status: string
+        }
+        Insert: {
+          company_linkedin?: string | null
+          company_website?: string | null
+          created_at?: string
+          document_paths?: string[]
+          id?: string
+          pitch_deck_path?: string | null
+          requester_email: string
+          requester_linkedin?: string | null
+          requester_name: string
+          status?: string
+        }
+        Update: {
+          company_linkedin?: string | null
+          company_website?: string | null
+          created_at?: string
+          document_paths?: string[]
+          id?: string
+          pitch_deck_path?: string | null
+          requester_email?: string
+          requester_linkedin?: string | null
+          requester_name?: string
+          status?: string
+        }
+        Relationships: []
+      }
       attachments: {
         Row: {
           bug_id: string

@@ -84,13 +84,13 @@ const Landing = () => {
             {/* Left column — text */}
             <div className="relative z-[3] flex-1 min-w-0 max-w-[540px]">
               <p className="text-[12px] uppercase tracking-[0.18em] text-muted-foreground mb-5">
-                Conviction management for investment firms
+                The operating system for private investment teams
               </p>
               <h1 className="text-[clamp(2rem,4vw,3.2rem)] font-[500] leading-[1.08] tracking-[-0.04em] text-foreground max-w-[540px]">
-                Turn deal flow into evidence-backed decisions.
+                Run every deal with clarity and conviction.
               </h1>
               <p className="mt-6 text-base leading-relaxed text-muted-foreground max-w-[480px]">
-                DcernX is the AI operating system for VCs, accelerators and startup programs — unifying intake, diligence, expert reviews, communications and decision records into one structured workspace.
+                DcernX brings sourcing, diligence, expert review, communications and decision records into a single, structured workspace — so partners spend less time reconstructing context, and more time making sharper calls.
               </p>
               <div className="mt-10 flex items-center gap-4">
                 <Link to="/auth">
@@ -99,7 +99,7 @@ const Landing = () => {
                     <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
                   </button>
                 </Link>
-                <span className="text-[13px] text-muted-foreground">Free for 4 months</span>
+                <span className="text-[13px] text-muted-foreground">Complimentary for 4 months</span>
               </div>
             </div>
 
@@ -236,31 +236,31 @@ const Landing = () => {
       <section className="relative z-10 pt-24 pb-24 px-6 overflow-hidden">
         <div className="mx-auto max-w-[1200px] relative">
           <p className="text-[13px] uppercase tracking-[0.15em] text-muted-foreground mb-4">
-            Built for conviction
+            Designed for modern investment teams
           </p>
           <h2 className="text-[clamp(1.8rem,3vw,2.5rem)] font-[500] tracking-[-0.03em] text-foreground max-w-[640px] leading-[1.15]">
-            From scattered signals<br />to one source of conviction.
+            A single source of truth<br />for every opportunity.
           </h2>
           <p className="mt-5 text-[15px] text-muted-foreground max-w-[560px]">
-            Decks, inboxes, spreadsheets, data rooms, WhatsApp threads and call notes — DcernX replaces the scattered stack with one structured record per opportunity: what came in, who reviewed it, what evidence exists, what risks remain, and why a decision was made.
+            Decks, inboxes, data rooms, call notes and chat threads are consolidated into one auditable record per deal — preserving the evidence, reviews and rationale your team relies on to act with confidence.
           </p>
 
           <div className="mt-16 border border-border">
             <div className="grid grid-cols-1 md:grid-cols-3">
               {[
                 {
-                  title: "Structured intake & scoring",
-                  desc: "Every inbound startup lands in one pipeline with source, stage, evidence and reviewer assignments — so good companies stop getting buried in noise.",
+                  title: "Unified deal workspace",
+                  desc: "Sourcing, stages, data rooms, communications and documents in one place — every artefact for every deal, with full context preserved end to end.",
                   graphic: "bars",
                 },
                 {
-                  title: "AI agents on primary analysis",
-                  desc: "Agents enrich each deal across risk, strategy, financials, compliance, legal, competition, negative media and external benchmarks before your team spends an hour.",
+                  title: "AI-assisted primary analysis",
+                  desc: "Purpose-built agents enrich each opportunity across risk, strategy, financials, compliance, legal, competition and benchmarks — surfacing the questions worth asking first.",
                   graphic: "flow",
                 },
                 {
-                  title: "Decision provenance & audit",
-                  desc: "Evaluations, open questions, risks, rationale and conviction scores — fully traceable for partners, ICs, LPs and public funders.",
+                  title: "Defensible decision records",
+                  desc: "Structured evaluations, scoring, rationale and conviction scores — fully traceable for partners, investment committees, LPs and public funders.",
                   graphic: "chart",
                 },
               ].map((feature, i) => (
@@ -338,7 +338,7 @@ const Landing = () => {
         <div className="mx-auto max-w-[1200px] relative">
           <div className="border border-border bg-background p-10 max-w-[720px] mx-auto">
             <blockquote className="text-[20px] font-[400] leading-[1.5] tracking-[-0.01em] text-foreground/85">
-              "The old stack was built for contact management. DcernX gives us conviction management — every deal has one record, every decision has a why, and nothing walks out the door when someone churns."
+              "DcernX has changed how our partnership works. Context lives with the deal, not in someone's inbox — and our investment committee finally sees the full picture, not a reconstructed summary."
             </blockquote>
             <div className="mt-6 flex items-center gap-3">
               <img src={testimonialAvatarAsset.url} alt="Jamie Kim" className="h-8 w-8 rounded-full object-cover" />
@@ -358,10 +358,10 @@ const Landing = () => {
       <section className="relative z-10 pt-32 pb-40 px-6 overflow-hidden">
         <div className="mx-auto max-w-[1200px] text-center relative">
           <h2 className="text-[clamp(2rem,4vw,3.2rem)] font-[500] tracking-[-0.035em] text-foreground leading-[1.1] mx-auto max-w-[680px]">
-            Set up your workspace in 10 minutes.
+            Bring your next deal cycle into focus.
           </h2>
-          <p className="mt-5 text-[15px] text-muted-foreground max-w-[500px] mx-auto">
-            Run a deal flow, diligence, accelerator or AI review pilot — free for 4 months. Introductory plans from €500/month, billed annually.
+          <p className="mt-5 text-[15px] text-muted-foreground max-w-[520px] mx-auto">
+            Stand up your workspace in under ten minutes. Complimentary for the first four months — introductory plans from €500 per month, billed annually.
           </p>
           <div className="mt-10 flex justify-center">
             <Link to="/auth">

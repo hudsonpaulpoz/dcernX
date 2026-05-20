@@ -95,11 +95,10 @@ const Landing = () => {
               <div className="mt-10 flex items-center gap-4">
                 <Link to="/auth">
                   <button className="group relative inline-flex items-center gap-2 px-6 py-3 text-[14px] font-medium bg-foreground text-background transition-all duration-200 hover:bg-foreground/90">
-                    Start free pilot
+                    Request access
                     <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
                   </button>
                 </Link>
-                <span className="text-[13px] text-muted-foreground">Complimentary for 4 months</span>
               </div>
             </div>
 

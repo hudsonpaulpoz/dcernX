@@ -338,7 +338,7 @@ const Landing = () => {
         <div className="mx-auto max-w-[1200px] relative">
           <div className="border border-border bg-background p-10 max-w-[720px] mx-auto">
             <blockquote className="text-[20px] font-[400] leading-[1.5] tracking-[-0.01em] text-foreground/85">
-              "DcernX collapsed our diligence stack into one room. The agents handle the first pass; the partners spend their time where it counts — building conviction together."
+              "The old stack was built for contact management. DcernX gives us conviction management — every deal has one record, every decision has a why, and nothing walks out the door when someone churns."
             </blockquote>
             <div className="mt-6 flex items-center gap-3">
               <img src={testimonialAvatarAsset.url} alt="Jamie Kim" className="h-8 w-8 rounded-full object-cover" />

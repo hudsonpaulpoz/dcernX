@@ -44,6 +44,18 @@ export default function Auth() {
     }
   };
 
+  const handleOAuthSignIn = async (provider: "google" | "apple") => {
+    setIsGoogleLoading(true);
+    try {
+      const { error } = await lovable.auth.signInWithOAuth(provider, { redirect_uri: window.location.origin });
+      if (error) toast({ title: "Sign-in failed", description: error.message, variant: "destructive" });
+    } catch (error: any) {
+      toast({ title: "Sign-in failed", description: error.message, variant: "destructive" });
+    } finally {
+      setIsGoogleLoading(false);
+    }
+  };
+
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);

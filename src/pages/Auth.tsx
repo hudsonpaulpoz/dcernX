@@ -173,9 +173,20 @@ export default function Auth() {
           </TabsContent>
         </Tabs>
 
-        <p className="text-left text-[11px] text-muted-foreground pt-2">
-          © {new Date().getFullYear()} DcernX
-        </p>
+        <div className="pt-2 border-t border-border space-y-1.5">
+          <p className="text-[11px] text-muted-foreground">
+            Prefer email? Reach out at{" "}
+            <a
+              href="mailto:hudson@p101limited.com?subject=DcernX%20-%20Request%20Access"
+              className="text-foreground underline underline-offset-2 hover:opacity-80"
+            >
+              hudson@p101limited.com
+            </a>
+          </p>
+          <p className="text-left text-[11px] text-muted-foreground">
+            © {new Date().getFullYear()} DcernX
+          </p>
+        </div>
       </div>
     </div>
   );

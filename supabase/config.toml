@@ -1,1 +1,3 @@
 project_id = "fpbnqwftdtsoglxzjbcq"
+[functions.analyze-company]
+verify_jwt = false

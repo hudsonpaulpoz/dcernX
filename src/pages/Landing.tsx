@@ -54,6 +54,12 @@ const Landing = () => {
             <span className="text-[14px] font-bold text-foreground tracking-[0.08em] uppercase">DcernX</span>
           </Link>
           <div className="flex items-center gap-2">
+            <Link
+              to="/ai-analysis"
+              className="hidden sm:inline-flex h-8 px-3 items-center text-[13px] text-foreground/70 hover:text-foreground transition-colors"
+            >
+              AI analysis
+            </Link>
             <button
               onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
               className="h-8 w-8 flex items-center justify-center text-foreground/70 hover:text-foreground transition-colors"
@@ -308,6 +314,15 @@ const Landing = () => {
                   </div>
                   <h3 className="text-[15px] font-medium text-foreground mb-2">{feature.title}</h3>
                   <p className="text-[13px] leading-[1.6] text-muted-foreground">{feature.desc}</p>
+                  {i === 1 && (
+                    <Link
+                      to="/ai-analysis"
+                      className="mt-4 inline-flex items-center gap-1.5 text-[12px] font-medium text-foreground hover:text-foreground/70 transition-colors"
+                    >
+                      Explore the seven analyses
+                      <ArrowRight className="h-3 w-3" />
+                    </Link>
+                  )}
                 </div>
               ))}
             </div>

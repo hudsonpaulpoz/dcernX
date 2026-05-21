@@ -68,7 +68,7 @@ export default function AIAnalysis() {
             "@type": "BreadcrumbList",
             itemListElement: [
               { "@type": "ListItem", position: 1, name: "Home", item: "/" },
-              { "@type": "ListItem", position: 2, name: "AI Analysis", item: "/ai-analysis" },
+              { "@type": "ListItem", position: 2, name: "Agentic DD", item: "/ai-analysis" },
             ],
           },
         ]}
@@ -227,10 +227,9 @@ export default function AIAnalysis() {
       {/* Footer */}
       <div className="border-t border-border">
         <div className="mx-auto max-w-[1200px] px-6 py-6 flex flex-wrap items-center justify-between gap-3">
-          <div className="flex items-center gap-2 -ml-0.5">
-            <StackedLogo size={16} />
-            <span className="text-[12px] font-bold text-foreground uppercase tracking-[0.08em]">DcernX</span>
-          </div>
+          <Link to="/" aria-label="DcernX home" className="-ml-0.5">
+            <StackedLogo size={20} />
+          </Link>
           <div className="flex items-center gap-5">
             <Link to="/privacy" className="text-[12px] text-muted-foreground hover:text-foreground">Privacy</Link>
             <Link to="/terms" className="text-[12px] text-muted-foreground hover:text-foreground">Terms</Link>

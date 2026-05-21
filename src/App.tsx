@@ -15,7 +15,7 @@ import BugList from "./pages/BugList";
 import Analytics from "./pages/Analytics";
 import Settings from "./pages/Settings";
 import NotFound from "./pages/NotFound";
-import { Privacy, Terms } from "./pages/Legal";
+import { Privacy, Terms, FairUse } from "./pages/Legal";
 import AIAnalysis from "./pages/AIAnalysis";
 import AIAnalysisTry from "./pages/AIAnalysisTry";
 
@@ -40,6 +40,7 @@ const App = () => (
               <Route path="/settings" element={<ProtectedRoute><Settings /></ProtectedRoute>} />
               <Route path="/privacy" element={<Privacy />} />
               <Route path="/terms" element={<Terms />} />
+              <Route path="/fair-use" element={<FairUse />} />
               <Route path="/ai-analysis" element={<AIAnalysis />} />
               <Route path="/ai-analysis/try" element={<AIAnalysisTry />} />
               <Route path="*" element={<NotFound />} />

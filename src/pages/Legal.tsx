@@ -412,3 +412,19 @@ export const Terms = () => (
     />
   </>
 );
+
+export const FairUse = () => (
+  <>
+    <Seo
+      title="Fair Use Policy | DcernX"
+      description="Fair use rules for DcernX, including the one-run free AI analysis entitlement, paid plan token usage, public vs private inference, and acceptable-use guardrails."
+      path="/fair-use"
+    />
+    <LegalShell
+      eyebrow="Legal"
+      title="Fair Use Policy"
+      intro={`This policy explains how ${COMPANY.product} may be used fairly and safely — including limits on the free AI analysis, how additional usage is purchased, and the inference environments and safeguards that apply to free and paid plans.`}
+      sections={fairUseSections}
+    />
+  </>
+);

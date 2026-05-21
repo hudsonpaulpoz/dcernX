@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 import { Seo } from "@/components/Seo";
 
 import { StackedLogo } from "@/components/StackedLogo";
+import { CursorSpotlight } from "@/components/CursorSpotlight";
 
 /** Apply slate accent on mount */
 const SLATE_HSL = "215 16% 47%";
@@ -255,7 +256,7 @@ const Landing = () => {
       <div className="relative z-10 w-full border-t border-border" />
 
       {/* Features */}
-      <section className="relative z-10 pt-24 pb-24 px-6 overflow-hidden">
+      <CursorSpotlight className="relative z-10 pt-24 pb-24 px-6 overflow-hidden">
         <div className="mx-auto max-w-[1200px] relative">
           <p className="text-[13px] uppercase tracking-[0.15em] text-muted-foreground mb-4">
             Designed for modern investment teams
@@ -345,7 +346,7 @@ const Landing = () => {
             </div>
           </div>
         </div>
-      </section>
+      </CursorSpotlight>
 
       {/* Full-width divider */}
       <div className="relative z-10 w-full border-t border-border" />

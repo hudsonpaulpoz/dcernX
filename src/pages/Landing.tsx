@@ -422,6 +422,9 @@ const Landing = () => {
             <Link to="/terms" className="text-[12px] text-muted-foreground hover:text-foreground transition-colors">
               Terms
             </Link>
+            <Link to="/fair-use" className="text-[12px] text-muted-foreground hover:text-foreground transition-colors">
+              Fair Use
+            </Link>
             <span className="text-[12px] text-muted-foreground">© {new Date().getFullYear()} P101 Limited</span>
           </div>
         </div>

@@ -3,6 +3,7 @@ import { ArrowRight, Brain, Building2, FileSearch, Scale, ShieldCheck, LineChart
 import { StackedLogo } from "@/components/StackedLogo";
 import { Seo } from "@/components/Seo";
 import { CursorSpotlight } from "@/components/CursorSpotlight";
+import { MarketingThemeToggle } from "@/components/MarketingThemeToggle";
 
 const analyses = [
   {
@@ -82,6 +83,7 @@ export default function AIAnalysis() {
             <Link to="/" className="hidden sm:inline-flex h-8 px-3 items-center text-[13px] text-foreground/70 hover:text-foreground transition-colors">
               Home
             </Link>
+            <MarketingThemeToggle />
             <Link to="/ai-analysis/try">
               <button className="text-[13px] h-8 px-3 border border-foreground/40 text-foreground hover:bg-foreground hover:text-background transition-colors">
                 Try for free

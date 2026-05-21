@@ -225,6 +225,75 @@ const termsSections: Section[] = [
   },
 ];
 
+const fairUseSections: Section[] = [
+  {
+    heading: "1. Purpose of this policy",
+    body: [
+      `This Fair Use Policy supplements our Terms of Service and governs how customers, evaluators and trial users may use the ${COMPANY.product} platform, including AI-assisted analyses, document ingestion, integrations and any free trial entitlements. It is designed to keep the Service available, performant and safe for all users and to protect ${COMPANY.name}, its customers and third parties.`,
+    ],
+  },
+  {
+    heading: "2. Free analysis entitlement",
+    body: [
+      `The free AI-assisted primary analysis offered at /ai-analysis/try is limited to one (1) successful analysis run per user, per organisation and per verified work email. We may, at our discretion, count multiple sign-ups originating from the same individual, household, organisation, IP range or payment instrument as a single user.`,
+      `Additional analysis runs beyond the free entitlement require a paid plan or the purchase of additional inference tokens, which are consumed against the customer's active usage plan. Token balances are non-transferable, non-refundable and expire in line with the customer's subscription term unless otherwise stated on the order form.`,
+    ],
+  },
+  {
+    heading: "3. Inference environment and data handling",
+    body: [
+      `Free analyses are produced using a gatekept public inference model operated by our sub-processors. While we apply reasonable safeguards, inputs submitted in the free tier should be treated as suitable for a shared inference environment. You are solely responsible for the materials you submit on the free tier, for ensuring you have the rights to share them, and for redacting any confidential, regulated, personal or special-category data prior to submission.`,
+      `Paid plans are provisioned on private inference with advanced data-privacy guardrails, including tenant isolation, encryption in transit and at rest, no-training contractual commitments with model providers, configurable data-residency, and audit logging. Specific guarantees applicable to your plan are set out in your order form and Data Processing Addendum.`,
+      `Across both tiers, ${COMPANY.name} does not use Customer Data to train foundation models and does not sell Customer Data.`,
+    ],
+  },
+  {
+    heading: "4. Acceptable use of AI features",
+    body: [
+      `You must not use the Service, including any AI analyses, to: (a) submit content you do not have the right to process; (b) generate or distribute unlawful, defamatory, harassing, deceptive, infringing or sexually explicit material; (c) produce regulated investment, legal, tax, medical or financial advice for onward distribution as if it were professional advice; (d) make solely automated decisions producing legal or similarly significant effects on individuals without appropriate human review; (e) attempt to reverse-engineer, extract weights from, or replicate the underlying models; or (f) submit prompts engineered to bypass safety, security or rate-limit controls.`,
+      `Outputs are probabilistic and may be incomplete, outdated or inaccurate. You must independently verify any output before relying on it for an investment, compliance or other material decision.`,
+    ],
+  },
+  {
+    heading: "5. Rate limits, volumes and abusive patterns",
+    body: [
+      `We apply rate limits, per-user concurrency caps and per-plan monthly volume limits to protect Service stability. These limits may be adjusted from time to time and are visible in your workspace where applicable.`,
+      `Behaviour we treat as abusive includes, without limitation: (a) automated, scripted or bulk submissions outside published APIs; (b) credential sharing across users or organisations; (c) circumventing the free-tier entitlement through disposable emails, alternate identities or coordinated sign-ups; (d) using the Service to scrape, mirror or rebuild a competing dataset or product; (e) submitting content designed to overload, destabilise or fingerprint the inference layer; and (f) attempting to access another customer's workspace or data.`,
+    ],
+  },
+  {
+    heading: "6. Inputs and prohibited content",
+    body: [
+      `You must not submit to the Service: (a) malware, exploits or actively malicious payloads; (b) export-controlled or sanctioned-party data in breach of applicable law; (c) personal data of children or special-category personal data unless expressly permitted by a written agreement; (d) credentials, secrets or payment-card data; or (e) content obtained in violation of a third party's terms, confidentiality or intellectual-property rights.`,
+    ],
+  },
+  {
+    heading: "7. Enforcement",
+    body: [
+      `Where we reasonably believe this Fair Use Policy has been breached, we may, with or without notice and proportionate to the breach: (a) throttle or suspend access; (b) revoke free-tier entitlements; (c) invalidate cached outputs; (d) require migration to a paid plan; (e) terminate the account under the Terms of Service; and (f) cooperate with law enforcement or regulators where required.`,
+      `We will, where reasonable and lawful, contact the customer administrator before taking material action and provide an opportunity to remediate.`,
+    ],
+  },
+  {
+    heading: "8. No professional advice; investor responsibility",
+    body: [
+      `${COMPANY.product} supports investment workflows. Outputs are decision-support artefacts, not investment, legal, tax, regulatory or financial advice. The customer and its authorised users remain solely responsible for any investment, diligence, compliance or operational decision taken on the basis of, or informed by, the Service.`,
+    ],
+  },
+  {
+    heading: "9. Changes",
+    body: [
+      `We may update this Fair Use Policy from time to time. Material changes will be communicated through the Service or by email. Continued use of the Service after the effective date constitutes acceptance of the updated policy.`,
+    ],
+  },
+  {
+    heading: "10. Contact",
+    body: [
+      `Questions, reports of suspected abuse, or requests to raise limits can be sent to ${COMPANY.contact}.`,
+    ],
+  },
+];
+
 function LegalShell({
   eyebrow,
   title,
@@ -299,6 +368,9 @@ function LegalShell({
             <Link to="/terms" className="text-[12px] text-muted-foreground hover:text-foreground transition-colors">
               Terms
             </Link>
+            <Link to="/fair-use" className="text-[12px] text-muted-foreground hover:text-foreground transition-colors">
+              Fair Use
+            </Link>
             <span className="text-[12px] text-muted-foreground">
               © {new Date().getFullYear()} {COMPANY.name}
             </span>
@@ -337,6 +409,22 @@ export const Terms = () => (
       title="Terms of Service"
       intro={`These Terms set out the agreement between ${COMPANY.name} and the organisations and individuals who use ${COMPANY.product}. They cover how the Service is provided, the responsibilities of each party, and the legal framework that applies to our relationship.`}
       sections={termsSections}
+    />
+  </>
+);
+
+export const FairUse = () => (
+  <>
+    <Seo
+      title="Fair Use Policy | DcernX"
+      description="Fair use rules for DcernX, including the one-run free AI analysis entitlement, paid plan token usage, public vs private inference, and acceptable-use guardrails."
+      path="/fair-use"
+    />
+    <LegalShell
+      eyebrow="Legal"
+      title="Fair Use Policy"
+      intro={`This policy explains how ${COMPANY.product} may be used fairly and safely — including limits on the free AI analysis, how additional usage is purchased, and the inference environments and safeguards that apply to free and paid plans.`}
+      sections={fairUseSections}
     />
   </>
 );

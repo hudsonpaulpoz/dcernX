@@ -75,9 +75,8 @@ export default function AIAnalysis() {
       {/* Nav */}
       <nav className="sticky top-0 z-50 w-full bg-background border-b border-border px-6">
         <div className="mx-auto flex h-[56px] max-w-[1200px] items-center justify-between">
-          <Link to="/" className="flex items-center gap-2 -ml-0.5">
-            <StackedLogo size={16} />
-            <span className="text-[14px] font-bold text-foreground tracking-[0.08em] uppercase">DcernX</span>
+          <Link to="/" className="flex items-center -ml-0.5" aria-label="DcernX home">
+            <StackedLogo size={24} />
           </Link>
           <div className="flex items-center gap-2">
             <Link to="/" className="hidden sm:inline-flex h-8 px-3 items-center text-[13px] text-foreground/70 hover:text-foreground transition-colors">
@@ -233,6 +232,7 @@ export default function AIAnalysis() {
           <div className="flex items-center gap-5">
             <Link to="/privacy" className="text-[12px] text-muted-foreground hover:text-foreground">Privacy</Link>
             <Link to="/terms" className="text-[12px] text-muted-foreground hover:text-foreground">Terms</Link>
+            <Link to="/fair-use" className="text-[12px] text-muted-foreground hover:text-foreground">Fair Use</Link>
             <span className="text-[12px] text-muted-foreground">© {new Date().getFullYear()} P101 Limited</span>
           </div>
         </div>

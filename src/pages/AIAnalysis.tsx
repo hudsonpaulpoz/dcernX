@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { ArrowRight, Brain, Building2, FileSearch, Scale, ShieldCheck, LineChart, AlertTriangle, Newspaper } from "lucide-react";
 import { StackedLogo } from "@/components/StackedLogo";
 import { Seo } from "@/components/Seo";
+import { CursorSpotlight } from "@/components/CursorSpotlight";
 
 const analyses = [
   {
@@ -120,7 +121,7 @@ export default function AIAnalysis() {
       <div className="border-t border-border" />
 
       {/* The seven analyses */}
-      <section className="px-6 py-20">
+      <CursorSpotlight className="px-6 py-20">
         <div className="mx-auto max-w-[1200px]">
           <p className="text-[13px] uppercase tracking-[0.15em] text-muted-foreground mb-4">
             What the agents produce
@@ -137,9 +138,9 @@ export default function AIAnalysis() {
               return (
                 <div
                   key={a.title}
-                  className={`p-8 ${!isRightEdge ? "lg:border-r" : ""} ${i % 2 === 0 ? "md:border-r lg:border-r" : ""} ${!isBottomRow ? "border-b" : "border-b md:border-b"} border-border`}
+                  className={`group/card relative p-8 transition-colors duration-200 hover:bg-foreground/[0.04] ${!isRightEdge ? "lg:border-r" : ""} ${i % 2 === 0 ? "md:border-r lg:border-r" : ""} ${!isBottomRow ? "border-b" : "border-b md:border-b"} border-border`}
                 >
-                  <div className="h-9 w-9 border border-border flex items-center justify-center mb-5">
+                  <div className="h-9 w-9 border border-border flex items-center justify-center mb-5 transition-colors group-hover/card:border-foreground/60 group-hover/card:bg-foreground/[0.06]">
                     <Icon className="h-4 w-4 text-foreground" strokeWidth={1.5} />
                   </div>
                   <h3 className="text-[15px] font-medium text-foreground mb-2">{a.title}</h3>
@@ -149,7 +150,7 @@ export default function AIAnalysis() {
             })}
           </div>
         </div>
-      </section>
+      </CursorSpotlight>
 
       <div className="border-t border-border" />
 

@@ -256,8 +256,7 @@ const Landing = () => {
       <div className="relative z-10 w-full border-t border-border" />
 
       {/* Features */}
-      <CursorSpotlight as="section" className="relative z-10 pt-24 pb-24 px-6 overflow-hidden">
-      <section className="contents">
+      <CursorSpotlight className="relative z-10 pt-24 pb-24 px-6 overflow-hidden">
         <div className="mx-auto max-w-[1200px] relative">
           <p className="text-[13px] uppercase tracking-[0.15em] text-muted-foreground mb-4">
             Designed for modern investment teams

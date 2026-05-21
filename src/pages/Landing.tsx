@@ -346,7 +346,7 @@ const Landing = () => {
             </div>
           </div>
         </div>
-      </section>
+      </CursorSpotlight>
 
       {/* Full-width divider */}
       <div className="relative z-10 w-full border-t border-border" />

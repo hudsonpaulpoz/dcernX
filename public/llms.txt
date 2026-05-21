@@ -1,14 +1,17 @@
 # DcernX
 
-> DcernX is the AI operating system for venture capital firms, accelerators, venture studios and startup funding programs — unifying deal flow, due diligence, expert review and conviction memos in a single workspace.
+> DcernX is the AI operating system for venture capital firms, accelerators, angel syndicates, venture studios and startup funds — unifying deal flow, agentic due diligence, expert review and conviction memos in a single workspace.
 
-DcernX is built by P101 Limited (UK, company no. 17063831) for private investment teams who need to run more deals with sharper conviction. The platform combines structured pipeline management with AI-assisted primary analysis across seven dimensions: strategy, competition, negative media, regulatory, compliance, financial and risk.
+DcernX is built by P101 Limited (UK, company no. 17063831) for private investment teams who need to run more deals with sharper conviction. The platform combines structured pipeline management with AI-assisted (agentic) primary analysis across seven dimensions: strategy, competition, negative media, regulatory, compliance, financial and risk.
 
 Who it's for:
-- Venture capital firms (early-stage, growth, multi-stage)
+- Venture capital firms (pre-seed, seed, early-stage, growth and multi-stage)
 - Accelerators and incubators running cohorts
+- Angel syndicates and angel networks
 - Venture studios building and backing companies
-- Startup funding programs, family offices and corporate venture teams
+- Startup funds, micro-funds and rolling funds
+- Family offices and corporate venture teams
+- Startup funding programs and government-backed funds
 
 What it does:
 - Centralises sourcing, intake, screening and pipeline
@@ -16,16 +19,22 @@ What it does:
 - Coordinates expert reviews, founder communications and IC decision records
 - Operates as a data processor on customer data — GDPR-compliant, no training on customer data, no behavioural profiling
 
+Key differentiators:
+- Agentic due diligence: seven structured analyses produced as a decision-useful brief
+- Free public-model analysis to try; private inference with advanced data-privacy guardrails on paid plans
+- GDPR-compliant by design; minimal PII; UK-based operator
+
 ## Pages
 
 - [Home](https://dcernx.com/): Overview of the DcernX operating system for private investment teams.
-- [AI-Assisted Primary Analysis](https://dcernx.com/ai-analysis): How DcernX runs seven structured AI analyses — strategy, competition, negative media, regulatory, compliance, financial and risk — on any prospective deal.
-- [Try AI Analysis Free](https://dcernx.com/ai-analysis/try): Run a live, free primary analysis on any company. No account required.
+- [Agentic DD — AI Primary Analysis](https://dcernx.com/ai-analysis): How DcernX runs seven structured AI analyses — strategy, competition, negative media, regulatory, compliance, financial and risk — on any prospective deal.
+- [Try AI Due Diligence Free](https://dcernx.com/ai-analysis/try): Run a live, free agentic primary analysis on any company. No account required.
 
 ## Legal
 
 - [Privacy Policy](https://dcernx.com/privacy): How DcernX handles information. GDPR-compliant, minimal PII collection, customer data processed solely on behalf of customers.
 - [Terms of Service](https://dcernx.com/terms): Terms governing use of the DcernX platform, operated by P101 Limited under English law.
+- [Fair Use Policy](https://dcernx.com/fair-use): Free-analysis limits, public vs private inference, acceptable-use guardrails and paid-plan token usage.
 
 ## Optional
 

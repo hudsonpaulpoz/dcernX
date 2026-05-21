@@ -150,9 +150,33 @@ export default function AIAnalysisTry() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Seo
-        title="Try AI Due Diligence Free — Run a Primary Analysis on Any Company | DcernX"
-        description="Upload a pitch deck, website or LinkedIn URL and DcernX will run a free AI primary analysis — strategy, competition, regulatory, compliance, financial and risk. Results delivered to your inbox."
+        title="Try Agentic AI Due Diligence Free — Run a Primary Analysis on Any Company | DcernX"
+        description="Upload a pitch deck, website or LinkedIn URL and DcernX runs a free agentic AI primary analysis — strategy, competition, regulatory, compliance, financial and risk. Built for VCs, accelerators, angel syndicates, venture studios and startup funds. Results delivered to your inbox."
         path="/ai-analysis/try"
+        jsonLd={[
+          {
+            "@context": "https://schema.org",
+            "@type": "HowTo",
+            name: "Run a free AI due diligence analysis on a startup",
+            description:
+              "Submit a company's pitch deck, website or LinkedIn and receive a structured AI primary analysis covering strategy, competition, regulatory, compliance, financial and risk.",
+            totalTime: "PT1H",
+            step: [
+              { "@type": "HowToStep", position: 1, name: "Share company materials", text: "Upload a pitch deck and any supporting documents, or paste the company website and LinkedIn URLs." },
+              { "@type": "HowToStep", position: 2, name: "Tell us where to send the brief", text: "Provide your name, work email and (optionally) your LinkedIn so we can deliver the analysis." },
+              { "@type": "HowToStep", position: 3, name: "Receive the primary brief and risk report", text: "DcernX's agents produce a decision-useful brief and a consolidated risk report, emailed within 15 minutes to 1 hour." },
+            ],
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Home", item: "/" },
+              { "@type": "ListItem", position: 2, name: "Agentic DD", item: "/ai-analysis" },
+              { "@type": "ListItem", position: 3, name: "Try free", item: "/ai-analysis/try" },
+            ],
+          },
+        ]}
       />
 
       {/* Nav */}

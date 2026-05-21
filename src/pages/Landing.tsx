@@ -49,8 +49,8 @@ const Landing = () => {
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
       <Seo
-        title="DcernX — Deal Flow & Diligence OS for VCs, Accelerators & Venture Studios"
-        description="DcernX is the AI operating system for venture capital firms, accelerators, venture studios and startup funding programs. Unify sourcing, diligence, expert review and decision records — and run primary analysis on any company in minutes."
+        title="DcernX — AI Deal Flow & Due Diligence OS for VCs, Accelerators, Angel Syndicates, Venture Studios & Startup Funds"
+        description="DcernX is the AI operating system for venture capital firms, accelerators, angel syndicates, venture studios and startup funds. Unify sourcing, agentic due diligence, expert review and conviction memos — and run primary analysis on any company in minutes."
         path="/"
         jsonLd={{
           "@context": "https://schema.org",

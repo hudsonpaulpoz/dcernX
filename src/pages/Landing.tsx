@@ -67,9 +67,8 @@ const Landing = () => {
       {/* Nav */}
       <nav className="fixed top-0 z-50 w-full bg-background border-b border-border px-6">
         <div className="mx-auto flex h-[56px] max-w-[1200px] items-center justify-between">
-          <Link to="/" className="flex items-center gap-2 -ml-0.5">
-            <StackedLogo size={16} />
-            <span className="text-[14px] font-bold text-foreground tracking-[0.08em] uppercase">DcernX</span>
+          <Link to="/" className="flex items-center -ml-0.5" aria-label="DcernX home">
+            <StackedLogo size={24} />
           </Link>
           <div className="flex items-center gap-2">
             <Link

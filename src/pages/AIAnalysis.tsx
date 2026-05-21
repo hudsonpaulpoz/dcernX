@@ -47,19 +47,19 @@ export default function AIAnalysis() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Seo
-        title="AI Due Diligence for VCs & Accelerators — Strategy, Competition, Regulatory, Financial & Risk Analysis | DcernX"
-        description="DcernX runs seven AI-assisted primary analyses on any prospective deal: strategy, competition, negative media, regulatory, compliance, financial and risk. Built for VCs, accelerators, venture studios and startup funding teams."
+        title="Agentic Due Diligence for VCs, Accelerators, Angel Syndicates & Venture Studios — Strategy, Competition, Regulatory, Financial & Risk Analysis | DcernX"
+        description="DcernX runs seven AI-assisted (agentic) primary analyses on any prospective deal: strategy, competition, negative media, regulatory, compliance, financial and risk. Built for VCs, accelerators, angel syndicates, venture studios and startup funds."
         path="/ai-analysis"
         jsonLd={[
           {
             "@context": "https://schema.org",
             "@type": "Service",
-            name: "DcernX AI-Assisted Primary Analysis",
+            name: "DcernX Agentic AI Primary Analysis",
             serviceType: "AI Due Diligence",
             provider: { "@type": "Organization", name: "P101 Limited" },
             audience: {
               "@type": "Audience",
-              audienceType: "Venture capital firms, accelerators, venture studios, startup funding programs, family offices, corporate venture",
+              audienceType: "Venture capital firms, accelerators, angel syndicates, venture studios, startup funds, family offices, corporate venture",
             },
             description: "Seven structured AI analyses — strategy, competition, negative media, regulatory, compliance, financial and risk — produced as a decision-useful brief for investment teams.",
           },

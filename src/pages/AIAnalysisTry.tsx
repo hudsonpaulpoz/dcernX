@@ -4,6 +4,7 @@ import { ArrowLeft, ArrowRight, CheckCircle2, FileText, Loader2, Mail, Paperclip
 import { z } from "zod";
 import { StackedLogo } from "@/components/StackedLogo";
 import { Seo } from "@/components/Seo";
+import { MarketingThemeToggle } from "@/components/MarketingThemeToggle";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 
@@ -157,17 +158,19 @@ export default function AIAnalysisTry() {
       {/* Nav */}
       <nav className="sticky top-0 z-50 w-full bg-background border-b border-border px-6">
         <div className="mx-auto flex h-[56px] max-w-[1200px] items-center justify-between">
-          <Link to="/" className="flex items-center gap-2 -ml-0.5">
-            <StackedLogo size={16} />
-            <span className="text-[14px] font-bold text-foreground tracking-[0.08em] uppercase">DcernX</span>
+          <Link to="/" className="flex items-center -ml-0.5" aria-label="DcernX home">
+            <StackedLogo size={24} />
           </Link>
-          <Link
-            to="/ai-analysis"
-            className="inline-flex items-center gap-1.5 text-[13px] text-foreground/70 hover:text-foreground transition-colors"
-          >
-            <ArrowLeft className="h-3.5 w-3.5" />
-            Back to overview
-          </Link>
+          <div className="flex items-center gap-2">
+            <MarketingThemeToggle />
+            <Link
+              to="/ai-analysis"
+              className="inline-flex items-center gap-1.5 text-[13px] text-foreground/70 hover:text-foreground transition-colors h-8 px-3"
+            >
+              <ArrowLeft className="h-3.5 w-3.5" />
+              Back to overview
+            </Link>
+          </div>
         </div>
       </nav>
 

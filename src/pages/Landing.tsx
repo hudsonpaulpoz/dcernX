@@ -406,10 +406,10 @@ const Landing = () => {
               "DcernX has changed how our partnership works. Context lives with the deal, not in someone's inbox — and our investment committee finally sees the full picture, not a reconstructed summary."
             </blockquote>
             <div className="mt-6 flex items-center gap-3">
-              <img src={testimonialAvatarAsset.url} alt="Jamie Kim" className="h-8 w-8 rounded-full object-cover" />
+              <img src={testimonialAvatar} alt="Christian K" className="h-9 w-9 rounded-full object-cover" />
               <div>
-                <span className="text-[13px] font-medium text-foreground">Jamie Kim</span>
-                <span className="text-[13px] text-muted-foreground ml-2">Partner, Northbound Capital</span>
+                <span className="text-[13px] font-medium text-foreground">Christian K</span>
+                <span className="text-[13px] text-muted-foreground ml-2">Partner, Capital Kinetics</span>
               </div>
             </div>
           </div>

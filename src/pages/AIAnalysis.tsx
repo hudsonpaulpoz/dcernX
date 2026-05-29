@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Brain, Building2, FileSearch, Scale, ShieldCheck, LineChart, AlertTriangle, Newspaper } from "lucide-react";
+import { ArrowRight, Brain, Building2, FileSearch, Scale, ShieldCheck, LineChart, AlertTriangle, Newspaper, Cpu, Layers, Target, Globe2, Calculator } from "lucide-react";
 import { StackedLogo } from "@/components/StackedLogo";
 import { Seo } from "@/components/Seo";
 import { CursorSpotlight } from "@/components/CursorSpotlight";
@@ -8,38 +8,63 @@ import { MarketingThemeToggle } from "@/components/MarketingThemeToggle";
 const analyses = [
   {
     icon: Brain,
-    title: "Strategy analysis",
-    desc: "Positioning, value proposition, target market, GTM motion, defensibility and the 18-month strategic priorities — with the three risks and opportunities that matter most.",
+    title: "Strategy",
+    desc: "Every strategic claim in the pitch — positioning, moat, GTM motion, 18-month priorities — challenged against public evidence and either validated or flagged, with the sources behind each verdict.",
   },
   {
     icon: Building2,
-    title: "Competition analysis",
-    desc: "A mapped landscape of direct and adjacent competitors with positioning, pricing posture and distribution — including where the target wins, loses and is structurally exposed.",
+    title: "Competition",
+    desc: "The competitor set the founders name (and the ones they don't) tested against the live landscape — pricing, positioning, distribution and traction — with attributable sources for every comparison.",
   },
   {
     icon: Newspaper,
-    title: "Negative media analysis",
-    desc: "A research scaffold across reputational, legal, ethical and adverse-news risk vectors — categories, search queries and jurisdictions for your team to pursue.",
+    title: "Negative media",
+    desc: "Reputational, legal, ethical and adverse-news signals on the company, founders and key backers — surfaced from open sources with links, dates and jurisdictions so your team can verify in one click.",
+  },
+  {
+    icon: Cpu,
+    title: "Technology",
+    desc: "Technical claims about the stack, IP, defensibility and scalability stress-tested against repos, job posts, patents and public architecture signals — with sources behind every confirmation or doubt.",
   },
   {
     icon: Scale,
-    title: "Regulatory analysis",
-    desc: "The regulatory regimes most likely to apply by sector and geography — licensing, reporting and approvals, plus emerging regulation that could reshape the model in 24 months.",
-  },
-  {
-    icon: ShieldCheck,
-    title: "Compliance analysis",
-    desc: "The compliance posture required at scale — data protection, security frameworks, KYC/AML, employment, IP and third-party risk — with the evidence to request from the founder.",
+    title: "Regulatory & compliance",
+    desc: "Applicable regimes by sector and geography — licensing, reporting, data protection, KYC/AML, security frameworks — cross-checked against regulator guidance with citations and effective dates.",
   },
   {
     icon: LineChart,
-    title: "Financial analysis",
-    desc: "Likely revenue model, unit economics, gross-margin profile, burn dynamics and capital efficiency — with the KPIs and benchmark ranges an investor should request.",
+    title: "Financial",
+    desc: "Revenue model, unit economics, burn and capital efficiency claims pressure-tested against sector benchmarks and filings — assumptions made explicit, ranges sourced, gaps flagged for the founder.",
   },
   {
     icon: AlertTriangle,
-    title: "Risk report",
-    desc: "A consolidated risk register across market, execution, team, technology, regulatory, financial and reputational categories — each rated and paired with a diligence question.",
+    title: "Risk",
+    desc: "A consolidated, source-backed risk register across market, execution, team, technology, regulatory, financial and reputational categories — each rated and paired with a diligence question.",
+  },
+  {
+    icon: Layers,
+    title: "PESTEL",
+    desc: "Political, economic, social, technological, environmental and legal forces shaping the opportunity — each factor evidenced with current public data and tied back to the company's exposure.",
+  },
+  {
+    icon: Target,
+    title: "SWOT",
+    desc: "Strengths, weaknesses, opportunities and threats — derived from validated claims rather than founder narrative, with every entry linked to the source that supports it.",
+  },
+  {
+    icon: ArrowRight,
+    title: "GTM",
+    desc: "Channels, ICP, sales motion, pricing and CAC/LTV assumptions checked against comparable companies and observable distribution — with cited examples of what works in this segment.",
+  },
+  {
+    icon: Globe2,
+    title: "External intelligence & benchmarking",
+    desc: "Market size, growth, comparable rounds, hiring signals and product-velocity benchmarks pulled from public sources — so every comparison the deck makes has a verifiable counterpart.",
+  },
+  {
+    icon: Calculator,
+    title: "Valuation",
+    desc: "An evidence-led valuation view: comparable transactions, revenue multiples and stage benchmarks, with the assumptions and ranges sourced — not a number to anchor on, a frame to negotiate from.",
   },
 ];
 
@@ -47,21 +72,21 @@ export default function AIAnalysis() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Seo
-        title="Agentic Due Diligence for VCs, Accelerators, Angel Syndicates & Venture Studios — Strategy, Competition, Regulatory, Financial & Risk Analysis | DcernX"
-        description="DcernX runs seven AI-assisted (agentic) primary analyses on any prospective deal: strategy, competition, negative media, regulatory, compliance, financial and risk. Built for VCs, accelerators, angel syndicates, venture studios and startup funds."
+        title="Agentic Due Diligence for VCs, Accelerators, Angel Syndicates & Venture Studios — Claim-by-Claim, Source-Backed Validation | DcernX"
+        description="DcernX's agentic DD challenges every claim in the pitch and supporting documents — validating or invalidating each with attributable, source-backed research across 12 analysis tracks. Built for VCs, accelerators, angel syndicates, venture studios and startup funds."
         path="/ai-analysis"
         jsonLd={[
           {
             "@context": "https://schema.org",
             "@type": "Service",
-            name: "DcernX Agentic AI Primary Analysis",
+            name: "DcernX Agentic Due Diligence",
             serviceType: "AI Due Diligence",
             provider: { "@type": "Organization", name: "P101 Limited" },
             audience: {
               "@type": "Audience",
               audienceType: "Venture capital firms, accelerators, angel syndicates, venture studios, startup funds, family offices, corporate venture",
             },
-            description: "Seven structured AI analyses — strategy, competition, negative media, regulatory, compliance, financial and risk — produced as a decision-useful brief for investment teams.",
+            description: "Twelve structured agentic analyses that challenge every claim in the pitch and startup documents and either validate or invalidate them with attributable, source-backed research.",
           },
           {
             "@context": "https://schema.org",
@@ -97,13 +122,13 @@ export default function AIAnalysis() {
       <section className="px-6 pt-20 pb-16">
         <div className="mx-auto max-w-[1200px]">
           <p className="text-[12px] uppercase tracking-[0.18em] text-muted-foreground mb-5">
-            AI-assisted primary analysis
+            Agentic due diligence
           </p>
-          <h1 className="text-[clamp(2rem,4vw,3.4rem)] font-[500] tracking-[-0.04em] leading-[1.05] text-foreground max-w-[820px]">
-            Seven structured analyses. One brief. Before your team spends an hour.
+          <h1 className="text-[clamp(2rem,4vw,3.4rem)] font-[500] tracking-[-0.04em] leading-[1.05] text-foreground max-w-[860px]">
+            Every claim challenged. Every verdict sourced. Conviction you can defend.
           </h1>
-          <p className="mt-6 text-[16px] leading-relaxed text-muted-foreground max-w-[640px]">
-            DcernX's primary analysis agents read every prospective deal across seven dimensions — surfacing the questions worth asking, the evidence worth requesting, and the risks worth pricing in. The output is a decision-useful brief your partners can act on immediately.
+          <p className="mt-6 text-[16px] leading-relaxed text-muted-foreground max-w-[680px]">
+            DcernX's agents read the pitch and supporting documents the way a sceptical partner would — interrogating each claim about market, traction, technology, team and economics, and either validating or invalidating it with attributable, source-backed research. The output is a brief your IC can stand behind.
           </p>
           <div className="mt-10 flex flex-wrap items-center gap-4">
             <Link to="/ai-analysis/try">
@@ -121,14 +146,14 @@ export default function AIAnalysis() {
 
       <div className="border-t border-border" />
 
-      {/* The seven analyses */}
+      {/* The twelve analyses */}
       <CursorSpotlight className="px-6 py-20">
         <div className="mx-auto max-w-[1200px]">
           <p className="text-[13px] uppercase tracking-[0.15em] text-muted-foreground mb-4">
             What the agents produce
           </p>
-          <h2 className="text-[clamp(1.8rem,3vw,2.5rem)] font-[500] tracking-[-0.03em] text-foreground max-w-[640px] leading-[1.15]">
-            A complete primary brief — assembled in minutes, structured for review.
+          <h2 className="text-[clamp(1.8rem,3vw,2.5rem)] font-[500] tracking-[-0.03em] text-foreground max-w-[720px] leading-[1.15]">
+            Twelve tracks. One brief. Every claim either validated or invalidated — with sources.
           </h2>
 
           <div className="mt-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 border border-border">
@@ -163,28 +188,28 @@ export default function AIAnalysis() {
               How it works
             </p>
             <h2 className="text-[clamp(1.6rem,2.6vw,2.2rem)] font-[500] tracking-[-0.03em] text-foreground leading-[1.15]">
-              Built to enrich judgement, not replace it.
+              Built to challenge claims, not echo them.
             </h2>
             <p className="mt-5 text-[15px] text-muted-foreground leading-[1.7]">
-              The agents pull from a curated reasoning stack and your workspace context — decks, founder updates, call notes, data-room documents. Every claim is structured, every assumption disclosed, every output reviewable.
+              The agents extract every material assertion from the deck, memo, data-room and founder updates, then triangulate each one against public sources — filings, regulators, repos, hiring data, comparable transactions and credible media. Every verdict is attributed; every gap is named.
             </p>
           </div>
           <ol className="space-y-6">
             {[
               {
                 step: "01",
-                title: "Provide the target",
-                body: "Drop in a company name, a website, and any context your team has captured so far. The agents take it from there.",
+                title: "Drop in the deal",
+                body: "Company name, website, deck and any documents your team has collected. The agents parse the claims and queue them for challenge.",
               },
               {
                 step: "02",
-                title: "Seven parallel briefs",
-                body: "Strategy, competition, negative media, regulatory, compliance, financial and risk — each produced as a structured section with consistent depth.",
+                title: "Twelve parallel investigations",
+                body: "Strategy, competition, negative media, technology, regulatory & compliance, financial, risk, PESTEL, SWOT, GTM, external intelligence & benchmarking, and valuation — each producing validated or invalidated findings with citations.",
               },
               {
                 step: "03",
-                title: "Reviewable in your workspace",
-                body: "Outputs land in the deal's record, ready to annotate, score, route to experts, and incorporate into the conviction memo.",
+                title: "A defensible brief in your workspace",
+                body: "Outputs land in the deal record with every source linked — ready to annotate, score, route to experts and fold into the IC memo with confidence.",
               },
             ].map((s) => (
               <li key={s.step} className="flex gap-5 border-t border-border pt-6 first:border-t-0 first:pt-0">
@@ -208,10 +233,10 @@ export default function AIAnalysis() {
         <div className="mx-auto max-w-[720px]">
           <FileSearch className="h-6 w-6 mx-auto text-foreground/70" strokeWidth={1.5} />
           <h2 className="mt-6 text-[clamp(1.8rem,3vw,2.5rem)] font-[500] tracking-[-0.035em] text-foreground leading-[1.1]">
-            See it on a deal you're looking at today.
+            Put it on a deal you're looking at today.
           </h2>
           <p className="mt-5 text-[15px] text-muted-foreground">
-            Run a free, live primary analysis on any prospective company. No account required.
+            Run a free, live agentic DD on any prospective company. Every claim challenged, every verdict sourced. No account required.
           </p>
           <div className="mt-10 flex justify-center">
             <Link to="/ai-analysis/try">

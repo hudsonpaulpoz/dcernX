@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Moon, Sun } from "lucide-react";
+import { ArrowRight, Moon, Sun, Inbox, Layers, FolderSearch, Brain, ClipboardCheck, LineChart } from "lucide-react";
 import { Logo3D } from "@/components/Logo3D";
 import testimonialAvatarAsset from "@/assets/testimonial-avatar.jpg.asset.json";
 import { useTheme } from "next-themes";
@@ -351,6 +351,121 @@ const Landing = () => {
 
       {/* Full-width divider */}
       <div className="relative z-10 w-full border-t border-border" />
+
+      {/* Operating layer — engagement cycle */}
+      <section className="relative z-10 px-6 py-24">
+        <div className="mx-auto max-w-[1200px]">
+          <p className="text-[13px] uppercase tracking-[0.15em] text-muted-foreground mb-4">
+            The operating layer
+          </p>
+          <h2 className="text-[clamp(1.8rem,3vw,2.5rem)] font-[500] tracking-[-0.03em] text-foreground max-w-[720px] leading-[1.15]">
+            One system for the full startup engagement cycle.
+          </h2>
+          <p className="mt-5 text-[15px] text-muted-foreground max-w-[640px] leading-[1.7]">
+            Investment operations today are stitched together from inboxes, spreadsheets, shared drives and memory. DcernX replaces that with a single auditable layer — from first-touch intake to post-decision tracking.
+          </p>
+
+          {/* Old vs new */}
+          <div className="mt-14 grid grid-cols-1 md:grid-cols-2 border border-border">
+            <div className="p-8 md:border-r border-border">
+              <p className="text-[11px] uppercase tracking-[0.18em] text-muted-foreground mb-4">The old model</p>
+              <ul className="space-y-3 text-[13.5px] leading-[1.65] text-muted-foreground">
+                <li className="flex gap-3"><span className="text-foreground/40 shrink-0">—</span><span>A founder submits a deck; someone forwards it to a partner.</span></li>
+                <li className="flex gap-3"><span className="text-foreground/40 shrink-0">—</span><span>An analyst adds it to a spreadsheet; a call happens.</span></li>
+                <li className="flex gap-3"><span className="text-foreground/40 shrink-0">—</span><span>A technical reviewer leaves comments in a document; notes sit with one teammate.</span></li>
+                <li className="flex gap-3"><span className="text-foreground/40 shrink-0">—</span><span>A partner asks "where are we on this company?" — the team reconstructs the answer from memory.</span></li>
+              </ul>
+            </div>
+            <div className="p-8 bg-foreground/[0.02]">
+              <p className="text-[11px] uppercase tracking-[0.18em] text-foreground mb-4">The DcernX model</p>
+              <ul className="space-y-3 text-[13.5px] leading-[1.65] text-foreground/85">
+                <li className="flex gap-3"><span className="text-foreground/50 shrink-0">→</span><span>The founder submits once; structured intake captures everything.</span></li>
+                <li className="flex gap-3"><span className="text-foreground/50 shrink-0">→</span><span>Pipeline, scoring and ownership update in the deal record — not a spreadsheet.</span></li>
+                <li className="flex gap-3"><span className="text-foreground/50 shrink-0">→</span><span>Reviewers, experts and agents work inside the deal; evidence and verdicts stay attached.</span></li>
+                <li className="flex gap-3"><span className="text-foreground/50 shrink-0">→</span><span>Anyone can answer "where are we?" in one click — with the rationale, sources and conviction score.</span></li>
+              </ul>
+            </div>
+          </div>
+
+          {/* Six-stage flow */}
+          <div className="mt-14 border border-border">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+              {[
+                {
+                  icon: Inbox,
+                  step: "01",
+                  title: "Intake",
+                  bullets: ["Structured startup profiles", "Founder data & documents", "Qualification & source tracking"],
+                },
+                {
+                  icon: Layers,
+                  step: "02",
+                  title: "Deal flow management",
+                  bullets: ["Pipeline stages & ownership", "Scoring, tags & sector filters", "Stage-movement disciplines"],
+                },
+                {
+                  icon: FolderSearch,
+                  step: "03",
+                  title: "Due diligence workspace",
+                  bullets: ["Startup, IC & partner portals", "Data rooms & evidence requests", "Reviewer assignments & expert feedback"],
+                },
+                {
+                  icon: Brain,
+                  step: "04",
+                  title: "AI-assisted synthesis",
+                  bullets: ["Call, email & document summaries", "12 primary analyses + PESTEL & benchmarks", "System of record for full auditability"],
+                },
+                {
+                  icon: ClipboardCheck,
+                  step: "05",
+                  title: "Decision records",
+                  bullets: ["Evaluation reviews & open questions", "Recommendations & decision rationale", "Conviction score & follow-ups"],
+                },
+                {
+                  icon: LineChart,
+                  step: "06",
+                  title: "Post-decision tracking",
+                  bullets: ["Cohort progress & milestones", "Founder updates & mentor engagement", "Portfolio monitoring & impact reporting"],
+                },
+              ].map((stage, i) => {
+                const Icon = stage.icon;
+                const isRightEdge = (i + 1) % 3 === 0;
+                const isBottomRow = i >= 3;
+                return (
+                  <div
+                    key={stage.title}
+                    className={`group/stage relative p-7 transition-colors duration-200 hover:bg-foreground/[0.03] ${!isRightEdge ? "lg:border-r" : ""} ${i % 2 === 0 ? "sm:border-r lg:border-r" : ""} ${!isBottomRow ? "border-b lg:border-b" : "border-b lg:border-b-0"} border-border`}
+                  >
+                    <div className="flex items-center justify-between mb-5">
+                      <div className="h-9 w-9 border border-border flex items-center justify-center transition-colors group-hover/stage:border-foreground/60 group-hover/stage:bg-foreground/[0.06]">
+                        <Icon className="h-4 w-4 text-foreground" strokeWidth={1.5} />
+                      </div>
+                      <span className="text-[11px] uppercase tracking-[0.18em] text-muted-foreground">{stage.step}</span>
+                    </div>
+                    <h3 className="text-[15px] font-medium text-foreground mb-3">{stage.title}</h3>
+                    <ul className="space-y-1.5 text-[12.5px] leading-[1.6] text-muted-foreground">
+                      {stage.bullets.map((b) => (
+                        <li key={b} className="flex gap-2">
+                          <span className="text-foreground/30 shrink-0">·</span>
+                          <span>{b}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+
+          <p className="mt-10 text-[13.5px] leading-[1.7] text-muted-foreground max-w-[760px]">
+            DcernX does not replace investment judgement — it makes judgement easier to <span className="text-foreground/85">capture, compare, quantify, defend and reuse</span>.
+          </p>
+        </div>
+      </section>
+
+      {/* Full-width divider */}
+      <div className="relative z-10 w-full border-t border-border" />
+
 
       {/* Social proof */}
       <section className="relative z-10 py-24 px-6 overflow-hidden">

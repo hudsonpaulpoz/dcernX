@@ -277,10 +277,11 @@ const Landing = () => {
                   graphic: "bars",
                 },
                 {
-                  title: "AI-assisted primary analysis",
-                  desc: "Purpose-built agents enrich each opportunity across risk, strategy, financials, compliance, legal, competition and benchmarks — surfacing the questions worth asking first.",
+                  title: "Agentic due diligence",
+                  desc: "Agents challenge every claim in the pitch and supporting documents — validating or invalidating each across 12 tracks with attributable, source-backed research your IC can defend.",
                   graphic: "flow",
                 },
+
                 {
                   title: "Defensible decision records",
                   desc: "Structured evaluations, scoring, rationale and conviction scores — fully traceable for partners, investment committees, LPs and public funders.",

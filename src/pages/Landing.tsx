@@ -88,16 +88,11 @@ const Landing = () => {
               <Sun className="h-4 w-4 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
               <Moon className="absolute h-4 w-4 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
             </button>
-            <Link to="/auth">
-              <button className="text-[13px] text-foreground/70 hover:text-foreground transition-colors h-8 px-3">
-                Log in
-              </button>
-            </Link>
-            <Link to="/auth">
+            <a href="https://wms.xylor.ai/forms/survey/nn787mfqd1abpvq69e9te4vx598744gp" target="_blank" rel="noopener noreferrer">
               <button className="text-[13px] h-8 px-3 border border-foreground/40 text-foreground hover:bg-foreground hover:text-background transition-colors">
-                Sign up
+                Go on the waitlist
               </button>
-            </Link>
+            </a>
           </div>
         </div>
       </nav>

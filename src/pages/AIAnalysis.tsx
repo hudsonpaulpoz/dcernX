@@ -137,9 +137,9 @@ export default function AIAnalysis() {
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
               </button>
             </Link>
-            <Link to="/auth" className="text-[13px] text-foreground/70 hover:text-foreground transition-colors">
+            <a href="https://wms.xylor.ai/forms/survey/nn787mfqd1abpvq69e9te4vx598744gp" target="_blank" rel="noopener noreferrer" className="text-[13px] text-foreground/70 hover:text-foreground transition-colors">
               Request access →
-            </Link>
+            </a>
           </div>
         </div>
       </section>

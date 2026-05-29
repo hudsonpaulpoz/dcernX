@@ -8,6 +8,8 @@ import { Seo } from "@/components/Seo";
 
 import { StackedLogo } from "@/components/StackedLogo";
 import { CursorSpotlight } from "@/components/CursorSpotlight";
+import { OperatingLayerOrbit } from "@/components/OperatingLayerOrbit";
+
 
 /** Apply slate accent on mount */
 const SLATE_HSL = "215 16% 47%";

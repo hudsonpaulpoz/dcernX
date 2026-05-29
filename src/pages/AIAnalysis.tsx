@@ -131,12 +131,12 @@ export default function AIAnalysis() {
             DcernX's agents read the pitch and supporting documents the way a sceptical partner would — interrogating each claim about market, traction, technology, team and economics, and either validating or invalidating it with attributable, source-backed research. The output is a brief your IC can stand behind.
           </p>
           <div className="mt-10 flex flex-wrap items-center gap-4">
-            <Link to="/ai-analysis/try">
+            <a href="https://wms.xylor.ai/forms/survey/nn7d7j7g20s2hng4bh14tx1a1187m9at" target="_blank" rel="noopener noreferrer">
               <button className="group inline-flex items-center gap-2 px-6 py-3 text-[14px] font-medium bg-foreground text-background hover:bg-foreground/90 transition-colors">
                 Try a live analysis
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
               </button>
-            </Link>
+            </a>
             <a href="https://wms.xylor.ai/forms/survey/nn787mfqd1abpvq69e9te4vx598744gp" target="_blank" rel="noopener noreferrer" className="text-[13px] text-foreground/70 hover:text-foreground transition-colors">
               Request access →
             </a>

@@ -8,6 +8,8 @@ import { Seo } from "@/components/Seo";
 
 import { StackedLogo } from "@/components/StackedLogo";
 import { CursorSpotlight } from "@/components/CursorSpotlight";
+import { OperatingLayerOrbit } from "@/components/OperatingLayerOrbit";
+
 
 /** Apply slate accent on mount */
 const SLATE_HSL = "215 16% 47%";
@@ -365,27 +367,11 @@ const Landing = () => {
             Investment operations today are stitched together from inboxes, spreadsheets, shared drives and memory. DcernX replaces that with a single auditable layer — from first-touch intake to post-decision tracking.
           </p>
 
-          {/* Old vs new */}
-          <div className="mt-14 grid grid-cols-1 md:grid-cols-2 border border-border">
-            <div className="p-8 md:border-r border-border">
-              <p className="text-[11px] uppercase tracking-[0.18em] text-muted-foreground mb-4">The old model</p>
-              <ul className="space-y-3 text-[13.5px] leading-[1.65] text-muted-foreground">
-                <li className="flex gap-3"><span className="text-foreground/40 shrink-0">—</span><span>A founder submits a deck; someone forwards it to a partner.</span></li>
-                <li className="flex gap-3"><span className="text-foreground/40 shrink-0">—</span><span>An analyst adds it to a spreadsheet; a call happens.</span></li>
-                <li className="flex gap-3"><span className="text-foreground/40 shrink-0">—</span><span>A technical reviewer leaves comments in a document; notes sit with one teammate.</span></li>
-                <li className="flex gap-3"><span className="text-foreground/40 shrink-0">—</span><span>A partner asks "where are we on this company?" — the team reconstructs the answer from memory.</span></li>
-              </ul>
-            </div>
-            <div className="p-8 bg-foreground/[0.02]">
-              <p className="text-[11px] uppercase tracking-[0.18em] text-foreground mb-4">The DcernX model</p>
-              <ul className="space-y-3 text-[13.5px] leading-[1.65] text-foreground/85">
-                <li className="flex gap-3"><span className="text-foreground/50 shrink-0">→</span><span>The founder submits once; structured intake captures everything.</span></li>
-                <li className="flex gap-3"><span className="text-foreground/50 shrink-0">→</span><span>Pipeline, scoring and ownership update in the deal record — not a spreadsheet.</span></li>
-                <li className="flex gap-3"><span className="text-foreground/50 shrink-0">→</span><span>Reviewers, experts and agents work inside the deal; evidence and verdicts stay attached.</span></li>
-                <li className="flex gap-3"><span className="text-foreground/50 shrink-0">→</span><span>Anyone can answer "where are we?" in one click — with the rationale, sources and conviction score.</span></li>
-              </ul>
-            </div>
+          {/* Animated orbit — interlinking */}
+          <div className="mt-14">
+            <OperatingLayerOrbit />
           </div>
+
 
           {/* Six-stage flow */}
           <div className="mt-14 border border-border">

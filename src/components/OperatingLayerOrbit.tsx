@@ -255,7 +255,8 @@ export const OperatingLayerOrbit = () => {
             50% { opacity: 0.5; transform: scale(1.08); }
           }
         `}</style>
-      </div>
+
+
 
         {/* Floating tooltip near the cursor */}
         {activeNode && cursor && (

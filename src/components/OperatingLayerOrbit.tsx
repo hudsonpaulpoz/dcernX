@@ -257,29 +257,45 @@ export const OperatingLayerOrbit = () => {
         `}</style>
       </div>
 
-      {/* Detail panel — swaps on hover */}
-      <div className="border-t border-border p-7 min-h-[148px] relative">
-        {activeNode ? (
-          <div key={activeNode.title} className="animate-fade-in grid grid-cols-1 md:grid-cols-[auto_1fr] gap-x-8 gap-y-3 items-start">
-            <div className="flex items-center gap-3">
-              <span className="text-[11px] uppercase tracking-[0.18em] text-muted-foreground">{activeNode.step}</span>
-              <h3 className="text-[16px] font-medium text-foreground">{activeNode.title}</h3>
+        {/* Floating tooltip near the cursor */}
+        {activeNode && cursor && (
+          <div
+            className="pointer-events-none absolute z-10 animate-fade-in"
+            style={{
+              left: cursor.x,
+              top: cursor.y,
+              transform: `translate(${cursor.x > 360 ? "calc(-100% - 16px)" : "16px"}, ${
+                cursor.y > 360 ? "calc(-100% - 16px)" : "16px"
+              })`,
+            }}
+          >
+            <div className="w-[260px] border border-border bg-background/95 backdrop-blur-sm shadow-lg p-4">
+              <div className="flex items-center gap-2 mb-2">
+                <span className="text-[10px] uppercase tracking-[0.18em] text-muted-foreground">
+                  {activeNode.step}
+                </span>
+                <h3 className="text-[13.5px] font-medium text-foreground">{activeNode.title}</h3>
+              </div>
+              <ul className="space-y-1.5 text-[12px] leading-[1.55] text-muted-foreground">
+                {activeNode.bullets.map((b) => (
+                  <li key={b} className="flex gap-2">
+                    <span className="text-foreground/30 shrink-0">·</span>
+                    <span>{b}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
-            <ul className="grid grid-cols-1 sm:grid-cols-3 gap-x-6 gap-y-1.5 text-[13px] leading-[1.6] text-muted-foreground">
-              {activeNode.bullets.map((b) => (
-                <li key={b} className="flex gap-2">
-                  <span className="text-foreground/30 shrink-0">·</span>
-                  <span>{b}</span>
-                </li>
-              ))}
-            </ul>
           </div>
-        ) : (
-          <p className="text-[13px] text-muted-foreground">
-            Hover any stage to see what lives inside it — every artefact stays attached to the deal record.
-          </p>
         )}
+      </div>
+
+      {/* Hint strip */}
+      <div className="border-t border-border px-7 py-4">
+        <p className="text-[12px] text-muted-foreground">
+          Hover any stage to see what lives inside it — every artefact stays attached to the deal record.
+        </p>
       </div>
     </div>
   );
 };
+

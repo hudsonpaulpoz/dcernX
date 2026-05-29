@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { ArrowRight, Moon, Sun, Inbox, Layers, FolderSearch, Brain, ClipboardCheck, LineChart } from "lucide-react";
 import { Logo3D } from "@/components/Logo3D";
-import testimonialAvatarAsset from "@/assets/testimonial-avatar.jpg.asset.json";
+import testimonialAvatar from "@/assets/testimonial-christian.jpg";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 import { Seo } from "@/components/Seo";

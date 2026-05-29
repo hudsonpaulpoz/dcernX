@@ -338,7 +338,7 @@ const Landing = () => {
                       to="/ai-analysis"
                       className="mt-4 inline-flex items-center gap-1.5 text-[12px] font-medium text-foreground hover:text-foreground/70 transition-colors"
                     >
-                      Explore the seven analyses
+                      Explore the 12 analyses
                       <ArrowRight className="h-3 w-3" />
                     </Link>
                   )}

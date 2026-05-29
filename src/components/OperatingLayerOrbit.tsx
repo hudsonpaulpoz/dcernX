@@ -62,12 +62,26 @@ const positions = NODES.map((_, i) => {
 
 export const OperatingLayerOrbit = () => {
   const [active, setActive] = useState<number | null>(null);
+  const [cursor, setCursor] = useState<{ x: number; y: number } | null>(null);
   const activeNode = active !== null ? NODES[active] : null;
+
+  const handleMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    setCursor({ x: e.clientX - rect.left, y: e.clientY - rect.top });
+  };
 
   return (
     <div className="border border-border bg-background">
       {/* Graphic */}
-      <div className="relative w-full overflow-hidden">
+      <div
+        className="relative w-full overflow-hidden"
+        onMouseMove={handleMove}
+        onMouseLeave={() => {
+          setActive(null);
+          setCursor(null);
+        }}
+      >
+
         <svg
           viewBox="0 0 800 520"
           className="w-full h-auto block"

@@ -109,11 +109,11 @@ export default function AIAnalysis() {
               Home
             </Link>
             <MarketingThemeToggle />
-            <Link to="/ai-analysis/try">
+            <a href="https://wms.xylor.ai/forms/survey/nn7d7j7g20s2hng4bh14tx1a1187m9at" target="_blank" rel="noopener noreferrer">
               <button className="text-[13px] h-8 px-3 border border-foreground/40 text-foreground hover:bg-foreground hover:text-background transition-colors">
                 Try for free
               </button>
-            </Link>
+            </a>
           </div>
         </div>
       </nav>
@@ -239,12 +239,12 @@ export default function AIAnalysis() {
             Run a free, live agentic DD on any prospective company. Every claim challenged, every verdict sourced. No account required.
           </p>
           <div className="mt-10 flex justify-center">
-            <Link to="/ai-analysis/try">
+            <a href="https://wms.xylor.ai/forms/survey/nn7d7j7g20s2hng4bh14tx1a1187m9at" target="_blank" rel="noopener noreferrer">
               <button className="group inline-flex items-center gap-2.5 px-8 py-3.5 text-[15px] font-medium border border-foreground/40 text-foreground hover:bg-foreground hover:text-background transition-colors">
                 Try for free
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
               </button>
-            </Link>
+            </a>
           </div>
         </div>
       </section>

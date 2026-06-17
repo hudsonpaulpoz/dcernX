@@ -17,10 +17,7 @@ const COMPANY_STAGES = [
   "MVP / Seed",
   "Product market fit",
   "Scaling",
-  "Series A",
-  "Series B",
-  "Series C",
-  "Series D",
+  "Series A through D",
   "PE capital raise",
   "Exit / M&A",
 ] as const;

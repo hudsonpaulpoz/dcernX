@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { ArrowLeft, ArrowRight, CheckCircle2, FileText, Loader2, Mail, Paperclip, Sparkles, Upload, X } from "lucide-react";
+import { ArrowLeft, ArrowRight, CheckCircle2, FileText, Loader2, Mail, Plus, Sparkles, Upload, X } from "lucide-react";
 import { z } from "zod";
 import { StackedLogo } from "@/components/StackedLogo";
 import { Seo } from "@/components/Seo";
@@ -9,88 +9,143 @@ import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 
 const MAX_FILE_MB = 25;
-const MAX_FILES = 10;
 const ALLOWED_DECK = /\.(pdf|ppt|pptx|key)$/i;
 const ALLOWED_DOC = /\.(pdf|doc|docx|xls|xlsx|csv|txt|md|ppt|pptx|key|png|jpg|jpeg)$/i;
 
-const artifactsSchema = z.object({
-  website: z.string().trim().max(500).url("Please enter a valid website URL").or(z.literal("")).optional(),
-  companyLinkedin: z.string().trim().max(500).url("Please enter a valid LinkedIn URL").or(z.literal("")).optional(),
-});
+const COMPANY_STAGES = [
+  "Idea stage",
+  "MVP / Seed",
+  "Product market fit",
+  "Scaling",
+  "Series A",
+  "Series B",
+  "Series C",
+  "Series D",
+  "PE capital raise",
+  "Exit / M&A",
+] as const;
 
 const contactSchema = z.object({
   name: z.string().trim().min(1, "Name is required").max(200),
   email: z.string().trim().email("Please enter a valid email").max(320),
+  phone: z.string().trim().max(50).optional().or(z.literal("")),
   linkedin: z.string().trim().max(500).url("Please enter a valid LinkedIn URL").or(z.literal("")).optional(),
+  organization: z.string().trim().min(1, "Organization name is required").max(200),
 });
 
-type Step = "artifacts" | "contact" | "done";
+const companySchema = z.object({
+  companyName: z.string().trim().min(1, "Company name is required").max(200),
+  companyContact: z.string().trim().min(1, "Company website or email is required").max(500),
+  founders: z.array(z.string().trim().min(1)).min(1, "Add at least one founder"),
+  stage: z.string().min(1, "Please select a company stage"),
+});
 
-const safeName = (name: string) =>
-  name.replace(/[^a-zA-Z0-9._-]+/g, "_").slice(-120);
+type Step = "contact" | "company" | "done";
 
-export default function AIAnalysisTry() {
-  const [step, setStep] = useState<Step>("artifacts");
+const safeName = (name: string) => name.replace(/[^a-zA-Z0-9._-]+/g, "_").slice(-120);
 
-  // Step 1
-  const [website, setWebsite] = useState("");
-  const [companyLinkedin, setCompanyLinkedin] = useState("");
-  const [pitchDeck, setPitchDeck] = useState<File | null>(null);
-  const [otherDocs, setOtherDocs] = useState<File[]>([]);
+interface FileSlotProps {
+  label: string;
+  optional?: boolean;
+  file: File | null;
+  onChange: (f: File | null) => void;
+  accept: string;
+  pattern: RegExp;
+  hint: string;
+}
 
-  // Step 2
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [linkedin, setLinkedin] = useState("");
-
-  const [submitting, setSubmitting] = useState(false);
-
-  const handleDeckSelect = (file: File | null) => {
-    if (!file) return setPitchDeck(null);
-    if (!ALLOWED_DECK.test(file.name)) {
-      toast.error("Pitch deck must be PDF, PPT, PPTX or KEY");
+function FileSlot({ label, optional, file, onChange, accept, pattern, hint }: FileSlotProps) {
+  const handle = (f: File | null) => {
+    if (!f) return onChange(null);
+    if (!pattern.test(f.name)) {
+      toast.error(`Unsupported file type for ${label}`);
       return;
     }
-    if (file.size > MAX_FILE_MB * 1024 * 1024) {
+    if (f.size > MAX_FILE_MB * 1024 * 1024) {
       toast.error(`File exceeds ${MAX_FILE_MB} MB limit`);
       return;
     }
-    setPitchDeck(file);
+    onChange(f);
   };
+  return (
+    <div>
+      <label className="block text-[12px] uppercase tracking-[0.12em] text-muted-foreground mb-3">
+        {label} {optional && <span className="lowercase tracking-normal text-muted-foreground/70">(optional)</span>}
+      </label>
+      {!file ? (
+        <label className="group flex items-center justify-center gap-3 border border-dashed border-border hover:border-foreground/50 px-6 py-8 cursor-pointer transition-colors">
+          <Upload className="h-4 w-4 text-muted-foreground group-hover:text-foreground transition-colors" strokeWidth={1.5} />
+          <span className="text-[13.5px] text-muted-foreground group-hover:text-foreground transition-colors">
+            {hint}
+          </span>
+          <input
+            type="file"
+            className="sr-only"
+            accept={accept}
+            onChange={(e) => handle(e.target.files?.[0] ?? null)}
+          />
+        </label>
+      ) : (
+        <div className="flex items-center justify-between border border-border px-4 py-3">
+          <div className="flex items-center gap-3 min-w-0">
+            <FileText className="h-4 w-4 text-foreground shrink-0" strokeWidth={1.5} />
+            <span className="text-[13.5px] text-foreground truncate">{file.name}</span>
+            <span className="text-[12px] text-muted-foreground shrink-0">
+              {(file.size / 1024 / 1024).toFixed(2)} MB
+            </span>
+          </div>
+          <button
+            type="button"
+            onClick={() => onChange(null)}
+            className="text-muted-foreground hover:text-foreground transition-colors"
+            aria-label={`Remove ${label}`}
+          >
+            <X className="h-4 w-4" />
+          </button>
+        </div>
+      )}
+    </div>
+  );
+}
 
-  const handleDocsSelect = (files: FileList | null) => {
-    if (!files) return;
-    const incoming = Array.from(files);
-    const invalid = incoming.find((f) => !ALLOWED_DOC.test(f.name));
-    if (invalid) {
-      toast.error(`Unsupported file type: ${invalid.name}`);
-      return;
-    }
-    const tooBig = incoming.find((f) => f.size > MAX_FILE_MB * 1024 * 1024);
-    if (tooBig) {
-      toast.error(`"${tooBig.name}" exceeds ${MAX_FILE_MB} MB limit`);
-      return;
-    }
-    const combined = [...otherDocs, ...incoming].slice(0, MAX_FILES);
-    if (otherDocs.length + incoming.length > MAX_FILES) {
-      toast.error(`Maximum ${MAX_FILES} additional documents`);
-    }
-    setOtherDocs(combined);
-  };
+export default function AIAnalysisTry() {
+  const [step, setStep] = useState<Step>("contact");
 
-  const goToContact = () => {
-    const parsed = artifactsSchema.safeParse({ website, companyLinkedin });
+  // Screen 1 — Contact
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [linkedin, setLinkedin] = useState("");
+  const [organization, setOrganization] = useState("");
+
+  // Screen 2 — Company
+  const [companyName, setCompanyName] = useState("");
+  const [companyContact, setCompanyContact] = useState("");
+  const [founders, setFounders] = useState<string[]>([""]);
+  const [stage, setStage] = useState("");
+  const [salesDeck, setSalesDeck] = useState<File | null>(null);
+  const [detailedDeck, setDetailedDeck] = useState<File | null>(null);
+  const [financials, setFinancials] = useState<File | null>(null);
+  const [customerInfo, setCustomerInfo] = useState<File | null>(null);
+
+  const [submitting, setSubmitting] = useState(false);
+
+  const goToCompany = () => {
+    const parsed = contactSchema.safeParse({ name, email, phone, linkedin, organization });
     if (!parsed.success) {
-      const issue = parsed.error.issues[0];
-      toast.error(issue.message);
+      toast.error(parsed.error.issues[0].message);
       return;
     }
-    if (!pitchDeck && !website && !companyLinkedin && otherDocs.length === 0) {
-      toast.error("Please provide at least a pitch deck, website or LinkedIn URL.");
-      return;
-    }
-    setStep("contact");
+    setStep("company");
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
+
+  const updateFounder = (i: number, v: string) => {
+    setFounders((arr) => arr.map((f, idx) => (idx === i ? v : f)));
+  };
+  const addFounder = () => setFounders((arr) => [...arr, ""]);
+  const removeFounder = (i: number) =>
+    setFounders((arr) => (arr.length === 1 ? arr : arr.filter((_, idx) => idx !== i)));
 
   const uploadFile = async (file: File, folder: string, requestId: string): Promise<string> => {
     const path = `${requestId}/${folder}/${Date.now()}-${safeName(file.name)}`;
@@ -105,35 +160,50 @@ export default function AIAnalysisTry() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const parsed = contactSchema.safeParse({ name, email, linkedin });
+    const cleanFounders = founders.map((f) => f.trim()).filter(Boolean);
+    const parsed = companySchema.safeParse({
+      companyName,
+      companyContact,
+      founders: cleanFounders,
+      stage,
+    });
     if (!parsed.success) {
-      const issue = parsed.error.issues[0];
-      toast.error(issue.message);
+      toast.error(parsed.error.issues[0].message);
       return;
     }
+    if (!salesDeck && !detailedDeck) {
+      toast.error("Please upload at least one deck (sales or detailed).");
+      return;
+    }
+
     setSubmitting(true);
     try {
       const requestId = crypto.randomUUID();
+      const salesPath = salesDeck ? await uploadFile(salesDeck, "sales-deck", requestId) : null;
+      const detailedPath = detailedDeck ? await uploadFile(detailedDeck, "detailed-deck", requestId) : null;
+      const financialsPath = financials ? await uploadFile(financials, "financials", requestId) : null;
+      const customerPath = customerInfo ? await uploadFile(customerInfo, "customers", requestId) : null;
 
-      let pitchDeckPath: string | null = null;
-      const docPaths: string[] = [];
-
-      if (pitchDeck) {
-        pitchDeckPath = await uploadFile(pitchDeck, "deck", requestId);
-      }
-      for (const f of otherDocs) {
-        docPaths.push(await uploadFile(f, "docs", requestId));
-      }
+      const isUrl = /^https?:\/\//i.test(companyContact.trim());
 
       const { error: insertError } = await supabase.from("analysis_requests").insert({
         id: requestId,
-        requester_name: parsed.data.name,
-        requester_email: parsed.data.email,
-        requester_linkedin: parsed.data.linkedin || null,
-        company_website: website.trim() || null,
-        company_linkedin: companyLinkedin.trim() || null,
-        pitch_deck_path: pitchDeckPath,
-        document_paths: docPaths,
+        requester_name: name.trim(),
+        requester_email: email.trim(),
+        requester_phone: phone.trim() || null,
+        requester_linkedin: linkedin.trim() || null,
+        requester_organization: organization.trim(),
+        company_name: companyName.trim(),
+        company_website: isUrl ? companyContact.trim() : null,
+        company_email: !isUrl ? companyContact.trim() : null,
+        founders: cleanFounders,
+        company_stage: stage,
+        sales_deck_path: salesPath,
+        detailed_deck_path: detailedPath,
+        financials_path: financialsPath,
+        customer_info_path: customerPath,
+        pitch_deck_path: salesPath ?? detailedPath,
+        document_paths: [],
       });
       if (insertError) throw insertError;
 
@@ -147,36 +217,16 @@ export default function AIAnalysisTry() {
     }
   };
 
+  const inputClass =
+    "w-full h-11 px-3 bg-background border border-border text-[14px] text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-foreground/60 transition-colors";
+  const labelClass = "block text-[12px] uppercase tracking-[0.12em] text-muted-foreground mb-2";
+
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Seo
         title="Try Agentic AI Due Diligence Free — Run a Primary Analysis on Any Company | DcernX"
-        description="Upload a pitch deck, website or LinkedIn URL and DcernX runs a free agentic AI primary analysis — strategy, competition, regulatory, compliance, financial and risk. Built for VCs, accelerators, angel syndicates, venture studios and startup funds. Results delivered to your inbox."
+        description="Submit a company's details, decks and supporting materials and receive a free agentic AI primary due-diligence report by email."
         path="/ai-analysis/try"
-        jsonLd={[
-          {
-            "@context": "https://schema.org",
-            "@type": "HowTo",
-            name: "Run a free AI due diligence analysis on a startup",
-            description:
-              "Submit a company's pitch deck, website or LinkedIn and receive a structured AI primary analysis covering strategy, competition, regulatory, compliance, financial and risk.",
-            totalTime: "PT1H",
-            step: [
-              { "@type": "HowToStep", position: 1, name: "Share company materials", text: "Upload a pitch deck and any supporting documents, or paste the company website and LinkedIn URLs." },
-              { "@type": "HowToStep", position: 2, name: "Tell us where to send the brief", text: "Provide your name, work email and (optionally) your LinkedIn so we can deliver the analysis." },
-              { "@type": "HowToStep", position: 3, name: "Receive the primary brief and risk report", text: "DcernX's agents produce a decision-useful brief and a consolidated risk report, emailed within 15 minutes to 1 hour." },
-            ],
-          },
-          {
-            "@context": "https://schema.org",
-            "@type": "BreadcrumbList",
-            itemListElement: [
-              { "@type": "ListItem", position: 1, name: "Home", item: "/" },
-              { "@type": "ListItem", position: 2, name: "Agentic DD", item: "/ai-analysis" },
-              { "@type": "ListItem", position: 3, name: "Try free", item: "/ai-analysis/try" },
-            ],
-          },
-        ]}
       />
 
       {/* Nav */}
@@ -206,150 +256,59 @@ export default function AIAnalysisTry() {
                 Free primary analysis
               </p>
               <h1 className="text-[clamp(1.8rem,3vw,2.4rem)] font-[500] tracking-[-0.03em] leading-[1.1] text-foreground max-w-[640px]">
-                {step === "artifacts"
-                  ? "Share what you have on the company."
-                  : "Where should we send the analysis?"}
+                {step === "contact"
+                  ? "Tell us a little about you."
+                  : "Now share the company you'd like analysed."}
               </h1>
               <p className="mt-5 text-[15px] text-muted-foreground leading-[1.65] max-w-[600px]">
-                {step === "artifacts"
-                  ? "Upload a pitch deck and any supporting material, or just paste a website or LinkedIn URL. Our agents will read everything before producing the brief."
-                  : "We'll email you the full brief and risk report when the analysis is complete."}
+                {step === "contact"
+                  ? "We'll use these details to send the report and follow up if we need anything."
+                  : "Upload the decks and supporting materials and our agents will build the brief."}
               </p>
 
               {/* Stepper */}
               <ol className="mt-9 flex items-center gap-3 text-[12px] uppercase tracking-[0.14em] text-muted-foreground">
-                <li className={`flex items-center gap-2 ${step === "artifacts" ? "text-foreground" : ""}`}>
-                  <span className={`inline-flex h-5 w-5 items-center justify-center border ${step === "artifacts" ? "border-foreground" : "border-border"}`}>1</span>
-                  Materials
+                <li className={`flex items-center gap-2 ${step === "contact" ? "text-foreground" : ""}`}>
+                  <span className={`inline-flex h-5 w-5 items-center justify-center border ${step === "contact" ? "border-foreground" : "border-border"}`}>1</span>
+                  Your details
                 </li>
                 <span className="h-px w-8 bg-border" />
-                <li className={`flex items-center gap-2 ${step === "contact" ? "text-foreground" : ""}`}>
-                  <span className={`inline-flex h-5 w-5 items-center justify-center border ${step === "contact" ? "border-foreground" : "border-border"}`}>2</span>
-                  Your details
+                <li className={`flex items-center gap-2 ${step === "company" ? "text-foreground" : ""}`}>
+                  <span className={`inline-flex h-5 w-5 items-center justify-center border ${step === "company" ? "border-foreground" : "border-border"}`}>2</span>
+                  Company
                 </li>
               </ol>
             </header>
           )}
 
-          {/* STEP 1 — Artifacts */}
-          {step === "artifacts" && (
-            <section className="space-y-8">
-              {/* Pitch deck */}
+          {/* STEP 1 — Contact */}
+          {step === "contact" && (
+            <section className="space-y-7">
               <div>
-                <label className="block text-[12px] uppercase tracking-[0.12em] text-muted-foreground mb-3">
-                  Pitch deck
-                </label>
-                {!pitchDeck ? (
-                  <label className="group flex items-center justify-center gap-3 border border-dashed border-border hover:border-foreground/50 px-6 py-10 cursor-pointer transition-colors">
-                    <Upload className="h-4 w-4 text-muted-foreground group-hover:text-foreground transition-colors" strokeWidth={1.5} />
-                    <span className="text-[13.5px] text-muted-foreground group-hover:text-foreground transition-colors">
-                      Click to upload PDF, PPT, PPTX or Keynote (max {MAX_FILE_MB} MB)
-                    </span>
-                    <input
-                      type="file"
-                      className="sr-only"
-                      accept=".pdf,.ppt,.pptx,.key,application/pdf"
-                      onChange={(e) => handleDeckSelect(e.target.files?.[0] ?? null)}
-                    />
-                  </label>
-                ) : (
-                  <div className="flex items-center justify-between border border-border px-4 py-3">
-                    <div className="flex items-center gap-3 min-w-0">
-                      <FileText className="h-4 w-4 text-foreground shrink-0" strokeWidth={1.5} />
-                      <span className="text-[13.5px] text-foreground truncate">{pitchDeck.name}</span>
-                      <span className="text-[12px] text-muted-foreground shrink-0">
-                        {(pitchDeck.size / 1024 / 1024).toFixed(2)} MB
-                      </span>
-                    </div>
-                    <button
-                      type="button"
-                      onClick={() => setPitchDeck(null)}
-                      className="text-muted-foreground hover:text-foreground transition-colors"
-                      aria-label="Remove pitch deck"
-                    >
-                      <X className="h-4 w-4" />
-                    </button>
-                  </div>
-                )}
+                <label className={labelClass}>Your full name</label>
+                <input type="text" value={name} onChange={(e) => setName(e.target.value)} maxLength={200} required placeholder="Jane Partner" className={inputClass} />
               </div>
-
-              {/* Website */}
               <div>
-                <label className="block text-[12px] uppercase tracking-[0.12em] text-muted-foreground mb-2">
-                  Website URL
-                </label>
-                <input
-                  type="url"
-                  value={website}
-                  onChange={(e) => setWebsite(e.target.value)}
-                  placeholder="https://company.com"
-                  className="w-full h-11 px-3 bg-background border border-border text-[14px] text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-foreground/60 transition-colors"
-                />
+                <label className={labelClass}>Email</label>
+                <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} maxLength={320} required placeholder="jane@yourfund.com" className={inputClass} />
               </div>
-
-              {/* Company LinkedIn */}
               <div>
-                <label className="block text-[12px] uppercase tracking-[0.12em] text-muted-foreground mb-2">
-                  Company LinkedIn URL
-                </label>
-                <input
-                  type="url"
-                  value={companyLinkedin}
-                  onChange={(e) => setCompanyLinkedin(e.target.value)}
-                  placeholder="https://www.linkedin.com/company/..."
-                  className="w-full h-11 px-3 bg-background border border-border text-[14px] text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-foreground/60 transition-colors"
-                />
+                <label className={labelClass}>Phone <span className="lowercase tracking-normal text-muted-foreground/70">(optional)</span></label>
+                <input type="tel" value={phone} onChange={(e) => setPhone(e.target.value)} maxLength={50} placeholder="+1 555 123 4567" className={inputClass} />
               </div>
-
-              {/* Other documents */}
               <div>
-                <label className="block text-[12px] uppercase tracking-[0.12em] text-muted-foreground mb-3">
-                  Other documents <span className="lowercase tracking-normal text-muted-foreground/70">(optional, up to {MAX_FILES})</span>
-                </label>
-
-                <label className="group flex items-center justify-center gap-3 border border-dashed border-border hover:border-foreground/50 px-6 py-8 cursor-pointer transition-colors">
-                  <Paperclip className="h-4 w-4 text-muted-foreground group-hover:text-foreground transition-colors" strokeWidth={1.5} />
-                  <span className="text-[13.5px] text-muted-foreground group-hover:text-foreground transition-colors">
-                    Add memos, financials, founder bios, data-room exports…
-                  </span>
-                  <input
-                    type="file"
-                    multiple
-                    className="sr-only"
-                    accept=".pdf,.doc,.docx,.xls,.xlsx,.csv,.txt,.md,.ppt,.pptx,.key,.png,.jpg,.jpeg"
-                    onChange={(e) => handleDocsSelect(e.target.files)}
-                  />
-                </label>
-
-                {otherDocs.length > 0 && (
-                  <ul className="mt-4 space-y-2">
-                    {otherDocs.map((f, i) => (
-                      <li key={`${f.name}-${i}`} className="flex items-center justify-between border border-border px-4 py-2.5">
-                        <div className="flex items-center gap-3 min-w-0">
-                          <FileText className="h-4 w-4 text-foreground/70 shrink-0" strokeWidth={1.5} />
-                          <span className="text-[13.5px] text-foreground truncate">{f.name}</span>
-                          <span className="text-[12px] text-muted-foreground shrink-0">
-                            {(f.size / 1024 / 1024).toFixed(2)} MB
-                          </span>
-                        </div>
-                        <button
-                          type="button"
-                          onClick={() => setOtherDocs(otherDocs.filter((_, idx) => idx !== i))}
-                          className="text-muted-foreground hover:text-foreground transition-colors"
-                          aria-label={`Remove ${f.name}`}
-                        >
-                          <X className="h-4 w-4" />
-                        </button>
-                      </li>
-                    ))}
-                  </ul>
-                )}
+                <label className={labelClass}>LinkedIn URL <span className="lowercase tracking-normal text-muted-foreground/70">(optional but useful)</span></label>
+                <input type="url" value={linkedin} onChange={(e) => setLinkedin(e.target.value)} maxLength={500} placeholder="https://www.linkedin.com/in/..." className={inputClass} />
+              </div>
+              <div>
+                <label className={labelClass}>Organization name</label>
+                <input type="text" value={organization} onChange={(e) => setOrganization(e.target.value)} maxLength={200} required placeholder="Your fund or firm" className={inputClass} />
               </div>
 
               <div className="pt-2 flex items-center justify-end">
                 <button
                   type="button"
-                  onClick={goToContact}
+                  onClick={goToCompany}
                   className="group inline-flex items-center gap-2 px-6 py-3 text-[14px] font-medium bg-foreground text-background hover:bg-foreground/90 transition-colors"
                 >
                   Continue
@@ -359,49 +318,106 @@ export default function AIAnalysisTry() {
             </section>
           )}
 
-          {/* STEP 2 — Contact */}
-          {step === "contact" && (
+          {/* STEP 2 — Company */}
+          {step === "company" && (
             <form onSubmit={handleSubmit} className="space-y-7">
               <div>
-                <label className="block text-[12px] uppercase tracking-[0.12em] text-muted-foreground mb-2">
-                  Your full name
-                </label>
-                <input
-                  type="text"
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
-                  maxLength={200}
-                  required
-                  placeholder="Jane Partner"
-                  className="w-full h-11 px-3 bg-background border border-border text-[14px] text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-foreground/60 transition-colors"
-                />
+                <label className={labelClass}>Company name</label>
+                <input type="text" value={companyName} onChange={(e) => setCompanyName(e.target.value)} maxLength={200} required placeholder="Acme Inc." className={inputClass} />
               </div>
+
               <div>
-                <label className="block text-[12px] uppercase tracking-[0.12em] text-muted-foreground mb-2">
-                  Work email
-                </label>
-                <input
-                  type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  maxLength={320}
-                  required
-                  placeholder="jane@yourfund.com"
-                  className="w-full h-11 px-3 bg-background border border-border text-[14px] text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-foreground/60 transition-colors"
-                />
+                <label className={labelClass}>Company website or email</label>
+                <input type="text" value={companyContact} onChange={(e) => setCompanyContact(e.target.value)} maxLength={500} required placeholder="https://acme.com or hello@acme.com" className={inputClass} />
               </div>
+
               <div>
-                <label className="block text-[12px] uppercase tracking-[0.12em] text-muted-foreground mb-2">
-                  Your LinkedIn URL <span className="lowercase tracking-normal text-muted-foreground/70">(optional)</span>
-                </label>
-                <input
-                  type="url"
-                  value={linkedin}
-                  onChange={(e) => setLinkedin(e.target.value)}
-                  maxLength={500}
-                  placeholder="https://www.linkedin.com/in/..."
-                  className="w-full h-11 px-3 bg-background border border-border text-[14px] text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-foreground/60 transition-colors"
-                />
+                <label className={labelClass}>Company founder(s)</label>
+                <div className="space-y-2">
+                  {founders.map((f, i) => (
+                    <div key={i} className="flex items-center gap-2">
+                      <input
+                        type="text"
+                        value={f}
+                        onChange={(e) => updateFounder(i, e.target.value)}
+                        maxLength={200}
+                        placeholder={`Founder ${i + 1} full name`}
+                        className={inputClass}
+                      />
+                      {founders.length > 1 && (
+                        <button
+                          type="button"
+                          onClick={() => removeFounder(i)}
+                          className="shrink-0 h-11 w-11 inline-flex items-center justify-center border border-border text-muted-foreground hover:text-foreground hover:border-foreground/40 transition-colors"
+                          aria-label="Remove founder"
+                        >
+                          <X className="h-4 w-4" />
+                        </button>
+                      )}
+                    </div>
+                  ))}
+                </div>
+                <button
+                  type="button"
+                  onClick={addFounder}
+                  className="mt-3 inline-flex items-center gap-1.5 text-[13px] text-muted-foreground hover:text-foreground transition-colors"
+                >
+                  <Plus className="h-3.5 w-3.5" />
+                  Add another founder
+                </button>
+              </div>
+
+              <FileSlot
+                label="Sales deck"
+                file={salesDeck}
+                onChange={setSalesDeck}
+                accept=".pdf,.ppt,.pptx,.key,application/pdf"
+                pattern={ALLOWED_DECK}
+                hint={`Click to upload PDF, PPT, PPTX or Keynote (max ${MAX_FILE_MB} MB)`}
+              />
+
+              <FileSlot
+                label="Detailed deck (investor / technical)"
+                file={detailedDeck}
+                onChange={setDetailedDeck}
+                accept=".pdf,.ppt,.pptx,.key,application/pdf"
+                pattern={ALLOWED_DECK}
+                hint={`Click to upload PDF, PPT, PPTX or Keynote (max ${MAX_FILE_MB} MB)`}
+              />
+
+              <FileSlot
+                label="Financials"
+                optional
+                file={financials}
+                onChange={setFinancials}
+                accept=".pdf,.xls,.xlsx,.csv,.doc,.docx"
+                pattern={ALLOWED_DOC}
+                hint="Click to upload financial model or statements"
+              />
+
+              <FileSlot
+                label="Customer information"
+                optional
+                file={customerInfo}
+                onChange={setCustomerInfo}
+                accept=".pdf,.xls,.xlsx,.csv,.doc,.docx,.txt"
+                pattern={ALLOWED_DOC}
+                hint="Click to upload customer list, case studies or references"
+              />
+
+              <div>
+                <label className={labelClass}>Company stage</label>
+                <select
+                  value={stage}
+                  onChange={(e) => setStage(e.target.value)}
+                  required
+                  className={inputClass}
+                >
+                  <option value="">Select a stage…</option>
+                  {COMPANY_STAGES.map((s) => (
+                    <option key={s} value={s}>{s}</option>
+                  ))}
+                </select>
               </div>
 
               <p className="text-[12px] text-muted-foreground/80 leading-[1.6]">
@@ -411,7 +427,7 @@ export default function AIAnalysisTry() {
               <div className="flex items-center justify-between pt-2">
                 <button
                   type="button"
-                  onClick={() => setStep("artifacts")}
+                  onClick={() => setStep("contact")}
                   disabled={submitting}
                   className="inline-flex items-center gap-1.5 text-[13px] text-muted-foreground hover:text-foreground transition-colors disabled:opacity-50"
                 >
@@ -431,7 +447,7 @@ export default function AIAnalysisTry() {
                   ) : (
                     <>
                       <Sparkles className="h-4 w-4" />
-                      Run analysis
+                      Submit for analysis
                     </>
                   )}
                 </button>
@@ -456,14 +472,14 @@ export default function AIAnalysisTry() {
                 <div className="flex items-start gap-3">
                   <Loader2 className="h-4 w-4 text-foreground/70 mt-0.5 shrink-0" strokeWidth={1.5} />
                   <p className="text-[14px] text-foreground/85 leading-[1.7]">
-                    The analysis typically takes <strong className="text-foreground">15 minutes to 1 hour</strong> depending on the depth of materials provided.
+                    You'll be contacted by email with a detailed report within <strong className="text-foreground">30 to 90 minutes</strong>.
                   </p>
                 </div>
                 <div className="flex items-start gap-3">
                   <Mail className="h-4 w-4 text-foreground/70 mt-0.5 shrink-0" strokeWidth={1.5} />
                   <p className="text-[14px] text-foreground/85 leading-[1.7]">
-                    We'll email the full brief and the <strong className="text-foreground">consolidated risk report</strong> to{" "}
-                    <span className="text-foreground">{email}</span> when it's ready.
+                    The full brief and consolidated risk report will be sent to{" "}
+                    <span className="text-foreground">{email}</span>.
                   </p>
                 </div>
               </div>

@@ -54,39 +54,69 @@ export type Database = {
       }
       analysis_requests: {
         Row: {
+          company_email: string | null
           company_linkedin: string | null
+          company_name: string | null
+          company_stage: string | null
           company_website: string | null
           created_at: string
+          customer_info_path: string | null
+          detailed_deck_path: string | null
           document_paths: string[]
+          financials_path: string | null
+          founders: string[]
           id: string
           pitch_deck_path: string | null
           requester_email: string
           requester_linkedin: string | null
           requester_name: string
+          requester_organization: string | null
+          requester_phone: string | null
+          sales_deck_path: string | null
           status: string
         }
         Insert: {
+          company_email?: string | null
           company_linkedin?: string | null
+          company_name?: string | null
+          company_stage?: string | null
           company_website?: string | null
           created_at?: string
+          customer_info_path?: string | null
+          detailed_deck_path?: string | null
           document_paths?: string[]
+          financials_path?: string | null
+          founders?: string[]
           id?: string
           pitch_deck_path?: string | null
           requester_email: string
           requester_linkedin?: string | null
           requester_name: string
+          requester_organization?: string | null
+          requester_phone?: string | null
+          sales_deck_path?: string | null
           status?: string
         }
         Update: {
+          company_email?: string | null
           company_linkedin?: string | null
+          company_name?: string | null
+          company_stage?: string | null
           company_website?: string | null
           created_at?: string
+          customer_info_path?: string | null
+          detailed_deck_path?: string | null
           document_paths?: string[]
+          financials_path?: string | null
+          founders?: string[]
           id?: string
           pitch_deck_path?: string | null
           requester_email?: string
           requester_linkedin?: string | null
           requester_name?: string
+          requester_organization?: string | null
+          requester_phone?: string | null
+          sales_deck_path?: string | null
           status?: string
         }
         Relationships: []

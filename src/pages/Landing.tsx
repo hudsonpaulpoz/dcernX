@@ -133,9 +133,9 @@ const Landing = () => {
 type VisualProps = { bgHex: string; lineHex: string };
 
 const CubeVisual = ({ bgHex, lineHex }: VisualProps) => (
-  <div className="relative h-[420px] lg:h-[520px] w-full pointer-events-none select-none">
+  <div className="relative h-[360px] md:h-[460px] lg:h-[520px] w-full pointer-events-none select-none">
     <div className="absolute inset-0 flex items-center justify-center">
-      <Logo3D variant={LOGO_VARIANT} size={560} zoom={320} bgHex={bgHex} lineHex={lineHex} />
+      <Logo3D variant={LOGO_VARIANT} size={520} zoom={320} bgHex={bgHex} lineHex={lineHex} />
     </div>
   </div>
 );

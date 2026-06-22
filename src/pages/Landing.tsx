@@ -465,14 +465,14 @@ const Landing = () => {
             Join the investment teams operating with clarity, speed and conviction on DcernX.
           </p>
           <div className="mt-10 flex justify-center">
-            <a href="https://wms.xylor.ai/forms/survey/nn787mfqd1abpvq69e9te4vx598744gp" target="_blank" rel="noopener noreferrer">
+            <Link to="/ai-analysis/try">
               <button
                 className="group relative inline-flex items-center gap-2.5 px-8 py-3.5 text-[15px] font-medium transition-all duration-200 border border-foreground/40 text-foreground hover:bg-foreground hover:text-background hover:border-foreground"
               >
-                Request access
+                Try DcernX
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
               </button>
-            </a>
+            </Link>
           </div>
         </div>
       </section>

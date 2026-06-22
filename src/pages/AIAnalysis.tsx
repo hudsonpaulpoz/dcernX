@@ -128,10 +128,10 @@ export default function AIAnalysis() {
             DcernX for Startups
           </p>
           <h1 className="text-[clamp(2rem,4vw,3.4rem)] font-[500] tracking-[-0.04em] leading-[1.05] text-foreground max-w-[900px]">
-            Walk into investor DD already prepared.
+            Make every investor meeting count.
           </h1>
           <p className="mt-6 text-[16px] leading-relaxed text-muted-foreground max-w-[720px]">
-            Upload your pitch deck, financials and supporting material. DcernX's advanced AI runs a VC-grade due diligence on your company — analysing investor readiness, conviction, technology, team and business model — and returns the same brief a sceptical partner would write. Fix the gaps before an investor finds them.
+            Investor intros are expensive — in time, in money, in goodwill. Every meeting has to build conviction and trust. Upload your pitch deck, financials and marketing material and DcernX returns a single, robust Investor DD report on your own company: every claim stress-tested, every gap surfaced, every hard question answered before it's asked. Walk in with the answers, leave with the next meeting.
           </p>
           <div className="mt-10 flex flex-wrap items-center gap-4">
             <Link to="/ai-analysis/try">

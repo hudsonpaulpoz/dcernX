@@ -140,12 +140,12 @@ const Landing = () => {
               </p>
               <h1 className="text-[clamp(2rem,4vw,3.2rem)] font-[500] leading-[1.08] tracking-[-0.04em] text-foreground max-w-[560px]">
                 {audience === "startups"
-                  ? "Walk into investor DD already prepared."
+                  ? "Make every investor meeting count."
                   : "Run every deal with clarity and conviction."}
               </h1>
               <p className="mt-6 text-base leading-relaxed text-muted-foreground max-w-[500px]">
                 {audience === "startups"
-                  ? "Upload your pitch deck, financials and supporting material. DcernX runs a VC-grade AI due diligence on your company — investor readiness, conviction, technology, team and business model — so you fix the gaps before an investor finds them."
+                  ? "Investor intros are expensive — in time and money. Upload your pitch, financials and marketing, and DcernX returns one robust Investor DD report on your own company — so every meeting builds conviction and trust."
                   : "Analyse hundreds of applications instantly, score every deal against your internal metrics, and run the full investment lifecycle — sourcing, DD, IC, communications and LP reporting — inside one integrated system with CRM, email, calling, chat and dedicated portals."}
               </p>
               <div className="mt-10 flex items-center gap-4">

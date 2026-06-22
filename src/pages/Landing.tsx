@@ -143,7 +143,7 @@ const CubeVisual = ({ bgHex, lineHex }: VisualProps) => (
 /* ----------------- STARTUPS SCREEN ----------------- */
 const StartupsScreen = ({ bgHex, lineHex }: VisualProps) => (
   <section className="px-6 py-20 lg:py-24">
-    <div className="mx-auto max-w-[1200px] grid lg:grid-cols-[1.05fr_0.95fr] gap-14 items-center">
+    <div className="mx-auto max-w-[1200px] grid md:grid-cols-[1.05fr_0.95fr] gap-10 lg:gap-14 items-center">
       <div>
         <p className="text-[12px] uppercase tracking-[0.18em] text-muted-foreground mb-5">
           DcernX for Startups

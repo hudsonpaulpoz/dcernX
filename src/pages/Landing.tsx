@@ -297,35 +297,61 @@ const Landing = () => {
       <CursorSpotlight className="relative z-10 pt-24 pb-24 px-6 overflow-hidden">
         <div className="mx-auto max-w-[1200px] relative">
           <p className="text-[13px] uppercase tracking-[0.15em] text-muted-foreground mb-4">
-            Designed for modern investment teams
+            {audience === "startups"
+              ? "Built for fundraising founders"
+              : "Designed for modern investment teams"}
           </p>
-          <h2 className="text-[clamp(1.8rem,3vw,2.5rem)] font-[500] tracking-[-0.03em] text-foreground max-w-[640px] leading-[1.15]">
-            A single source of truth<br />for every opportunity.
+          <h2 className="text-[clamp(1.8rem,3vw,2.5rem)] font-[500] tracking-[-0.03em] text-foreground max-w-[680px] leading-[1.15]">
+            {audience === "startups" ? (
+              <>One robust report.<br />Every investor question, answered.</>
+            ) : (
+              <>A single source of truth<br />for every opportunity.</>
+            )}
           </h2>
-          <p className="mt-5 text-[15px] text-muted-foreground max-w-[560px]">
-            Decks, inboxes, data rooms, call notes and chat threads are consolidated into one auditable record per deal — preserving the evidence, reviews and rationale your team relies on to act with confidence.
+          <p className="mt-5 text-[15px] text-muted-foreground max-w-[580px]">
+            {audience === "startups"
+              ? "Your pitch deck, financials and marketing — read the way an investor's analyst would read them, and returned to you as one defensible Investor DD report on your own company."
+              : "Decks, inboxes, data rooms, call notes and chat threads are consolidated into one auditable record per deal — preserving the evidence, reviews and rationale your team relies on to act with confidence."}
           </p>
 
           <div className="mt-16 border border-border">
             <div className="grid grid-cols-1 md:grid-cols-3">
-              {[
-                {
-                  title: "Unified deal workspace",
-                  desc: "Sourcing, stages, data rooms, communications and documents in one place — every artefact for every deal, with full context preserved end to end.",
-                  graphic: "bars",
-                },
-                {
-                  title: "Agentic due diligence",
-                  desc: "Agents challenge every claim in the pitch and supporting documents — validating or invalidating each across 12 tracks with attributable, source-backed research your IC can defend.",
-                  graphic: "flow",
-                },
-
-                {
-                  title: "Defensible decision records",
-                  desc: "Structured evaluations, scoring, rationale and conviction scores — fully traceable for partners, investment committees, LPs and public funders.",
-                  graphic: "chart",
-                },
-              ].map((feature, i) => (
+              {(audience === "startups"
+                ? [
+                    {
+                      title: "Your story, stress-tested",
+                      desc: "Every claim in your deck — market, traction, tech, team — interrogated the way a sceptical partner would. You see what holds up and what to reword before the meeting.",
+                      graphic: "bars",
+                    },
+                    {
+                      title: "Your Investor DD report",
+                      desc: "Twelve founder-facing sections covering story, market, competition, tech, financials, GTM, risk and more — with the exact questions an investor will ask and the answers waiting underneath.",
+                      graphic: "flow",
+                    },
+                    {
+                      title: "Your benchmarks",
+                      desc: "Your numbers, GTM and valuation framed against companies investors have already funded in your space — so you negotiate with comparables, not vibes.",
+                      graphic: "chart",
+                    },
+                  ]
+                : [
+                    {
+                      title: "Unified deal workspace",
+                      desc: "Sourcing, stages, data rooms, communications and documents in one place — every artefact for every deal, with full context preserved end to end.",
+                      graphic: "bars",
+                    },
+                    {
+                      title: "Agentic due diligence",
+                      desc: "Agents challenge every claim in the pitch and supporting documents — validating or invalidating each across 12 tracks with attributable, source-backed research your IC can defend.",
+                      graphic: "flow",
+                    },
+                    {
+                      title: "Defensible decision records",
+                      desc: "Structured evaluations, scoring, rationale and conviction scores — fully traceable for partners, investment committees, LPs and public funders.",
+                      graphic: "chart",
+                    },
+                  ]
+              ).map((feature, i) => (
                 <div
                   key={feature.title}
                   className={`p-8 ${i < 2 ? "md:border-r border-border" : ""} ${i > 0 ? "border-t md:border-t-0 border-border" : ""}`}
@@ -373,10 +399,10 @@ const Landing = () => {
                   <p className="text-[13px] leading-[1.6] text-muted-foreground">{feature.desc}</p>
                   {i === 1 && (
                     <Link
-                      to="/ai-analysis"
+                      to={audience === "startups" ? "/ai-analysis" : "/for-investors"}
                       className="mt-4 inline-flex items-center gap-1.5 text-[12px] font-medium text-foreground hover:text-foreground/70 transition-colors"
                     >
-                      Explore the 12 analyses
+                      {audience === "startups" ? "See the full report" : "Explore the 12 analyses"}
                       <ArrowRight className="h-3 w-3" />
                     </Link>
                   )}
@@ -394,13 +420,17 @@ const Landing = () => {
       <section className="relative z-10 px-6 py-24">
         <div className="mx-auto max-w-[1200px]">
           <p className="text-[13px] uppercase tracking-[0.15em] text-muted-foreground mb-4">
-            The operating layer
+            {audience === "startups" ? "The fundraising cycle" : "The operating layer"}
           </p>
-          <h2 className="text-[clamp(1.8rem,3vw,2.5rem)] font-[500] tracking-[-0.03em] text-foreground max-w-[720px] leading-[1.15]">
-            One system for the full startup engagement cycle.
+          <h2 className="text-[clamp(1.8rem,3vw,2.5rem)] font-[500] tracking-[-0.03em] text-foreground max-w-[760px] leading-[1.15]">
+            {audience === "startups"
+              ? "Every part of your raise, sharper."
+              : "One system for the full startup engagement cycle."}
           </h2>
-          <p className="mt-5 text-[15px] text-muted-foreground max-w-[640px] leading-[1.7]">
-            Investment operations today are stitched together from inboxes, spreadsheets, shared drives and memory. DcernX replaces that with a single auditable layer — from first-touch intake to post-decision tracking.
+          <p className="mt-5 text-[15px] text-muted-foreground max-w-[660px] leading-[1.7]">
+            {audience === "startups"
+              ? "From the moment you tighten your deck to the moment you sign the SAFE, DcernX gives you the same lens an investor uses — so every iteration of your pitch, financials and outreach is grounded in evidence, not hope."
+              : "Investment operations today are stitched together from inboxes, spreadsheets, shared drives and memory. DcernX replaces that with a single auditable layer — from first-touch intake to post-decision tracking."}
           </p>
 
           {/* Animated orbit — interlinking */}
@@ -408,10 +438,12 @@ const Landing = () => {
             <OperatingLayerOrbit />
           </div>
 
-
-
           <p className="mt-10 text-[13.5px] leading-[1.7] text-muted-foreground max-w-[760px]">
-            DcernX does not replace investment judgement — it makes judgement easier to <span className="text-foreground/85">capture, compare, quantify, defend and reuse</span>.
+            {audience === "startups" ? (
+              <>DcernX doesn't write your story — it makes sure your story is <span className="text-foreground/85">defensible, comparable, sourced and investor-ready</span>.</>
+            ) : (
+              <>DcernX does not replace investment judgement — it makes judgement easier to <span className="text-foreground/85">capture, compare, quantify, defend and reuse</span>.</>
+            )}
           </p>
         </div>
       </section>
@@ -439,13 +471,19 @@ const Landing = () => {
         <div className="mx-auto max-w-[1200px] relative">
           <div className="border border-border bg-background p-10 max-w-[720px] mx-auto">
             <blockquote className="text-[20px] font-[400] leading-[1.5] tracking-[-0.01em] text-foreground/85">
-              "DcernX has changed how our partnership works. Context lives with the deal, not in someone's inbox — and our investment committee finally sees the full picture, not a reconstructed summary."
+              {audience === "startups"
+                ? "\u201CWe ran DcernX before our seed round and rewrote three slides the same night. Every investor meeting after that felt different — we had the answer before they finished the question.\u201D"
+                : "\u201CDcernX has changed how our partnership works. Context lives with the deal, not in someone's inbox — and our investment committee finally sees the full picture, not a reconstructed summary.\u201D"}
             </blockquote>
             <div className="mt-6 flex items-center gap-3">
-              <img src={testimonialAvatar} alt="Christian K" className="h-9 w-9 rounded-full object-cover" />
+              <img src={testimonialAvatar} alt={audience === "startups" ? "Founder testimonial" : "Christian K"} className="h-9 w-9 rounded-full object-cover" />
               <div>
-                <span className="text-[13px] font-medium text-foreground">Christian K</span>
-                <span className="text-[13px] text-muted-foreground ml-2">Partner, Capital Kinetics</span>
+                <span className="text-[13px] font-medium text-foreground">
+                  {audience === "startups" ? "Maya R" : "Christian K"}
+                </span>
+                <span className="text-[13px] text-muted-foreground ml-2">
+                  {audience === "startups" ? "Co-founder & CEO, Northbound" : "Partner, Capital Kinetics"}
+                </span>
               </div>
             </div>
           </div>
@@ -458,11 +496,15 @@ const Landing = () => {
       {/* CTA */}
       <section className="relative z-10 pt-32 pb-40 px-6 overflow-hidden">
         <div className="mx-auto max-w-[1200px] text-center relative">
-          <h2 className="text-[clamp(2rem,4vw,3.2rem)] font-[500] tracking-[-0.035em] text-foreground leading-[1.1] mx-auto max-w-[720px]">
-            The sharpest decisions deserve the sharpest workspace.
+          <h2 className="text-[clamp(2rem,4vw,3.2rem)] font-[500] tracking-[-0.035em] text-foreground leading-[1.1] mx-auto max-w-[760px]">
+            {audience === "startups"
+              ? "Don't waste a single investor meeting."
+              : "The sharpest decisions deserve the sharpest workspace."}
           </h2>
-          <p className="mt-5 text-[15px] text-muted-foreground max-w-[520px] mx-auto">
-            Join the investment teams operating with clarity, speed and conviction on DcernX.
+          <p className="mt-5 text-[15px] text-muted-foreground max-w-[560px] mx-auto">
+            {audience === "startups"
+              ? "Get one robust Investor DD report on your own company — and walk into every conversation already prepared."
+              : "Join the investment teams operating with clarity, speed and conviction on DcernX."}
           </p>
           <div className="mt-10 flex justify-center">
             <Link to="/ai-analysis/try">

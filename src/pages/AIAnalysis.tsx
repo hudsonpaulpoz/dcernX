@@ -72,28 +72,28 @@ export default function AIAnalysis() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Seo
-        title="Agentic Due Diligence for VCs, Accelerators, Angel Syndicates & Venture Studios — Claim-by-Claim, Source-Backed Validation | DcernX"
-        description="DcernX's agentic DD challenges every claim in the pitch and supporting documents — validating or invalidating each with attributable, source-backed research across 12 analysis tracks. Built for VCs, accelerators, angel syndicates, venture studios and startup funds."
+        title="DcernX for Startups — Investor-Readiness AI Due Diligence on Your Pitch Deck, Financials & Story"
+        description="Fundraising founders: upload your pitch deck, financials and supporting documents and DcernX's agentic AI runs a VC-grade due diligence across 12 tracks — strategy, team, technology, market, financials and more — so you walk into investor DD already prepared."
         path="/ai-analysis"
         jsonLd={[
           {
             "@context": "https://schema.org",
             "@type": "Service",
-            name: "DcernX Agentic Due Diligence",
-            serviceType: "AI Due Diligence",
+            name: "DcernX for Startups",
+            serviceType: "AI Investor-Readiness Due Diligence",
             provider: { "@type": "Organization", name: "P101 Limited" },
             audience: {
               "@type": "Audience",
-              audienceType: "Venture capital firms, accelerators, angel syndicates, venture studios, startup funds, family offices, corporate venture",
+              audienceType: "Fundraising startups, founders, pre-seed to growth-stage companies",
             },
-            description: "Twelve structured agentic analyses that challenge every claim in the pitch and startup documents and either validate or invalidate them with attributable, source-backed research.",
+            description: "VC-grade agentic due diligence on your own pitch — surfacing what investors will ask before they ask it.",
           },
           {
             "@context": "https://schema.org",
             "@type": "BreadcrumbList",
             itemListElement: [
               { "@type": "ListItem", position: 1, name: "Home", item: "/" },
-              { "@type": "ListItem", position: 2, name: "Agentic DD", item: "/ai-analysis" },
+              { "@type": "ListItem", position: 2, name: "For Startups", item: "/ai-analysis" },
             ],
           },
         ]}
@@ -105,13 +105,16 @@ export default function AIAnalysis() {
             <StackedLogo size={24} />
           </Link>
           <div className="flex items-center gap-2">
-            <Link to="/" className="hidden sm:inline-flex h-8 px-3 items-center text-[13px] text-foreground/70 hover:text-foreground transition-colors">
-              Home
+            <Link to="/ai-analysis" className="hidden sm:inline-flex h-8 px-3 items-center text-[13px] text-foreground hover:text-foreground transition-colors">
+              For Startups
+            </Link>
+            <Link to="/for-investors" className="hidden sm:inline-flex h-8 px-3 items-center text-[13px] text-foreground/70 hover:text-foreground transition-colors">
+              For Investors
             </Link>
             <MarketingThemeToggle />
             <Link to="/ai-analysis/try">
               <button className="text-[13px] h-8 px-3 border border-foreground/40 text-foreground hover:bg-foreground hover:text-background transition-colors">
-                Try for free
+                Try DcernX
               </button>
             </Link>
           </div>
@@ -122,24 +125,24 @@ export default function AIAnalysis() {
       <section className="px-6 pt-20 pb-16">
         <div className="mx-auto max-w-[1200px]">
           <p className="text-[12px] uppercase tracking-[0.18em] text-muted-foreground mb-5">
-            Agentic due diligence
+            DcernX for Startups
           </p>
-          <h1 className="text-[clamp(2rem,4vw,3.4rem)] font-[500] tracking-[-0.04em] leading-[1.05] text-foreground max-w-[860px]">
-            Every claim challenged. Every verdict sourced. Conviction you can defend.
+          <h1 className="text-[clamp(2rem,4vw,3.4rem)] font-[500] tracking-[-0.04em] leading-[1.05] text-foreground max-w-[900px]">
+            Walk into investor DD already prepared.
           </h1>
-          <p className="mt-6 text-[16px] leading-relaxed text-muted-foreground max-w-[680px]">
-            DcernX's agents read the pitch and supporting documents the way a sceptical partner would — interrogating each claim about market, traction, technology, team and economics, and either validating or invalidating it with attributable, source-backed research. The output is a brief your IC can stand behind.
+          <p className="mt-6 text-[16px] leading-relaxed text-muted-foreground max-w-[720px]">
+            Upload your pitch deck, financials and supporting material. DcernX's advanced AI runs a VC-grade due diligence on your company — analysing investor readiness, conviction, technology, team and business model — and returns the same brief a sceptical partner would write. Fix the gaps before an investor finds them.
           </p>
           <div className="mt-10 flex flex-wrap items-center gap-4">
             <Link to="/ai-analysis/try">
               <button className="group inline-flex items-center gap-2 px-6 py-3 text-[14px] font-medium bg-foreground text-background hover:bg-foreground/90 transition-colors">
-                Try a live analysis
+                Try DcernX
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
               </button>
             </Link>
-            <a href="https://wms.xylor.ai/forms/survey/nn787mfqd1abpvq69e9te4vx598744gp" target="_blank" rel="noopener noreferrer" className="text-[13px] text-foreground/70 hover:text-foreground transition-colors">
-              Request access →
-            </a>
+            <Link to="/for-investors" className="text-[13px] text-foreground/70 hover:text-foreground transition-colors">
+              Are you an investor? →
+            </Link>
           </div>
         </div>
       </section>
@@ -233,15 +236,15 @@ export default function AIAnalysis() {
         <div className="mx-auto max-w-[720px]">
           <FileSearch className="h-6 w-6 mx-auto text-foreground/70" strokeWidth={1.5} />
           <h2 className="mt-6 text-[clamp(1.8rem,3vw,2.5rem)] font-[500] tracking-[-0.035em] text-foreground leading-[1.1]">
-            Put it on a deal you're looking at today.
+            See your pitch the way an investor will.
           </h2>
           <p className="mt-5 text-[15px] text-muted-foreground">
-            Run a free, live agentic DD on any prospective company. Every claim challenged, every verdict sourced. No account required.
+            Run a free, live VC-grade DD on your own company. Every claim challenged, every gap surfaced — so you can tighten the story before you send it.
           </p>
           <div className="mt-10 flex justify-center">
             <Link to="/ai-analysis/try">
               <button className="group inline-flex items-center gap-2.5 px-8 py-3.5 text-[15px] font-medium border border-foreground/40 text-foreground hover:bg-foreground hover:text-background transition-colors">
-                Try for free
+                Try DcernX
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
               </button>
             </Link>
@@ -256,6 +259,8 @@ export default function AIAnalysis() {
             <StackedLogo size={20} />
           </Link>
           <div className="flex items-center gap-5">
+            <Link to="/ai-analysis" className="text-[12px] text-muted-foreground hover:text-foreground">For Startups</Link>
+            <Link to="/for-investors" className="text-[12px] text-muted-foreground hover:text-foreground">For Investors</Link>
             <Link to="/privacy" className="text-[12px] text-muted-foreground hover:text-foreground">Privacy</Link>
             <Link to="/terms" className="text-[12px] text-muted-foreground hover:text-foreground">Terms</Link>
             <Link to="/fair-use" className="text-[12px] text-muted-foreground hover:text-foreground">Fair Use</Link>

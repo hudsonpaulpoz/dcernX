@@ -18,6 +18,7 @@ import NotFound from "./pages/NotFound";
 import { Privacy, Terms, FairUse } from "./pages/Legal";
 import AIAnalysis from "./pages/AIAnalysis";
 import AIAnalysisTry from "./pages/AIAnalysisTry";
+import ForInvestors from "./pages/ForInvestors";
 
 const queryClient = new QueryClient();
 
@@ -43,6 +44,8 @@ const App = () => (
               <Route path="/fair-use" element={<FairUse />} />
               <Route path="/ai-analysis" element={<AIAnalysis />} />
               <Route path="/ai-analysis/try" element={<AIAnalysisTry />} />
+              <Route path="/for-investors" element={<ForInvestors />} />
+              <Route path="/for-startups" element={<AIAnalysis />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </AuthProvider>

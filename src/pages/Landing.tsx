@@ -1,26 +1,32 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Moon, Sun, CheckCircle2, MessageSquareQuote, ShieldCheck, ScanSearch } from "lucide-react";
+import { ArrowRight, Moon, Sun, CheckCircle2, ShieldCheck, ScanSearch } from "lucide-react";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 import { Seo } from "@/components/Seo";
 import { StackedLogo } from "@/components/StackedLogo";
 import { OperatingLayerOrbit } from "@/components/OperatingLayerOrbit";
+import { Logo3D } from "@/components/Logo3D";
 
 const SLATE_HSL = "215 16% 47%";
 const SLATE_DARK = "215 14% 55%";
 
+const LOGO_VARIANT = 1;
+
 const Landing = () => {
   const { theme, setTheme } = useTheme();
   const [audience, setAudience] = useState<"startups" | "investors">("startups");
+  const isDark = theme === "dark";
 
   useEffect(() => {
     const root = document.documentElement;
-    const isDark = theme === "dark";
     root.style.setProperty("--primary", isDark ? SLATE_DARK : SLATE_HSL);
     root.style.setProperty("--ring", isDark ? SLATE_DARK : SLATE_HSL);
     root.style.setProperty("--sidebar-primary", isDark ? SLATE_DARK : SLATE_HSL);
     root.style.setProperty("--sidebar-ring", isDark ? SLATE_DARK : SLATE_HSL);
-  }, [theme]);
+  }, [isDark]);
+
+  const bgHex = isDark ? "#0e0e10" : "#ffffff";
+  const lineHex = isDark ? "#58585e" : "#c0c0c8";
 
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
@@ -51,7 +57,7 @@ const Landing = () => {
               For Investors
             </Link>
             <button
-              onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+              onClick={() => setTheme(isDark ? "light" : "dark")}
               className="h-8 w-8 flex items-center justify-center text-foreground/70 hover:text-foreground transition-colors"
               title="Toggle theme"
             >
@@ -67,7 +73,6 @@ const Landing = () => {
         </div>
       </nav>
 
-      {/* Single-screen audience surface */}
       <main className="pt-[56px]">
         {/* Audience toggle bar */}
         <div className="border-b border-border">
@@ -98,7 +103,11 @@ const Landing = () => {
           </div>
         </div>
 
-        {audience === "startups" ? <StartupsScreen /> : <InvestorsScreen />}
+        {audience === "startups" ? (
+          <StartupsScreen bgHex={bgHex} lineHex={lineHex} />
+        ) : (
+          <InvestorsScreen bgHex={bgHex} lineHex={lineHex} />
+        )}
       </main>
 
       {/* Footer */}
@@ -121,11 +130,20 @@ const Landing = () => {
   );
 };
 
+type VisualProps = { bgHex: string; lineHex: string };
+
+const CubeVisual = ({ bgHex, lineHex }: VisualProps) => (
+  <div className="relative h-[420px] lg:h-[520px] w-full pointer-events-none select-none">
+    <div className="absolute inset-0 flex items-center justify-center">
+      <Logo3D variant={LOGO_VARIANT} size={560} zoom={320} bgHex={bgHex} lineHex={lineHex} />
+    </div>
+  </div>
+);
+
 /* ----------------- STARTUPS SCREEN ----------------- */
-const StartupsScreen = () => (
-  <section className="px-6 py-20 lg:py-28">
+const StartupsScreen = ({ bgHex, lineHex }: VisualProps) => (
+  <section className="px-6 py-20 lg:py-24">
     <div className="mx-auto max-w-[1200px] grid lg:grid-cols-[1.05fr_0.95fr] gap-14 items-center">
-      {/* Copy */}
       <div>
         <p className="text-[12px] uppercase tracking-[0.18em] text-muted-foreground mb-5">
           DcernX for Startups
@@ -163,58 +181,16 @@ const StartupsScreen = () => (
         </div>
       </div>
 
-      {/* Visual — sample DD card */}
-      <div className="relative">
-        <div className="border border-border bg-card/40 p-6">
-          <div className="flex items-center justify-between mb-5">
-            <span className="text-[11px] uppercase tracking-[0.16em] text-muted-foreground">
-              Sample Investor DD — Section 04
-            </span>
-            <span className="text-[11px] text-foreground/60 font-mono">GTM</span>
-          </div>
-
-          <h3 className="text-[16px] font-medium text-foreground leading-[1.4]">
-            "How are you going to acquire your first 1,000 customers?"
-          </h3>
-
-          <div className="mt-5 border-l-2 border-foreground/40 pl-4">
-            <p className="text-[13px] text-muted-foreground leading-[1.65]">
-              Your deck claims founder-led outbound + paid LinkedIn. Benchmarks from 14 comparable seed-stage B2B SaaS companies suggest blended CAC for that motion sits at $480–$720 in your segment — your $310 assumption needs either a sharper channel mix or a clear explanation of the underlying advantage.
-            </p>
-          </div>
-
-          <div className="mt-6 grid grid-cols-3 gap-3">
-            {[
-              { label: "Claims tested", value: "47" },
-              { label: "Validated", value: "31" },
-              { label: "Needs work", value: "16" },
-            ].map((m) => (
-              <div key={m.label} className="border border-border p-3">
-                <div className="text-[20px] font-medium text-foreground tracking-[-0.02em]">{m.value}</div>
-                <div className="text-[10px] uppercase tracking-[0.14em] text-muted-foreground mt-1">{m.label}</div>
-              </div>
-            ))}
-          </div>
-
-          <div className="mt-6 flex items-center gap-2 text-[11px] text-muted-foreground">
-            <MessageSquareQuote className="h-3.5 w-3.5" strokeWidth={1.5} />
-            <span>12 founder-facing sections in every report</span>
-          </div>
-        </div>
-
-        <div className="mt-4 text-[11px] uppercase tracking-[0.16em] text-muted-foreground">
-          Higher conviction. Better meetings. Better outcomes.
-        </div>
-      </div>
+      <CubeVisual bgHex={bgHex} lineHex={lineHex} />
     </div>
   </section>
 );
 
 /* ----------------- INVESTORS SCREEN ----------------- */
-const InvestorsScreen = () => (
-  <section className="px-6 py-20 lg:py-28">
-    <div className="mx-auto max-w-[1200px]">
-      <div className="grid lg:grid-cols-[1fr_0.85fr] gap-14 items-start">
+const InvestorsScreen = ({ bgHex, lineHex }: VisualProps) => (
+  <>
+    <section className="px-6 py-20 lg:py-24">
+      <div className="mx-auto max-w-[1200px] grid lg:grid-cols-[1.05fr_0.95fr] gap-14 items-center">
         <div>
           <p className="text-[12px] uppercase tracking-[0.18em] text-muted-foreground mb-5">
             DcernX for Investors
@@ -252,18 +228,25 @@ const InvestorsScreen = () => (
           </div>
         </div>
 
-        {/* Lifecycle infographic */}
-        <div className="relative">
-          <div className="border border-border bg-card/40 p-6">
-            <p className="text-[11px] uppercase tracking-[0.16em] text-muted-foreground mb-4">
-              The full lifecycle, in one system
-            </p>
-            <OperatingLayerOrbit />
-          </div>
+        <CubeVisual bgHex={bgHex} lineHex={lineHex} />
+      </div>
+    </section>
+
+    {/* Lifecycle infographic band */}
+    <section className="border-t border-border px-6 py-16">
+      <div className="mx-auto max-w-[1200px]">
+        <p className="text-[12px] uppercase tracking-[0.18em] text-muted-foreground mb-3">
+          The full lifecycle, in one system
+        </p>
+        <h2 className="text-[clamp(1.4rem,2.4vw,1.9rem)] font-[500] tracking-[-0.02em] text-foreground max-w-[640px] leading-[1.2]">
+          Intake. Deal flow. Operations. Post-deal. One auditable record per deal.
+        </h2>
+        <div className="mt-10">
+          <OperatingLayerOrbit />
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </>
 );
 
 export default Landing;

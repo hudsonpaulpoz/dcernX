@@ -142,48 +142,122 @@ const CubeVisual = ({ bgHex, lineHex }: VisualProps) => (
 
 /* ----------------- STARTUPS SCREEN ----------------- */
 const StartupsScreen = ({ bgHex, lineHex }: VisualProps) => (
-  <section className="px-6 py-20 lg:py-24">
-    <div className="mx-auto max-w-[1200px] grid md:grid-cols-[1.05fr_0.95fr] gap-10 lg:gap-14 items-center">
-      <div>
-        <p className="text-[12px] uppercase tracking-[0.18em] text-muted-foreground mb-5">
-          DcernX for Startups
-        </p>
-        <h1 className="text-[clamp(2.2rem,4.2vw,3.6rem)] font-[500] leading-[1.04] tracking-[-0.04em] text-foreground">
-          Walk into every investor meeting with higher conviction.
-        </h1>
-        <p className="mt-6 text-[16px] leading-[1.65] text-muted-foreground max-w-[540px]">
-          Investor intros are expensive. DcernX runs an Investor-grade DD on your own pitch, financials and marketing — so every meeting builds trust, answers the hard questions before they're asked, and tilts the odds toward a successful outcome.
-        </p>
+  <>
+    <section className="px-6 py-20 lg:py-24">
+      <div className="mx-auto max-w-[1200px] grid md:grid-cols-[1.05fr_0.95fr] gap-10 lg:gap-14 items-center">
+        <div>
+          <p className="text-[12px] uppercase tracking-[0.18em] text-muted-foreground mb-5">
+            DcernX for Startups
+          </p>
+          <h1 className="text-[clamp(2.2rem,4.2vw,3.6rem)] font-[500] leading-[1.04] tracking-[-0.04em] text-foreground">
+            Walk into every investor meeting with higher conviction.
+          </h1>
+          <p className="mt-6 text-[16px] leading-[1.65] text-muted-foreground max-w-[540px]">
+            Investor intros are expensive. DcernX runs an Investor-grade DD on your own pitch, financials and marketing — so every meeting builds trust, answers the hard questions before they're asked, and tilts the odds toward a successful outcome.
+          </p>
 
-        <ul className="mt-8 space-y-3">
+          <ul className="mt-8 space-y-3">
+            {[
+              "One robust report on your own company, in under 90 minutes",
+              "Every claim in your deck stress-tested against public evidence",
+              "The exact questions investors will ask — with answers ready",
+            ].map((line) => (
+              <li key={line} className="flex items-start gap-3 text-[14px] text-foreground/85">
+                <CheckCircle2 className="h-4 w-4 mt-[3px] text-foreground/60 shrink-0" strokeWidth={1.5} />
+                <span>{line}</span>
+              </li>
+            ))}
+          </ul>
+
+          <div className="mt-10 flex flex-wrap items-center gap-4">
+            <Link to="/ai-analysis/try">
+              <button className="group inline-flex items-center gap-2 px-6 py-3 text-[14px] font-medium bg-foreground text-background hover:bg-foreground/90 transition-colors">
+                Get my Investor DD report
+                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+              </button>
+            </Link>
+            <Link to="/ai-analysis" className="text-[13px] text-foreground/70 hover:text-foreground transition-colors">
+              See what's in the report →
+            </Link>
+          </div>
+        </div>
+
+        <CubeVisual bgHex={bgHex} lineHex={lineHex} />
+      </div>
+    </section>
+
+    {/* What's in the report */}
+    <section className="border-t border-border px-6 py-16 lg:py-20">
+      <div className="mx-auto max-w-[1200px]">
+        <p className="text-[12px] uppercase tracking-[0.18em] text-muted-foreground mb-3">
+          What's in your report
+        </p>
+        <h2 className="text-[clamp(1.5rem,2.6vw,2.1rem)] font-[500] tracking-[-0.02em] text-foreground max-w-[720px] leading-[1.18]">
+          The same diligence an investor would run on you — delivered to you first.
+        </h2>
+        <div className="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-border border border-border">
           {[
-            "One robust report on your own company, in under 90 minutes",
-            "Every claim in your deck stress-tested against public evidence",
-            "The exact questions investors will ask — with answers ready",
-          ].map((line) => (
-            <li key={line} className="flex items-start gap-3 text-[14px] text-foreground/85">
-              <CheckCircle2 className="h-4 w-4 mt-[3px] text-foreground/60 shrink-0" strokeWidth={1.5} />
-              <span>{line}</span>
-            </li>
+            { t: "Pitch & Narrative", d: "Story arc, positioning, proof points and the gaps a partner will press on." },
+            { t: "Financial Stress-test", d: "Unit economics, model assumptions and the numbers that don't yet hold up." },
+            { t: "Market & Competition", d: "TAM logic, competitor depth and the framing that survives scrutiny." },
+            { t: "Traction & Evidence", d: "Every claim cross-checked against public signals and third-party data." },
+            { t: "Founder & Team", d: "Operating history, gaps in the cap table and the questions partners will raise." },
+            { t: "Investor Q&A Pack", d: "The 30 questions you'll be asked — with sourced, defensible answers." },
+          ].map(({ t, d }) => (
+            <div key={t} className="bg-background p-6">
+              <div className="text-[13px] font-[500] text-foreground">{t}</div>
+              <p className="mt-2 text-[13px] leading-[1.6] text-muted-foreground">{d}</p>
+            </div>
           ))}
-        </ul>
-
-        <div className="mt-10 flex flex-wrap items-center gap-4">
-          <Link to="/ai-analysis/try">
-            <button className="group inline-flex items-center gap-2 px-6 py-3 text-[14px] font-medium bg-foreground text-background hover:bg-foreground/90 transition-colors">
-              Get my Investor DD report
-              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
-            </button>
-          </Link>
-          <Link to="/ai-analysis" className="text-[13px] text-foreground/70 hover:text-foreground transition-colors">
-            See what's in the report →
-          </Link>
         </div>
       </div>
+    </section>
 
-      <CubeVisual bgHex={bgHex} lineHex={lineHex} />
-    </div>
-  </section>
+    {/* How it works */}
+    <section className="border-t border-border px-6 py-16 lg:py-20">
+      <div className="mx-auto max-w-[1200px]">
+        <p className="text-[12px] uppercase tracking-[0.18em] text-muted-foreground mb-3">
+          How it works
+        </p>
+        <h2 className="text-[clamp(1.5rem,2.6vw,2.1rem)] font-[500] tracking-[-0.02em] text-foreground max-w-[720px] leading-[1.18]">
+          From deck upload to investor-ready, in under 90 minutes.
+        </h2>
+        <ol className="mt-10 grid md:grid-cols-3 gap-6">
+          {[
+            { n: "01", t: "Upload your pitch", d: "Deck, model and any supporting materials. Nothing leaves your workspace." },
+            { n: "02", t: "Agentic DD runs", d: "DcernX evaluates pitch, financials, market and team — at investor depth." },
+            { n: "03", t: "Get your report", d: "A robust DD report plus an investor Q&A pack you can rehearse against." },
+          ].map(({ n, t, d }) => (
+            <li key={n} className="border border-border p-6">
+              <div className="text-[12px] tracking-[0.18em] text-muted-foreground">{n}</div>
+              <div className="mt-3 text-[15px] font-[500] text-foreground">{t}</div>
+              <p className="mt-2 text-[13px] leading-[1.6] text-muted-foreground">{d}</p>
+            </li>
+          ))}
+        </ol>
+      </div>
+    </section>
+
+    {/* Closing CTA */}
+    <section className="border-t border-border px-6 py-16 lg:py-20">
+      <div className="mx-auto max-w-[1200px] flex flex-col md:flex-row items-start md:items-end justify-between gap-8">
+        <div>
+          <h2 className="text-[clamp(1.6rem,2.8vw,2.2rem)] font-[500] tracking-[-0.02em] text-foreground max-w-[640px] leading-[1.15]">
+            Stop walking into investor meetings cold.
+          </h2>
+          <p className="mt-4 text-[15px] leading-[1.6] text-muted-foreground max-w-[560px]">
+            One report. Every weak point surfaced. Every answer prepared.
+          </p>
+        </div>
+        <Link to="/ai-analysis/try">
+          <button className="group inline-flex items-center gap-2 px-6 py-3 text-[14px] font-medium bg-foreground text-background hover:bg-foreground/90 transition-colors">
+            Get my Investor DD report
+            <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+          </button>
+        </Link>
+      </div>
+    </section>
+  </>
 );
 
 /* ----------------- INVESTORS SCREEN ----------------- */
@@ -232,18 +306,65 @@ const InvestorsScreen = ({ bgHex, lineHex }: VisualProps) => (
       </div>
     </section>
 
+    {/* Capabilities */}
+    <section className="border-t border-border px-6 py-16 lg:py-20">
+      <div className="mx-auto max-w-[1200px]">
+        <p className="text-[12px] uppercase tracking-[0.18em] text-muted-foreground mb-3">
+          Built for investment teams
+        </p>
+        <h2 className="text-[clamp(1.5rem,2.6vw,2.1rem)] font-[500] tracking-[-0.02em] text-foreground max-w-[720px] leading-[1.18]">
+          Augment your partners. Never throttle your funnel.
+        </h2>
+        <div className="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-border border border-border">
+          {[
+            { t: "Agentic intake", d: "Every application normalised, scored and triaged — within minutes of submission." },
+            { t: "Diligence at volume", d: "Hundreds of DDs run in parallel against a consistent investor-grade rubric." },
+            { t: "Evidence-led scoring", d: "Every score backed by sourced evidence — auditable, not a black box." },
+            { t: "Deal flow management", d: "Pipeline stages, IC packs and partner notes on one auditable record per deal." },
+            { t: "Post-deal tracking", d: "KPIs, board updates and portfolio health monitored after the wire clears." },
+            { t: "Team workspace", d: "Roles, comments and assignments — built for how investment teams actually work." },
+          ].map(({ t, d }) => (
+            <div key={t} className="bg-background p-6">
+              <div className="text-[13px] font-[500] text-foreground">{t}</div>
+              <p className="mt-2 text-[13px] leading-[1.6] text-muted-foreground">{d}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
     {/* Lifecycle infographic band */}
-    <section className="border-t border-border px-6 py-16">
+    <section className="border-t border-border px-6 py-16 lg:py-20">
       <div className="mx-auto max-w-[1200px]">
         <p className="text-[12px] uppercase tracking-[0.18em] text-muted-foreground mb-3">
           The full lifecycle, in one system
         </p>
-        <h2 className="text-[clamp(1.4rem,2.4vw,1.9rem)] font-[500] tracking-[-0.02em] text-foreground max-w-[640px] leading-[1.2]">
+        <h2 className="text-[clamp(1.5rem,2.6vw,2.1rem)] font-[500] tracking-[-0.02em] text-foreground max-w-[720px] leading-[1.18]">
           Intake. Deal flow. Operations. Post-deal. One auditable record per deal.
         </h2>
         <div className="mt-10">
           <OperatingLayerOrbit />
         </div>
+      </div>
+    </section>
+
+    {/* Closing CTA */}
+    <section className="border-t border-border px-6 py-16 lg:py-20">
+      <div className="mx-auto max-w-[1200px] flex flex-col md:flex-row items-start md:items-end justify-between gap-8">
+        <div>
+          <h2 className="text-[clamp(1.6rem,2.8vw,2.2rem)] font-[500] tracking-[-0.02em] text-foreground max-w-[640px] leading-[1.15]">
+            Review every intake. Back the right ones.
+          </h2>
+          <p className="mt-4 text-[15px] leading-[1.6] text-muted-foreground max-w-[560px]">
+            See how DcernX runs DD across your full funnel and keeps the lifecycle in one place.
+          </p>
+        </div>
+        <Link to="/for-investors">
+          <button className="group inline-flex items-center gap-2 px-6 py-3 text-[14px] font-medium bg-foreground text-background hover:bg-foreground/90 transition-colors">
+            See the platform
+            <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+          </button>
+        </Link>
       </div>
     </section>
   </>

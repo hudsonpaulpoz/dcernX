@@ -22,6 +22,7 @@ const CUBE_OFFSET_Y = -80;
 
 const Landing = () => {
   const { theme, setTheme } = useTheme();
+  const [audience, setAudience] = useState<"startups" | "investors">("startups");
   const [cubeZoom, setCubeZoom] = useState(() => {
     const w = window.innerWidth;
     return w < 1024 ? 270 : 360;
@@ -78,7 +79,13 @@ const Landing = () => {
               to="/ai-analysis"
               className="hidden sm:inline-flex h-8 px-3 items-center text-[13px] text-foreground/70 hover:text-foreground transition-colors"
             >
-              Agentic DD
+              For Startups
+            </Link>
+            <Link
+              to="/for-investors"
+              className="hidden sm:inline-flex h-8 px-3 items-center text-[13px] text-foreground/70 hover:text-foreground transition-colors"
+            >
+              For Investors
             </Link>
             <button
               onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
@@ -88,11 +95,11 @@ const Landing = () => {
               <Sun className="h-4 w-4 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
               <Moon className="absolute h-4 w-4 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
             </button>
-            <a href="https://wms.xylor.ai/forms/survey/nn787mfqd1abpvq69e9te4vx598744gp" target="_blank" rel="noopener noreferrer">
+            <Link to="/ai-analysis/try">
               <button className="text-[13px] h-8 px-3 border border-foreground/40 text-foreground hover:bg-foreground hover:text-background transition-colors">
-                Go on the waitlist
+                Try DcernX
               </button>
-            </a>
+            </Link>
           </div>
         </div>
       </nav>
@@ -103,26 +110,54 @@ const Landing = () => {
           {/* Two-column hero: text left, cube right */}
           <div className="pt-[52px] pb-16 relative flex">
             {/* Left column — text */}
-            <div className="relative z-[3] flex-1 min-w-0 max-w-[540px]">
+            <div className="relative z-[3] flex-1 min-w-0 max-w-[600px]">
+              {/* Audience toggle */}
+              <div className="inline-flex border border-border mb-6" role="tablist" aria-label="Choose your audience">
+                <button
+                  type="button"
+                  role="tab"
+                  aria-selected={audience === "startups"}
+                  onClick={() => setAudience("startups")}
+                  className={`px-4 h-9 text-[12px] uppercase tracking-[0.14em] transition-colors ${audience === "startups" ? "bg-foreground text-background" : "text-foreground/70 hover:text-foreground"}`}
+                >
+                  For Startups
+                </button>
+                <button
+                  type="button"
+                  role="tab"
+                  aria-selected={audience === "investors"}
+                  onClick={() => setAudience("investors")}
+                  className={`px-4 h-9 text-[12px] uppercase tracking-[0.14em] border-l border-border transition-colors ${audience === "investors" ? "bg-foreground text-background" : "text-foreground/70 hover:text-foreground"}`}
+                >
+                  For Investors
+                </button>
+              </div>
+
               <p className="text-[12px] uppercase tracking-[0.18em] text-muted-foreground mb-5">
-                The operating system for private investment teams
+                {audience === "startups"
+                  ? "AI investor-readiness for fundraising founders"
+                  : "The operating system for private investment teams"}
               </p>
-              <h1 className="text-[clamp(2rem,4vw,3.2rem)] font-[500] leading-[1.08] tracking-[-0.04em] text-foreground max-w-[540px]">
-                Run every deal with clarity and conviction.
+              <h1 className="text-[clamp(2rem,4vw,3.2rem)] font-[500] leading-[1.08] tracking-[-0.04em] text-foreground max-w-[560px]">
+                {audience === "startups"
+                  ? "Walk into investor DD already prepared."
+                  : "Run every deal with clarity and conviction."}
               </h1>
-              <p className="mt-6 text-base leading-relaxed text-muted-foreground max-w-[480px]">
-                DcernX brings sourcing, diligence, expert review, communications and decision records into a single, structured workspace — so partners spend less time reconstructing context, and more time making sharper calls.
+              <p className="mt-6 text-base leading-relaxed text-muted-foreground max-w-[500px]">
+                {audience === "startups"
+                  ? "Upload your pitch deck, financials and supporting material. DcernX runs a VC-grade AI due diligence on your company — investor readiness, conviction, technology, team and business model — so you fix the gaps before an investor finds them."
+                  : "Analyse hundreds of applications instantly, score every deal against your internal metrics, and run the full investment lifecycle — sourcing, DD, IC, communications and LP reporting — inside one integrated system with CRM, email, calling, chat and dedicated portals."}
               </p>
               <div className="mt-10 flex items-center gap-4">
-                <a href="https://wms.xylor.ai/forms/survey/nn787mfqd1abpvq69e9te4vx598744gp" target="_blank" rel="noopener noreferrer">
+                <Link to="/ai-analysis/try">
                   <button className="group relative inline-flex items-center gap-2 px-6 py-3 text-[14px] font-medium bg-foreground text-background transition-all duration-200 hover:bg-foreground/90">
-                    Request access
+                    Try DcernX
                     <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
                   </button>
-                </a>
-                <Link to="/ai-analysis/try">
+                </Link>
+                <Link to={audience === "startups" ? "/ai-analysis" : "/for-investors"}>
                   <button className="group relative inline-flex items-center gap-2 px-6 py-3 text-[14px] font-medium border border-foreground/40 text-foreground hover:bg-foreground hover:text-background transition-colors">
-                    Try a live analysis
+                    {audience === "startups" ? "How it works" : "See the platform"}
                     <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
                   </button>
                 </Link>
@@ -449,6 +484,12 @@ const Landing = () => {
             <StackedLogo size={20} />
           </Link>
           <div className="flex items-center gap-5">
+            <Link to="/ai-analysis" className="text-[12px] text-muted-foreground hover:text-foreground transition-colors">
+              For Startups
+            </Link>
+            <Link to="/for-investors" className="text-[12px] text-muted-foreground hover:text-foreground transition-colors">
+              For Investors
+            </Link>
             <Link to="/privacy" className="text-[12px] text-muted-foreground hover:text-foreground transition-colors">
               Privacy
             </Link>

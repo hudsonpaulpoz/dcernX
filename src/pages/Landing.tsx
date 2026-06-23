@@ -30,8 +30,8 @@ const Landing = () => {
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
       <Seo
-        title="DcernX — AI for Fundraising Founders & Private Investment Teams"
-        description="Two products, one operating system. DcernX for Startups gives founders an Investor DD report on their own pitch so every meeting builds conviction. DcernX for Investors runs high-volume agentic DD and manages the full lifecycle from intake to post-deal tracking."
+        title="DcernX — Investor Due Diligence for Founders Raising Capital & Early-Stage Investors"
+        description="DcernX runs agentic investor due diligence for founders raising pre-seed, seed and Series A capital, and for early-stage investors evaluating pre-revenue startups. One report. Seven dimensions. Minutes, not weeks."
         path="/"
         jsonLd={{
           "@context": "https://schema.org",

@@ -30,8 +30,8 @@ const Landing = () => {
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
       <Seo
-        title="DcernX — AI for Fundraising Founders & Private Investment Teams"
-        description="Two products, one operating system. DcernX for Startups gives founders an Investor DD report on their own pitch so every meeting builds conviction. DcernX for Investors runs high-volume agentic DD and manages the full lifecycle from intake to post-deal tracking."
+        title="DcernX — Investor Due Diligence for Founders Raising Capital & Early-Stage Investors"
+        description="DcernX runs agentic investor due diligence for founders raising pre-seed, seed and Series A capital, and for early-stage investors evaluating pre-revenue startups. One report. Seven dimensions. Minutes, not weeks."
         path="/"
         jsonLd={{
           "@context": "https://schema.org",
@@ -73,34 +73,40 @@ const Landing = () => {
       </nav>
 
       <main className="pt-[56px]">
-        {/* Audience toggle bar */}
+        {/* Audience toggle bar — sliding pill */}
         <div className="border-b border-border">
-          <div className="mx-auto max-w-[1200px] px-6 py-5 flex items-center justify-between gap-4">
-            <p className="text-[12px] uppercase tracking-[0.18em] text-muted-foreground">
-              Two products. Pick yours.
+          <div className="mx-auto max-w-[1200px] px-6 py-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+            <p className="text-[13px] text-foreground/80">
+              I'm raising capital <span className="text-muted-foreground">·</span> I'm backing founders — <span className="text-muted-foreground">choose your view</span>
             </p>
-            <div className="inline-flex border border-border" role="tablist" aria-label="Choose your audience">
-              <button
-                type="button"
-                role="tab"
-                aria-selected={audience === "startups"}
-                onClick={() => setAudience("startups")}
-                className={`px-5 h-9 text-[12px] uppercase tracking-[0.14em] transition-colors ${audience === "startups" ? "bg-foreground text-background" : "text-foreground/70 hover:text-foreground"}`}
-              >
-                For Startups
-              </button>
-              <button
-                type="button"
-                role="tab"
-                aria-selected={audience === "investors"}
-                onClick={() => setAudience("investors")}
-                className={`px-5 h-9 text-[12px] uppercase tracking-[0.14em] border-l border-border transition-colors ${audience === "investors" ? "bg-foreground text-background" : "text-foreground/70 hover:text-foreground"}`}
-              >
-                For Investors
-              </button>
+            <div
+              role="tablist"
+              aria-label="Choose your view"
+              className="relative inline-flex p-1 bg-foreground/[0.06] dark:bg-foreground/[0.08] border border-border rounded-full select-none"
+            >
+              <span
+                aria-hidden
+                className="absolute top-1 bottom-1 left-1 w-[calc(50%-4px)] rounded-full bg-foreground transition-transform duration-300 ease-out"
+                style={{ transform: audience === "investors" ? "translateX(100%)" : "translateX(0)" }}
+              />
+              {(["startups", "investors"] as const).map((key) => (
+                <button
+                  key={key}
+                  type="button"
+                  role="tab"
+                  aria-selected={audience === key}
+                  onClick={() => setAudience(key)}
+                  className={`relative z-10 px-5 sm:px-6 h-9 text-[13px] font-[500] rounded-full transition-colors ${
+                    audience === key ? "text-background" : "text-foreground/70 hover:text-foreground"
+                  }`}
+                >
+                  {key === "startups" ? "Founders raising" : "Investors backing"}
+                </button>
+              ))}
             </div>
           </div>
         </div>
+
 
         {audience === "startups" ? (
           <StartupsScreen bgHex={bgHex} lineHex={lineHex} />
@@ -139,33 +145,157 @@ const CubeVisual = ({ bgHex, lineHex }: VisualProps) => (
   </div>
 );
 
-/* Seven research dimensions — shared vocabulary across both audiences */
+/* Seven research dimensions — shown inside a report-template mockup.
+   Copy is outcome-led: what the reader will know after reading the section. */
 const DIMENSIONS = [
-  { icon: Target, t: "The Opportunity", d: "Problem worth solving, demand depth, customer pain quantified from primary and secondary signals." },
-  { icon: Compass, t: "The Landscape", d: "Where the market sits today, where it's heading, and the structural shifts moving it." },
-  { icon: Radar, t: "Market Signals", d: "Demand indicators, search trends, hiring patterns and capital flow — read in minutes, not weeks." },
-  { icon: Shield, t: "Risks & Entry Barriers", d: "Execution, technology, capital and timing risks — surfaced before they bite." },
-  { icon: Swords, t: "Competition", d: "Direct and adjacent players, moats, gaps and the wedge that actually wins." },
-  { icon: Gavel, t: "Regulatory", d: "Jurisdictional requirements, compliance load and policy direction across target markets." },
-  { icon: TrendingUp, t: "Trends", d: "Technology, behaviour and category trends — separated from noise, weighted for relevance." },
+  {
+    icon: Target,
+    t: "The Opportunity",
+    investor: "Whether the problem is big enough, urgent enough, and growing fast enough to back today.",
+    startup: "Whether the problem you've picked is one investors are actively writing cheques against.",
+    score: 82, signal: "Strong", sources: 12,
+  },
+  {
+    icon: Compass,
+    t: "The Landscape",
+    investor: "Where the market is heading next, and whether this founder is moving with the shift or against it.",
+    startup: "How your category will be framed in an IC memo — and where your story slots in.",
+    score: 71, signal: "Mixed", sources: 9,
+  },
+  {
+    icon: Radar,
+    t: "Market Signals",
+    investor: "Real-time demand, hiring, search and capital signals that confirm — or quietly contradict — the pitch.",
+    startup: "The live signals an investor will pull up next to your deck. We show them to you first.",
+    score: 78, signal: "Strong", sources: 14,
+  },
+  {
+    icon: Shield,
+    t: "Risks & Entry Barriers",
+    investor: "The execution, capital and timing risks that derail this kind of company at this stage.",
+    startup: "Every concern an investor will privately note — surfaced so you can address them out loud.",
+    score: 58, signal: "Watch", sources: 7,
+  },
+  {
+    icon: Swords,
+    t: "Competition",
+    investor: "Who else is moving in this space, where the moats actually sit, and what the wedge needs to be.",
+    startup: "How your competitive framing holds up under pressure — and the gap that's genuinely yours.",
+    score: 64, signal: "Mixed", sources: 11,
+  },
+  {
+    icon: Gavel,
+    t: "Regulatory",
+    investor: "Jurisdictional load, policy direction and the compliance debt that could slow growth post-investment.",
+    startup: "The regulatory questions that come up in IC — and the answers that keep the cheque on the table.",
+    score: 80, signal: "Strong", sources: 6,
+  },
+  {
+    icon: TrendingUp,
+    t: "Trends",
+    investor: "The behavioural and technology trends that make this bet timely — separated from category noise.",
+    startup: "The tailwinds investors believe in right now, mapped to how you should be telling your story.",
+    score: 84, signal: "Strong", sources: 8,
+  },
 ];
 
-const DimensionsGrid = () => (
-  <div className="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-border border border-border">
-    {DIMENSIONS.map(({ icon: Icon, t, d }) => (
-      <div key={t} className="bg-background p-6">
-        <Icon className="h-4 w-4 text-foreground/60 mb-3" strokeWidth={1.5} />
-        <div className="text-[13px] font-[500] text-foreground">{t}</div>
-        <p className="mt-2 text-[13px] leading-[1.6] text-muted-foreground">{d}</p>
+const SIGNAL_STYLES: Record<string, string> = {
+  Strong: "border-foreground/40 text-foreground",
+  Mixed: "border-foreground/25 text-foreground/70",
+  Watch: "border-foreground/25 text-foreground/70",
+};
+
+const ReportPreview = ({ audience }: { audience: "startups" | "investors" }) => {
+  const overall = 74;
+  const isInvestor = audience === "investors";
+  const subjectLabel = isInvestor ? "Subject" : "Subject";
+  const subjectValue = isInvestor ? "Lumen Health Inc." : "Your Company";
+  const stage = isInvestor ? "Pre-Seed · Pre-Revenue" : "Pre-Seed · Raising $1.2M";
+  const docTitle = isInvestor ? "Applicant Due Diligence Brief" : "Pre-Investor DD Report";
+
+  return (
+    <div className="mt-10 border border-border bg-background shadow-[0_1px_0_rgba(0,0,0,0.02),0_24px_60px_-30px_rgba(0,0,0,0.18)]">
+      {/* Top bar — like a document chrome */}
+      <div className="flex items-center justify-between border-b border-border px-5 py-3">
+        <div className="flex items-center gap-3">
+          <div className="flex gap-1">
+            <span className="h-2 w-2 rounded-full bg-foreground/20" />
+            <span className="h-2 w-2 rounded-full bg-foreground/20" />
+            <span className="h-2 w-2 rounded-full bg-foreground/20" />
+          </div>
+          <span className="text-[11px] tracking-[0.14em] uppercase text-muted-foreground">
+            DcernX · {docTitle}
+          </span>
+        </div>
+        <span className="hidden sm:inline text-[11px] text-muted-foreground tabular-nums">
+          Generated 23 Jun 2026 · 8 min 14 sec
+        </span>
       </div>
-    ))}
-    <div className="bg-background p-6 flex items-center">
-      <p className="text-[13px] leading-[1.6] text-foreground/80">
-        Seven dimensions. One agentic pass. Evidence-led, source-cited, defensible.
-      </p>
+
+      {/* Cover header */}
+      <div className="grid sm:grid-cols-[1fr_auto] gap-6 px-6 sm:px-8 py-7 border-b border-border">
+        <div>
+          <div className="text-[11px] uppercase tracking-[0.18em] text-muted-foreground">{subjectLabel}</div>
+          <div className="mt-1 text-[20px] font-[500] text-foreground tracking-[-0.01em]">{subjectValue}</div>
+          <div className="mt-2 flex flex-wrap items-center gap-2 text-[11px]">
+            <span className="border border-border px-2 py-[3px] text-foreground/70">{stage}</span>
+            <span className="border border-border px-2 py-[3px] text-foreground/70">7 dimensions</span>
+            <span className="border border-border px-2 py-[3px] text-foreground/70">47 sources</span>
+          </div>
+        </div>
+        <div className="sm:min-w-[220px]">
+          <div className="flex items-center justify-between text-[11px] uppercase tracking-[0.16em] text-muted-foreground mb-2">
+            <span>Conviction Score</span>
+            <span className="text-foreground tabular-nums">{overall}/100</span>
+          </div>
+          <div className="h-[6px] w-full bg-border">
+            <div className="h-full bg-foreground" style={{ width: `${overall}%` }} />
+          </div>
+          <p className="mt-2 text-[11px] text-muted-foreground">
+            {isInvestor ? "Worth a partner meeting. Two flags to probe." : "Two areas to tighten before your next intro."}
+          </p>
+        </div>
+      </div>
+
+      {/* Section rows */}
+      <ol className="divide-y divide-border">
+        {DIMENSIONS.map((row, i) => (
+          <li key={row.t} className="grid grid-cols-[28px_1fr_auto] items-start gap-4 px-6 sm:px-8 py-4">
+            <div className="text-[11px] tabular-nums text-muted-foreground pt-[3px]">
+              {String(i + 1).padStart(2, "0")}
+            </div>
+            <div>
+              <div className="flex items-center gap-2">
+                <row.icon className="h-3.5 w-3.5 text-foreground/60" strokeWidth={1.5} />
+                <span className="text-[13px] font-[500] text-foreground">{row.t}</span>
+              </div>
+              <p className="mt-1 text-[12.5px] leading-[1.55] text-muted-foreground max-w-[560px]">
+                {isInvestor ? row.investor : row.startup}
+              </p>
+            </div>
+            <div className="flex flex-col items-end gap-1.5 pt-[2px]">
+              <span className={`text-[10px] uppercase tracking-[0.14em] border px-2 py-[2px] ${SIGNAL_STYLES[row.signal]}`}>
+                {row.signal} · {row.score}
+              </span>
+              <span className="text-[10.5px] text-muted-foreground tabular-nums">{row.sources} sources</span>
+            </div>
+          </li>
+        ))}
+      </ol>
+
+      {/* Footer */}
+      <div className="flex flex-wrap items-center justify-between gap-3 border-t border-border px-6 sm:px-8 py-4 bg-foreground/[0.02]">
+        <span className="text-[11px] text-muted-foreground">
+          Every claim source-cited · Exportable to PDF, Notion, IC memo
+        </span>
+        <span className="text-[11px] text-foreground/70">
+          {isInvestor ? "Partner-ready in minutes" : "Investor-ready before your next intro"}
+        </span>
+      </div>
     </div>
-  </div>
-);
+  );
+};
+
 
 /* ----------------- STARTUPS SCREEN ----------------- */
 const StartupsScreen = ({ bgHex, lineHex }: VisualProps) => (
@@ -174,13 +304,13 @@ const StartupsScreen = ({ bgHex, lineHex }: VisualProps) => (
       <div className="mx-auto max-w-[1200px] grid md:grid-cols-[1.05fr_0.95fr] gap-10 lg:gap-14 items-center">
         <div>
           <p className="text-[12px] uppercase tracking-[0.18em] text-muted-foreground mb-5">
-            DcernX for Startups
+            DcernX for founders raising capital
           </p>
           <h1 className="text-[clamp(2.2rem,4.2vw,3.6rem)] font-[500] leading-[1.04] tracking-[-0.04em] text-foreground">
-            Pass investor DD before you ever meet one.
+            Pass investor due diligence before your first pitch meeting.
           </h1>
           <p className="mt-6 text-[16px] leading-[1.65] text-muted-foreground max-w-[560px]">
-            DcernX runs the same agentic due diligence an investor would — on your opportunity, landscape, market signals, risks, regulatory exposure, trends and competition. You see exactly what they'll see, fix what doesn't hold up, and walk in with a confidence score that compounds with every meeting.
+            DcernX runs the same agentic due diligence a pre-seed, seed or Series A investor would — on your opportunity, market signals, competition, risks, regulatory load and traction. Founders raising capital see exactly what the IC will see, fix what doesn't hold up, and walk into every pitch with a conviction score that compounds across meetings.
           </p>
 
           <div className="mt-10 flex flex-wrap items-center gap-4">
@@ -191,7 +321,7 @@ const StartupsScreen = ({ bgHex, lineHex }: VisualProps) => (
               </button>
             </Link>
             <Link to="/ai-analysis" className="text-[13px] text-foreground/70 hover:text-foreground transition-colors">
-              See how it works →
+              See a sample report →
             </Link>
           </div>
         </div>
@@ -200,18 +330,22 @@ const StartupsScreen = ({ bgHex, lineHex }: VisualProps) => (
       </div>
     </section>
 
-    {/* Dimensions tested */}
+    {/* Report preview */}
     <section className="border-t border-border px-6 py-16 lg:py-20">
       <div className="mx-auto max-w-[1200px]">
         <p className="text-[12px] uppercase tracking-[0.18em] text-muted-foreground mb-3">
-          What we test, the way investors test it
+          The report you'll get back
         </p>
-        <h2 className="text-[clamp(1.5rem,2.6vw,2.1rem)] font-[500] tracking-[-0.02em] text-foreground max-w-[760px] leading-[1.18]">
-          Your business, stress-tested against the seven dimensions every investor will probe.
+        <h2 className="text-[clamp(1.5rem,2.6vw,2.1rem)] font-[500] tracking-[-0.02em] text-foreground max-w-[780px] leading-[1.18]">
+          A full investor-grade DD on your own startup — so you know what they'll say before they say it.
         </h2>
-        <DimensionsGrid />
+        <p className="mt-4 text-[15px] leading-[1.6] text-muted-foreground max-w-[640px]">
+          One document. Seven dimensions investors actually score on. Every weak spot called out, every claim cited — ready to rehearse against before your next intro.
+        </p>
+        <ReportPreview audience="startups" />
       </div>
     </section>
+
 
     {/* Outcome — confidence score */}
     <section className="border-t border-border px-6 py-16 lg:py-20">
@@ -307,13 +441,13 @@ const InvestorsScreen = ({ bgHex, lineHex }: VisualProps) => (
       <div className="mx-auto max-w-[1200px] grid md:grid-cols-[1.05fr_0.95fr] gap-10 lg:gap-14 items-center">
         <div>
           <p className="text-[12px] uppercase tracking-[0.18em] text-muted-foreground mb-5">
-            DcernX for Investors
+            DcernX for early-stage investors
           </p>
           <h1 className="text-[clamp(2.2rem,4.2vw,3.6rem)] font-[500] leading-[1.04] tracking-[-0.04em] text-foreground">
-            Deep market research, on every applicant, in minutes.
+            Deep due diligence on every early-stage and pre-revenue startup — in minutes.
           </h1>
           <p className="mt-6 text-[16px] leading-[1.65] text-muted-foreground max-w-[560px]">
-            DcernX runs agentic due diligence calibrated to applicant stage — the product, the opportunity, the landscape, market signals, risks, entry barriers, competition and regulatory load. Your team starts every conversation with research-backed evidence, not a blank page.
+            DcernX runs agentic due diligence calibrated to applicant stage — pre-seed, seed, Series A — across the product, opportunity, market signals, competition, risks, entry barriers and regulatory load. Your investment team starts every founder conversation with research-backed evidence, not a blank page or a rushed first read.
           </p>
 
           <div className="mt-10 flex flex-wrap items-center gap-4">
@@ -324,7 +458,7 @@ const InvestorsScreen = ({ bgHex, lineHex }: VisualProps) => (
               </button>
             </Link>
             <Link to="/for-investors" className="text-[13px] text-foreground/70 hover:text-foreground transition-colors">
-              See the platform →
+              See a sample brief →
             </Link>
           </div>
         </div>
@@ -333,18 +467,22 @@ const InvestorsScreen = ({ bgHex, lineHex }: VisualProps) => (
       </div>
     </section>
 
-    {/* Dimensions evaluated */}
+    {/* Report preview */}
     <section className="border-t border-border px-6 py-16 lg:py-20">
       <div className="mx-auto max-w-[1200px]">
         <p className="text-[12px] uppercase tracking-[0.18em] text-muted-foreground mb-3">
-          What every DD covers
+          The brief your partners will read
         </p>
-        <h2 className="text-[clamp(1.5rem,2.6vw,2.1rem)] font-[500] tracking-[-0.02em] text-foreground max-w-[760px] leading-[1.18]">
-          Seven dimensions. Calibrated to stage. Source-cited, audit-ready.
+        <h2 className="text-[clamp(1.5rem,2.6vw,2.1rem)] font-[500] tracking-[-0.02em] text-foreground max-w-[780px] leading-[1.18]">
+          One partner-ready brief per applicant — so you know within minutes which founders deserve a meeting.
         </h2>
-        <DimensionsGrid />
+        <p className="mt-4 text-[15px] leading-[1.6] text-muted-foreground max-w-[640px]">
+          Calibrated to stage. Every claim sourced. Every signal weighted. Your team stops drowning in cold decks and starts spending time on the founders worth backing.
+        </p>
+        <ReportPreview audience="investors" />
       </div>
     </section>
+
 
     {/* Outcome — better starting point */}
     <section className="border-t border-border px-6 py-16 lg:py-20">

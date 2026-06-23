@@ -1,10 +1,9 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Moon, Sun, Compass, Radar, Shield, Swords, Gavel, TrendingUp, Layers, Target, Gauge } from "lucide-react";
+import { ArrowRight, Moon, Sun, Compass, Radar, Shield, Swords, Gavel, TrendingUp, Target, Gauge } from "lucide-react";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 import { Seo } from "@/components/Seo";
 import { StackedLogo } from "@/components/StackedLogo";
-import { OperatingLayerOrbit } from "@/components/OperatingLayerOrbit";
 import { Logo3D } from "@/components/Logo3D";
 
 const SLATE_HSL = "215 16% 47%";

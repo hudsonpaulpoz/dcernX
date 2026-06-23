@@ -77,7 +77,7 @@ const Landing = () => {
         <div className="border-b border-border">
           <div className="mx-auto max-w-[1200px] px-6 py-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
             <p className="text-[13px] text-foreground/80">
-              I'm raising capital <span className="text-muted-foreground">·</span> I'm backing founders — <span className="text-muted-foreground">choose your view</span>
+              {audience === "startups" ? "I am raising capital" : "I am backing founders"}
             </p>
             <div
               role="tablist"
@@ -100,7 +100,7 @@ const Landing = () => {
                     audience === key ? "text-background" : "text-foreground/70 hover:text-foreground"
                   }`}
                 >
-                  {key === "startups" ? "Founders raising" : "Investors backing"}
+                  {key === "startups" ? "Founders" : "Investors"}
                 </button>
               ))}
             </div>

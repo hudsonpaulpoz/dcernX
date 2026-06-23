@@ -73,34 +73,40 @@ const Landing = () => {
       </nav>
 
       <main className="pt-[56px]">
-        {/* Audience toggle bar */}
+        {/* Audience toggle bar — sliding pill */}
         <div className="border-b border-border">
-          <div className="mx-auto max-w-[1200px] px-6 py-5 flex items-center justify-between gap-4">
-            <p className="text-[12px] uppercase tracking-[0.18em] text-muted-foreground">
-              Two products. Pick yours.
+          <div className="mx-auto max-w-[1200px] px-6 py-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+            <p className="text-[13px] text-foreground/80">
+              I'm raising capital <span className="text-muted-foreground">·</span> I'm backing founders — <span className="text-muted-foreground">choose your view</span>
             </p>
-            <div className="inline-flex border border-border" role="tablist" aria-label="Choose your audience">
-              <button
-                type="button"
-                role="tab"
-                aria-selected={audience === "startups"}
-                onClick={() => setAudience("startups")}
-                className={`px-5 h-9 text-[12px] uppercase tracking-[0.14em] transition-colors ${audience === "startups" ? "bg-foreground text-background" : "text-foreground/70 hover:text-foreground"}`}
-              >
-                For Startups
-              </button>
-              <button
-                type="button"
-                role="tab"
-                aria-selected={audience === "investors"}
-                onClick={() => setAudience("investors")}
-                className={`px-5 h-9 text-[12px] uppercase tracking-[0.14em] border-l border-border transition-colors ${audience === "investors" ? "bg-foreground text-background" : "text-foreground/70 hover:text-foreground"}`}
-              >
-                For Investors
-              </button>
+            <div
+              role="tablist"
+              aria-label="Choose your view"
+              className="relative inline-flex p-1 bg-foreground/[0.06] dark:bg-foreground/[0.08] border border-border rounded-full select-none"
+            >
+              <span
+                aria-hidden
+                className="absolute top-1 bottom-1 left-1 w-[calc(50%-4px)] rounded-full bg-foreground transition-transform duration-300 ease-out"
+                style={{ transform: audience === "investors" ? "translateX(100%)" : "translateX(0)" }}
+              />
+              {(["startups", "investors"] as const).map((key) => (
+                <button
+                  key={key}
+                  type="button"
+                  role="tab"
+                  aria-selected={audience === key}
+                  onClick={() => setAudience(key)}
+                  className={`relative z-10 px-5 sm:px-6 h-9 text-[13px] font-[500] rounded-full transition-colors ${
+                    audience === key ? "text-background" : "text-foreground/70 hover:text-foreground"
+                  }`}
+                >
+                  {key === "startups" ? "Founders raising" : "Investors backing"}
+                </button>
+              ))}
             </div>
           </div>
         </div>
+
 
         {audience === "startups" ? (
           <StartupsScreen bgHex={bgHex} lineHex={lineHex} />

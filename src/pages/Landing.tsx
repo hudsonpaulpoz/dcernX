@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Moon, Sun, CheckCircle2, ShieldCheck, ScanSearch } from "lucide-react";
+import { ArrowRight, Moon, Sun, Compass, Radar, Shield, Swords, Gavel, TrendingUp, Layers, Target, Gauge } from "lucide-react";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 import { Seo } from "@/components/Seo";

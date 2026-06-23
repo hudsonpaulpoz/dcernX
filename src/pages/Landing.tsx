@@ -441,13 +441,13 @@ const InvestorsScreen = ({ bgHex, lineHex }: VisualProps) => (
       <div className="mx-auto max-w-[1200px] grid md:grid-cols-[1.05fr_0.95fr] gap-10 lg:gap-14 items-center">
         <div>
           <p className="text-[12px] uppercase tracking-[0.18em] text-muted-foreground mb-5">
-            DcernX for Investors
+            DcernX for early-stage investors
           </p>
           <h1 className="text-[clamp(2.2rem,4.2vw,3.6rem)] font-[500] leading-[1.04] tracking-[-0.04em] text-foreground">
-            Deep market research, on every applicant, in minutes.
+            Deep due diligence on every early-stage and pre-revenue startup — in minutes.
           </h1>
           <p className="mt-6 text-[16px] leading-[1.65] text-muted-foreground max-w-[560px]">
-            DcernX runs agentic due diligence calibrated to applicant stage — the product, the opportunity, the landscape, market signals, risks, entry barriers, competition and regulatory load. Your team starts every conversation with research-backed evidence, not a blank page.
+            DcernX runs agentic due diligence calibrated to applicant stage — pre-seed, seed, Series A — across the product, opportunity, market signals, competition, risks, entry barriers and regulatory load. Your investment team starts every founder conversation with research-backed evidence, not a blank page or a rushed first read.
           </p>
 
           <div className="mt-10 flex flex-wrap items-center gap-4">
@@ -458,7 +458,7 @@ const InvestorsScreen = ({ bgHex, lineHex }: VisualProps) => (
               </button>
             </Link>
             <Link to="/for-investors" className="text-[13px] text-foreground/70 hover:text-foreground transition-colors">
-              See the platform →
+              See a sample brief →
             </Link>
           </div>
         </div>
@@ -467,18 +467,22 @@ const InvestorsScreen = ({ bgHex, lineHex }: VisualProps) => (
       </div>
     </section>
 
-    {/* Dimensions evaluated */}
+    {/* Report preview */}
     <section className="border-t border-border px-6 py-16 lg:py-20">
       <div className="mx-auto max-w-[1200px]">
         <p className="text-[12px] uppercase tracking-[0.18em] text-muted-foreground mb-3">
-          What every DD covers
+          The brief your partners will read
         </p>
-        <h2 className="text-[clamp(1.5rem,2.6vw,2.1rem)] font-[500] tracking-[-0.02em] text-foreground max-w-[760px] leading-[1.18]">
-          Seven dimensions. Calibrated to stage. Source-cited, audit-ready.
+        <h2 className="text-[clamp(1.5rem,2.6vw,2.1rem)] font-[500] tracking-[-0.02em] text-foreground max-w-[780px] leading-[1.18]">
+          One partner-ready brief per applicant — so you know within minutes which founders deserve a meeting.
         </h2>
-        <DimensionsGrid />
+        <p className="mt-4 text-[15px] leading-[1.6] text-muted-foreground max-w-[640px]">
+          Calibrated to stage. Every claim sourced. Every signal weighted. Your team stops drowning in cold decks and starts spending time on the founders worth backing.
+        </p>
+        <ReportPreview audience="investors" />
       </div>
     </section>
+
 
     {/* Outcome — better starting point */}
     <section className="border-t border-border px-6 py-16 lg:py-20">

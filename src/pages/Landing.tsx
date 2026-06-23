@@ -304,13 +304,13 @@ const StartupsScreen = ({ bgHex, lineHex }: VisualProps) => (
       <div className="mx-auto max-w-[1200px] grid md:grid-cols-[1.05fr_0.95fr] gap-10 lg:gap-14 items-center">
         <div>
           <p className="text-[12px] uppercase tracking-[0.18em] text-muted-foreground mb-5">
-            DcernX for Startups
+            DcernX for founders raising capital
           </p>
           <h1 className="text-[clamp(2.2rem,4.2vw,3.6rem)] font-[500] leading-[1.04] tracking-[-0.04em] text-foreground">
-            Pass investor DD before you ever meet one.
+            Pass investor due diligence before your first pitch meeting.
           </h1>
           <p className="mt-6 text-[16px] leading-[1.65] text-muted-foreground max-w-[560px]">
-            DcernX runs the same agentic due diligence an investor would — on your opportunity, landscape, market signals, risks, regulatory exposure, trends and competition. You see exactly what they'll see, fix what doesn't hold up, and walk in with a confidence score that compounds with every meeting.
+            DcernX runs the same agentic due diligence a pre-seed, seed or Series A investor would — on your opportunity, market signals, competition, risks, regulatory load and traction. Founders raising capital see exactly what the IC will see, fix what doesn't hold up, and walk into every pitch with a conviction score that compounds across meetings.
           </p>
 
           <div className="mt-10 flex flex-wrap items-center gap-4">
@@ -321,7 +321,7 @@ const StartupsScreen = ({ bgHex, lineHex }: VisualProps) => (
               </button>
             </Link>
             <Link to="/ai-analysis" className="text-[13px] text-foreground/70 hover:text-foreground transition-colors">
-              See how it works →
+              See a sample report →
             </Link>
           </div>
         </div>
@@ -330,18 +330,22 @@ const StartupsScreen = ({ bgHex, lineHex }: VisualProps) => (
       </div>
     </section>
 
-    {/* Dimensions tested */}
+    {/* Report preview */}
     <section className="border-t border-border px-6 py-16 lg:py-20">
       <div className="mx-auto max-w-[1200px]">
         <p className="text-[12px] uppercase tracking-[0.18em] text-muted-foreground mb-3">
-          What we test, the way investors test it
+          The report you'll get back
         </p>
-        <h2 className="text-[clamp(1.5rem,2.6vw,2.1rem)] font-[500] tracking-[-0.02em] text-foreground max-w-[760px] leading-[1.18]">
-          Your business, stress-tested against the seven dimensions every investor will probe.
+        <h2 className="text-[clamp(1.5rem,2.6vw,2.1rem)] font-[500] tracking-[-0.02em] text-foreground max-w-[780px] leading-[1.18]">
+          A full investor-grade DD on your own startup — so you know what they'll say before they say it.
         </h2>
-        <DimensionsGrid />
+        <p className="mt-4 text-[15px] leading-[1.6] text-muted-foreground max-w-[640px]">
+          One document. Seven dimensions investors actually score on. Every weak spot called out, every claim cited — ready to rehearse against before your next intro.
+        </p>
+        <ReportPreview audience="startups" />
       </div>
     </section>
+
 
     {/* Outcome — confidence score */}
     <section className="border-t border-border px-6 py-16 lg:py-20">

@@ -140,6 +140,34 @@ const CubeVisual = ({ bgHex, lineHex }: VisualProps) => (
   </div>
 );
 
+/* Seven research dimensions — shared vocabulary across both audiences */
+const DIMENSIONS = [
+  { icon: Target, t: "The Opportunity", d: "Problem worth solving, demand depth, customer pain quantified from primary and secondary signals." },
+  { icon: Compass, t: "The Landscape", d: "Where the market sits today, where it's heading, and the structural shifts moving it." },
+  { icon: Radar, t: "Market Signals", d: "Demand indicators, search trends, hiring patterns and capital flow — read in minutes, not weeks." },
+  { icon: Shield, t: "Risks & Entry Barriers", d: "Execution, technology, capital and timing risks — surfaced before they bite." },
+  { icon: Swords, t: "Competition", d: "Direct and adjacent players, moats, gaps and the wedge that actually wins." },
+  { icon: Gavel, t: "Regulatory", d: "Jurisdictional requirements, compliance load and policy direction across target markets." },
+  { icon: TrendingUp, t: "Trends", d: "Technology, behaviour and category trends — separated from noise, weighted for relevance." },
+];
+
+const DimensionsGrid = () => (
+  <div className="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-border border border-border">
+    {DIMENSIONS.map(({ icon: Icon, t, d }) => (
+      <div key={t} className="bg-background p-6">
+        <Icon className="h-4 w-4 text-foreground/60 mb-3" strokeWidth={1.5} />
+        <div className="text-[13px] font-[500] text-foreground">{t}</div>
+        <p className="mt-2 text-[13px] leading-[1.6] text-muted-foreground">{d}</p>
+      </div>
+    ))}
+    <div className="bg-background p-6 flex items-center">
+      <p className="text-[13px] leading-[1.6] text-foreground/80">
+        Seven dimensions. One agentic pass. Evidence-led, source-cited, defensible.
+      </p>
+    </div>
+  </div>
+);
+
 /* ----------------- STARTUPS SCREEN ----------------- */
 const StartupsScreen = ({ bgHex, lineHex }: VisualProps) => (
   <>
@@ -150,34 +178,21 @@ const StartupsScreen = ({ bgHex, lineHex }: VisualProps) => (
             DcernX for Startups
           </p>
           <h1 className="text-[clamp(2.2rem,4.2vw,3.6rem)] font-[500] leading-[1.04] tracking-[-0.04em] text-foreground">
-            Walk into every investor meeting with higher conviction.
+            Pass investor DD before you ever meet one.
           </h1>
-          <p className="mt-6 text-[16px] leading-[1.65] text-muted-foreground max-w-[540px]">
-            Investor intros are expensive. DcernX runs an Investor-grade DD on your own pitch, financials and marketing — so every meeting builds trust, answers the hard questions before they're asked, and tilts the odds toward a successful outcome.
+          <p className="mt-6 text-[16px] leading-[1.65] text-muted-foreground max-w-[560px]">
+            DcernX runs the same agentic due diligence an investor would — on your opportunity, landscape, market signals, risks, regulatory exposure, trends and competition. You see exactly what they'll see, fix what doesn't hold up, and walk in with a confidence score that compounds with every meeting.
           </p>
-
-          <ul className="mt-8 space-y-3">
-            {[
-              "One robust report on your own company, in under 90 minutes",
-              "Every claim in your deck stress-tested against public evidence",
-              "The exact questions investors will ask — with answers ready",
-            ].map((line) => (
-              <li key={line} className="flex items-start gap-3 text-[14px] text-foreground/85">
-                <CheckCircle2 className="h-4 w-4 mt-[3px] text-foreground/60 shrink-0" strokeWidth={1.5} />
-                <span>{line}</span>
-              </li>
-            ))}
-          </ul>
 
           <div className="mt-10 flex flex-wrap items-center gap-4">
             <Link to="/ai-analysis/try">
               <button className="group inline-flex items-center gap-2 px-6 py-3 text-[14px] font-medium bg-foreground text-background hover:bg-foreground/90 transition-colors">
-                Get my Investor DD report
+                Run my pre-investor DD
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
               </button>
             </Link>
             <Link to="/ai-analysis" className="text-[13px] text-foreground/70 hover:text-foreground transition-colors">
-              See what's in the report →
+              See how it works →
             </Link>
           </div>
         </div>
@@ -186,29 +201,55 @@ const StartupsScreen = ({ bgHex, lineHex }: VisualProps) => (
       </div>
     </section>
 
-    {/* What's in the report */}
+    {/* Dimensions tested */}
     <section className="border-t border-border px-6 py-16 lg:py-20">
       <div className="mx-auto max-w-[1200px]">
         <p className="text-[12px] uppercase tracking-[0.18em] text-muted-foreground mb-3">
-          What's in your report
+          What we test, the way investors test it
         </p>
-        <h2 className="text-[clamp(1.5rem,2.6vw,2.1rem)] font-[500] tracking-[-0.02em] text-foreground max-w-[720px] leading-[1.18]">
-          The same diligence an investor would run on you — delivered to you first.
+        <h2 className="text-[clamp(1.5rem,2.6vw,2.1rem)] font-[500] tracking-[-0.02em] text-foreground max-w-[760px] leading-[1.18]">
+          Your business, stress-tested against the seven dimensions every investor will probe.
         </h2>
-        <div className="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-border border border-border">
-          {[
-            { t: "Pitch & Narrative", d: "Story arc, positioning, proof points and the gaps a partner will press on." },
-            { t: "Financial Stress-test", d: "Unit economics, model assumptions and the numbers that don't yet hold up." },
-            { t: "Market & Competition", d: "TAM logic, competitor depth and the framing that survives scrutiny." },
-            { t: "Traction & Evidence", d: "Every claim cross-checked against public signals and third-party data." },
-            { t: "Founder & Team", d: "Operating history, gaps in the cap table and the questions partners will raise." },
-            { t: "Investor Q&A Pack", d: "The 30 questions you'll be asked — with sourced, defensible answers." },
-          ].map(({ t, d }) => (
-            <div key={t} className="bg-background p-6">
-              <div className="text-[13px] font-[500] text-foreground">{t}</div>
-              <p className="mt-2 text-[13px] leading-[1.6] text-muted-foreground">{d}</p>
-            </div>
-          ))}
+        <DimensionsGrid />
+      </div>
+    </section>
+
+    {/* Outcome — confidence score */}
+    <section className="border-t border-border px-6 py-16 lg:py-20">
+      <div className="mx-auto max-w-[1200px] grid md:grid-cols-2 gap-10 lg:gap-14 items-start">
+        <div>
+          <p className="text-[12px] uppercase tracking-[0.18em] text-muted-foreground mb-3">
+            The outcome
+          </p>
+          <h2 className="text-[clamp(1.5rem,2.6vw,2.1rem)] font-[500] tracking-[-0.02em] text-foreground leading-[1.18]">
+            A confidence score that climbs with every investor conversation.
+          </h2>
+          <p className="mt-5 text-[15px] leading-[1.65] text-muted-foreground max-w-[520px]">
+            Each DD pass tightens your messaging, hardens your evidence and aligns your narrative to what the next investor cares about. Better answers. Sharper positioning. Higher conversion.
+          </p>
+        </div>
+        <div className="border border-border p-8">
+          <div className="flex items-center justify-between">
+            <div className="text-[12px] uppercase tracking-[0.18em] text-muted-foreground">Confidence Score</div>
+            <Gauge className="h-4 w-4 text-foreground/60" strokeWidth={1.5} />
+          </div>
+          <div className="mt-6 space-y-4">
+            {[
+              { label: "Before DcernX", v: 32 },
+              { label: "After first pass", v: 64 },
+              { label: "After investor-aligned revisions", v: 88 },
+            ].map((row) => (
+              <div key={row.label}>
+                <div className="flex items-center justify-between text-[12px] mb-1.5">
+                  <span className="text-muted-foreground">{row.label}</span>
+                  <span className="text-foreground/80 tabular-nums">{row.v}</span>
+                </div>
+                <div className="h-[6px] w-full bg-border">
+                  <div className="h-full bg-foreground" style={{ width: `${row.v}%` }} />
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
@@ -220,13 +261,13 @@ const StartupsScreen = ({ bgHex, lineHex }: VisualProps) => (
           How it works
         </p>
         <h2 className="text-[clamp(1.5rem,2.6vw,2.1rem)] font-[500] tracking-[-0.02em] text-foreground max-w-[720px] leading-[1.18]">
-          From deck upload to investor-ready, in under 90 minutes.
+          Upload. Agentic DD runs. Walk in investor-ready.
         </h2>
         <ol className="mt-10 grid md:grid-cols-3 gap-6">
           {[
-            { n: "01", t: "Upload your pitch", d: "Deck, model and any supporting materials. Nothing leaves your workspace." },
-            { n: "02", t: "Agentic DD runs", d: "DcernX evaluates pitch, financials, market and team — at investor depth." },
-            { n: "03", t: "Get your report", d: "A robust DD report plus an investor Q&A pack you can rehearse against." },
+            { n: "01", t: "Share your business", d: "Deck, model, stage and target investor profile. Nothing leaves your workspace." },
+            { n: "02", t: "Agents go deep", d: "Seven research dimensions evaluated in parallel against an investor-grade rubric." },
+            { n: "03", t: "Rehearse and refine", d: "A scored report, the questions you'll be asked, and the evidence to answer them." },
           ].map(({ n, t, d }) => (
             <li key={n} className="border border-border p-6">
               <div className="text-[12px] tracking-[0.18em] text-muted-foreground">{n}</div>
@@ -243,15 +284,15 @@ const StartupsScreen = ({ bgHex, lineHex }: VisualProps) => (
       <div className="mx-auto max-w-[1200px] flex flex-col md:flex-row items-start md:items-end justify-between gap-8">
         <div>
           <h2 className="text-[clamp(1.6rem,2.8vw,2.2rem)] font-[500] tracking-[-0.02em] text-foreground max-w-[640px] leading-[1.15]">
-            Stop walking into investor meetings cold.
+            Raise your confidence score before you raise capital.
           </h2>
           <p className="mt-4 text-[15px] leading-[1.6] text-muted-foreground max-w-[560px]">
-            One report. Every weak point surfaced. Every answer prepared.
+            Run the DD that's coming for you anyway — agentic, in minutes.
           </p>
         </div>
         <Link to="/ai-analysis/try">
           <button className="group inline-flex items-center gap-2 px-6 py-3 text-[14px] font-medium bg-foreground text-background hover:bg-foreground/90 transition-colors">
-            Get my Investor DD report
+            Run my pre-investor DD
             <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
           </button>
         </Link>
@@ -270,29 +311,16 @@ const InvestorsScreen = ({ bgHex, lineHex }: VisualProps) => (
             DcernX for Investors
           </p>
           <h1 className="text-[clamp(2.2rem,4.2vw,3.6rem)] font-[500] leading-[1.04] tracking-[-0.04em] text-foreground">
-            Find the businesses solving the right problem, in the right space, with the right approach.
+            Deep market research, on every applicant, in minutes.
           </h1>
           <p className="mt-6 text-[16px] leading-[1.65] text-muted-foreground max-w-[560px]">
-            Run high-volume due diligence on every intake using DcernX's agentic infrastructure — so no application is throttled by capacity and every founder gets a fair, evidence-led read. Then manage the entire lifecycle, from first intake to post-deal tracking, inside one operating system.
+            DcernX runs agentic due diligence calibrated to applicant stage — the product, the opportunity, the landscape, market signals, risks, entry barriers, competition and regulatory load. Your team starts every conversation with research-backed evidence, not a blank page.
           </p>
-
-          <ul className="mt-8 space-y-3">
-            {[
-              { icon: ScanSearch, line: "Agentic DD at volume — hundreds of applications scored consistently" },
-              { icon: ShieldCheck, line: "Capacity augmented, never throttled — every intake reviewed" },
-              { icon: CheckCircle2, line: "End-to-end lifecycle: intake → deal flow → operations → post-deal" },
-            ].map(({ icon: Icon, line }) => (
-              <li key={line} className="flex items-start gap-3 text-[14px] text-foreground/85">
-                <Icon className="h-4 w-4 mt-[3px] text-foreground/60 shrink-0" strokeWidth={1.5} />
-                <span>{line}</span>
-              </li>
-            ))}
-          </ul>
 
           <div className="mt-10 flex flex-wrap items-center gap-4">
             <Link to="/ai-analysis/try">
               <button className="group inline-flex items-center gap-2 px-6 py-3 text-[14px] font-medium bg-foreground text-background hover:bg-foreground/90 transition-colors">
-                Try DcernX
+                Run DD on an applicant
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
               </button>
             </Link>
@@ -306,45 +334,73 @@ const InvestorsScreen = ({ bgHex, lineHex }: VisualProps) => (
       </div>
     </section>
 
-    {/* Capabilities */}
+    {/* Dimensions evaluated */}
     <section className="border-t border-border px-6 py-16 lg:py-20">
       <div className="mx-auto max-w-[1200px]">
         <p className="text-[12px] uppercase tracking-[0.18em] text-muted-foreground mb-3">
-          Built for investment teams
+          What every DD covers
         </p>
-        <h2 className="text-[clamp(1.5rem,2.6vw,2.1rem)] font-[500] tracking-[-0.02em] text-foreground max-w-[720px] leading-[1.18]">
-          Augment your partners. Never throttle your funnel.
+        <h2 className="text-[clamp(1.5rem,2.6vw,2.1rem)] font-[500] tracking-[-0.02em] text-foreground max-w-[760px] leading-[1.18]">
+          Seven dimensions. Calibrated to stage. Source-cited, audit-ready.
         </h2>
-        <div className="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-border border border-border">
+        <DimensionsGrid />
+      </div>
+    </section>
+
+    {/* Outcome — better starting point */}
+    <section className="border-t border-border px-6 py-16 lg:py-20">
+      <div className="mx-auto max-w-[1200px] grid md:grid-cols-2 gap-10 lg:gap-14 items-start">
+        <div>
+          <p className="text-[12px] uppercase tracking-[0.18em] text-muted-foreground mb-3">
+            The outcome
+          </p>
+          <h2 className="text-[clamp(1.5rem,2.6vw,2.1rem)] font-[500] tracking-[-0.02em] text-foreground leading-[1.18]">
+            Start every deal with research-backed conviction.
+          </h2>
+          <p className="mt-5 text-[15px] leading-[1.65] text-muted-foreground max-w-[520px]">
+            Partners stop spending hours on first-pass research and start spending them on judgement. Better starting point. Faster cycle times. Higher hit rate on the ones you back.
+          </p>
+        </div>
+        <div className="border border-border p-8 grid grid-cols-3 gap-6">
           {[
-            { t: "Agentic intake", d: "Every application normalised, scored and triaged — within minutes of submission." },
-            { t: "Diligence at volume", d: "Hundreds of DDs run in parallel against a consistent investor-grade rubric." },
-            { t: "Evidence-led scoring", d: "Every score backed by sourced evidence — auditable, not a black box." },
-            { t: "Deal flow management", d: "Pipeline stages, IC packs and partner notes on one auditable record per deal." },
-            { t: "Post-deal tracking", d: "KPIs, board updates and portfolio health monitored after the wire clears." },
-            { t: "Team workspace", d: "Roles, comments and assignments — built for how investment teams actually work." },
-          ].map(({ t, d }) => (
-            <div key={t} className="bg-background p-6">
-              <div className="text-[13px] font-[500] text-foreground">{t}</div>
-              <p className="mt-2 text-[13px] leading-[1.6] text-muted-foreground">{d}</p>
+            { k: "minutes", v: "8", l: "Avg time to first-pass DD" },
+            { k: "x", v: "12", l: "Applicant capacity per analyst" },
+            { k: "%", v: "100", l: "Intake reviewed, never throttled" },
+          ].map((s) => (
+            <div key={s.l}>
+              <div className="flex items-baseline gap-1">
+                <span className="text-[clamp(1.8rem,3vw,2.4rem)] font-[500] text-foreground tabular-nums">{s.v}</span>
+                <span className="text-[12px] text-muted-foreground">{s.k}</span>
+              </div>
+              <p className="mt-2 text-[12px] leading-[1.5] text-muted-foreground">{s.l}</p>
             </div>
           ))}
         </div>
       </div>
     </section>
 
-    {/* Lifecycle infographic band */}
+    {/* How it works */}
     <section className="border-t border-border px-6 py-16 lg:py-20">
       <div className="mx-auto max-w-[1200px]">
         <p className="text-[12px] uppercase tracking-[0.18em] text-muted-foreground mb-3">
-          The full lifecycle, in one system
+          How it works
         </p>
         <h2 className="text-[clamp(1.5rem,2.6vw,2.1rem)] font-[500] tracking-[-0.02em] text-foreground max-w-[720px] leading-[1.18]">
-          Intake. Deal flow. Operations. Post-deal. One auditable record per deal.
+          From applicant in, to investment-grade brief out.
         </h2>
-        <div className="mt-10">
-          <OperatingLayerOrbit />
-        </div>
+        <ol className="mt-10 grid md:grid-cols-3 gap-6">
+          {[
+            { n: "01", t: "Intake, normalised", d: "Every applicant parsed and staged — pre-seed to growth — so DD depth matches reality." },
+            { n: "02", t: "Agents research in parallel", d: "Opportunity, landscape, signals, risks, competition, regulatory and trends — all at once." },
+            { n: "03", t: "Brief lands with sources", d: "An evidence-led, partner-ready brief with every claim cited and weighted." },
+          ].map(({ n, t, d }) => (
+            <li key={n} className="border border-border p-6">
+              <div className="text-[12px] tracking-[0.18em] text-muted-foreground">{n}</div>
+              <div className="mt-3 text-[15px] font-[500] text-foreground">{t}</div>
+              <p className="mt-2 text-[13px] leading-[1.6] text-muted-foreground">{d}</p>
+            </li>
+          ))}
+        </ol>
       </div>
     </section>
 
@@ -353,10 +409,10 @@ const InvestorsScreen = ({ bgHex, lineHex }: VisualProps) => (
       <div className="mx-auto max-w-[1200px] flex flex-col md:flex-row items-start md:items-end justify-between gap-8">
         <div>
           <h2 className="text-[clamp(1.6rem,2.8vw,2.2rem)] font-[500] tracking-[-0.02em] text-foreground max-w-[640px] leading-[1.15]">
-            Review every intake. Back the right ones.
+            Give every applicant a serious read. Without the headcount.
           </h2>
           <p className="mt-4 text-[15px] leading-[1.6] text-muted-foreground max-w-[560px]">
-            See how DcernX runs DD across your full funnel and keeps the lifecycle in one place.
+            Agentic DD on the full funnel. Sourced, scored, and ready for the partner meeting.
           </p>
         </div>
         <Link to="/for-investors">
@@ -369,5 +425,6 @@ const InvestorsScreen = ({ bgHex, lineHex }: VisualProps) => (
     </section>
   </>
 );
+
 
 export default Landing;

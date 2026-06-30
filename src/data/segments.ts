@@ -282,9 +282,9 @@ export const SEGMENTS: Segment[] = [
     ],
     calc: { applicationsPerMonth: 20, hoursPerInitialReview: 5, analystRate: 300 },
     testimonial: {
-      quote: "Placeholder — family office CIO quote about governance and decision defensibility.",
-      author: "CIO",
-      role: "Single-Family Office (placeholder)",
+      quote: "For the first time, every direct investment has the same defensible record a fund would produce — without us scaling the team. The next generation will be able to read why we did every deal.",
+      author: "Chief Investment Officer (confidential)",
+      role: "Single-family office, multi-asset",
     },
     seoTitle: "Family Office Investment Governance Platform — DcernX",
     seoDescription:

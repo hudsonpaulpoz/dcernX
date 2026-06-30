@@ -138,9 +138,9 @@ export const SEGMENTS: Segment[] = [
     ],
     calc: { applicationsPerMonth: 30, hoursPerInitialReview: 6, analystRate: 150 },
     testimonial: {
-      quote: "Placeholder — studio partner quote about reusing validation work for spin-outs.",
-      author: "Studio Partner",
-      role: "Venture Studio (placeholder)",
+      quote: "We used to rebuild every spin-out's investor story from zero. With DcernX, the validation work we did at the thesis stage flows straight into the seed memo — saving us six to eight weeks per spin-out.",
+      author: "Managing Partner (confidential)",
+      role: "Venture studio, 6 active builds per year",
     },
     seoTitle: "Venture Studio Operating Platform — DcernX",
     seoDescription:

@@ -1,42 +1,44 @@
 # DcernX
 
-> DcernX is the AI operating system for venture capital firms, accelerators, angel syndicates, venture studios and startup funds — unifying deal flow, agentic due diligence, expert review and conviction memos in a single workspace.
+> DcernX is the operating layer for private investment teams — venture capital, accelerators, venture studios, angel syndicates, family offices, private equity funds and startup programs. It combines structured intake, agentic due diligence and audit-grade decision records in one workspace.
 
-DcernX is built by P101 Limited (UK, company no. 17063831) for private investment teams who need to run more deals with sharper conviction. The platform combines structured pipeline management with AI-assisted (agentic) primary analysis across seven dimensions: strategy, competition, negative media, regulatory, compliance, financial and risk.
+DcernX is built by P101 Limited (UK, company no. 17063831). The platform turns ~20 hours of analyst diligence into ~12 minutes of agentic research per opportunity, with every claim cited and every decision evidenced.
 
-Who it's for:
-- Venture capital firms (pre-seed, seed, early-stage, growth and multi-stage)
-- Accelerators and incubators running cohorts
-- Angel syndicates and angel networks
-- Venture studios building and backing companies
-- Startup funds, micro-funds and rolling funds
-- Family offices and corporate venture teams
-- Startup funding programs and government-backed funds
+## Who it's for
 
-What it does:
-- Centralises sourcing, intake, screening and pipeline
-- Runs AI primary analysis on any prospective company in minutes
-- Coordinates expert reviews, founder communications and IC decision records
-- Operates as a data processor on customer data — GDPR-compliant, no training on customer data, no behavioural profiling
+- Accelerators and incubators
+- Venture studios
+- Venture capital firms (pre-seed through growth)
+- Angel investors and syndicates
+- Family offices (single and multi)
+- Private equity funds
+- Corporate venture, government and university startup programs
 
-Key differentiators:
-- Agentic due diligence: seven structured analyses produced as a decision-useful brief
-- Free public-model analysis to try; private inference with advanced data-privacy guardrails on paid plans
-- GDPR-compliant by design; minimal PII; UK-based operator
+## What it does
+
+- Unified intake for inbound, referrals and partner forms
+- Agentic primary research across 12 tracks (strategy, market, competition, team, financial, regulatory, negative media, risk, and more)
+- IC-ready memos generated from underlying evidence
+- Auditable decision records and portfolio memory
+- Sponsor / LP reporting on demand
 
 ## Pages
 
-- [Home](https://dcernx.com/): Overview of the DcernX operating system for private investment teams.
-- [Agentic DD — AI Primary Analysis](https://dcernx.com/ai-analysis): How DcernX runs seven structured AI analyses — strategy, competition, negative media, regulatory, compliance, financial and risk — on any prospective deal.
-- [Try AI Due Diligence Free](https://dcernx.com/ai-analysis/try): Run a live, free agentic primary analysis on any company. No account required.
+- [Home](https://dcernx.com/): Overview of the operating layer for private investment teams.
+- [For Venture Capital](https://dcernx.com/segments/vcs)
+- [For Accelerators](https://dcernx.com/segments/accelerators)
+- [For Venture Studios](https://dcernx.com/segments/venture-studios)
+- [For Angel Syndicates](https://dcernx.com/segments/angels)
+- [For Family Offices](https://dcernx.com/segments/family-offices)
+- [For Private Equity](https://dcernx.com/segments/pe-funds)
+- [For Startup Programs](https://dcernx.com/segments/startup-programs)
 
 ## Legal
 
-- [Privacy Policy](https://dcernx.com/privacy): How DcernX handles information. GDPR-compliant, minimal PII collection, customer data processed solely on behalf of customers.
-- [Terms of Service](https://dcernx.com/terms): Terms governing use of the DcernX platform, operated by P101 Limited under English law.
-- [Fair Use Policy](https://dcernx.com/fair-use): Free-analysis limits, public vs private inference, acceptable-use guardrails and paid-plan token usage.
+- [Privacy Policy](https://dcernx.com/privacy)
+- [Terms of Service](https://dcernx.com/terms)
+- [Fair Use Policy](https://dcernx.com/fair-use)
 
-## Optional
+## Contact
 
-- [Sitemap](https://dcernx.com/sitemap.xml): Machine-readable index of indexable pages.
-- Contact: hudson@p101limited.com
+hudson@p101limited.com

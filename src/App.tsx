@@ -16,9 +16,7 @@ import Analytics from "./pages/Analytics";
 import Settings from "./pages/Settings";
 import NotFound from "./pages/NotFound";
 import { Privacy, Terms, FairUse } from "./pages/Legal";
-import AIAnalysis from "./pages/AIAnalysis";
-import AIAnalysisTry from "./pages/AIAnalysisTry";
-import ForInvestors from "./pages/ForInvestors";
+import SegmentPage from "./pages/SegmentPage";
 
 const queryClient = new QueryClient();
 
@@ -33,6 +31,7 @@ const App = () => (
             <Routes>
               <Route path="/auth" element={<Auth />} />
               <Route path="/" element={<Index />} />
+              <Route path="/segments/:slug" element={<SegmentPage />} />
               <Route path="/dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
               <Route path="/bugs" element={<ProtectedRoute><BugList /></ProtectedRoute>} />
               <Route path="/bugs/new" element={<ProtectedRoute><BugCreate /></ProtectedRoute>} />
@@ -42,10 +41,6 @@ const App = () => (
               <Route path="/privacy" element={<Privacy />} />
               <Route path="/terms" element={<Terms />} />
               <Route path="/fair-use" element={<FairUse />} />
-              <Route path="/ai-analysis" element={<AIAnalysis />} />
-              <Route path="/ai-analysis/try" element={<AIAnalysisTry />} />
-              <Route path="/for-investors" element={<ForInvestors />} />
-              <Route path="/for-startups" element={<AIAnalysis />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </AuthProvider>

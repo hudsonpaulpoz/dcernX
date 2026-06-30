@@ -4,6 +4,16 @@ import { resolve } from "path";
 
 const BASE_URL = "https://dcernx.com";
 
+const SEGMENT_SLUGS = [
+  "accelerators",
+  "venture-studios",
+  "vcs",
+  "angels",
+  "family-offices",
+  "pe-funds",
+  "startup-programs",
+];
+
 interface SitemapEntry {
   path: string;
   changefreq?: "always" | "hourly" | "daily" | "weekly" | "monthly" | "yearly" | "never";
@@ -12,8 +22,11 @@ interface SitemapEntry {
 
 const entries: SitemapEntry[] = [
   { path: "/", changefreq: "weekly", priority: "1.0" },
-  { path: "/ai-analysis", changefreq: "weekly", priority: "0.9" },
-  { path: "/ai-analysis/try", changefreq: "weekly", priority: "0.8" },
+  ...SEGMENT_SLUGS.map((slug) => ({
+    path: `/segments/${slug}`,
+    changefreq: "weekly" as const,
+    priority: "0.9",
+  })),
   { path: "/auth", changefreq: "monthly", priority: "0.5" },
   { path: "/privacy", changefreq: "yearly", priority: "0.3" },
   { path: "/terms", changefreq: "yearly", priority: "0.3" },

@@ -33,15 +33,55 @@ const FAQS = [
   },
 ];
 
-const PIPELINE = [
-  { n: "01", t: "Intake", d: "Decks, links, founder forms, partner referrals — one structured profile." },
-  { n: "02", t: "Agent dispatch", d: "16 specialised research agents allocated to the opportunity." },
-  { n: "03", t: "Swarm research", d: "Parallel investigation across web, filings, news and proprietary sources." },
-  { n: "04", t: "Claim challenge", d: "Every claim in the deck tested against external evidence." },
-  { n: "05", t: "Source loops", d: "Findings cross-checked against multiple independent sources." },
-  { n: "06", t: "Ingestion", d: "Evidence pulled into structured fields, scored and tagged." },
-  { n: "07", t: "Cleaning", d: "Duplicates removed, conflicts flagged, citations normalised." },
-  { n: "08", t: "Report", d: "IC-ready brief published to the deal workspace with full audit trail." },
+const FLOW_DEAL = [
+  {
+    n: "01",
+    t: "Upload the deal",
+    d: "Drop the deck, data room link, founder forms or war-room notes. One structured profile in seconds.",
+  },
+  {
+    n: "02",
+    t: "Dispatch the swarm",
+    d: "16 specialised agents start work in parallel across strategy, market, competition, team, financials, regulatory and risk.",
+  },
+  {
+    n: "03",
+    t: "Agentic investigation",
+    d: "Every claim is challenged against external sources — web, filings, news, proprietary data — and cross-checked in source loops.",
+  },
+  {
+    n: "04",
+    t: "Get the brief",
+    d: "An IC-ready, evidence-backed report lands in your inbox in ~12 minutes. Every finding cited, every source timestamped.",
+  },
+];
+
+const FLOW_ORG = [
+  {
+    n: "01",
+    t: "Talk to us",
+    d: "Book a working session. We map your deal flow, team shape and decision rituals to the right plan.",
+  },
+  {
+    n: "02",
+    t: "Pick your plan",
+    d: "Seats, agent capacity and storage sized to your team — solo angel, 20-person fund, accelerator cohort, or PE platform.",
+  },
+  {
+    n: "03",
+    t: "Configure your workflows",
+    d: "Intake forms, scoring rubrics, IC templates and stage gates tuned to how your team actually decides.",
+  },
+  {
+    n: "04",
+    t: "Wire in your CRM",
+    d: "Connect existing tools or run DcernX as your system of record. Portfolio memory becomes searchable across years.",
+  },
+  {
+    n: "05",
+    t: "Operate on evidence",
+    d: "Every new deal, decision and update is captured, sourced and auditable — from first look to LP report.",
+  },
 ];
 
 const Landing = () => {

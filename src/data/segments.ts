@@ -106,23 +106,23 @@ export const SEGMENTS: Segment[] = [
     buyer: "Studio GP",
     icon: FlaskConical,
     hubPain: "Internal ideas and external opportunities live in different worlds.",
-    hubOutcome: "One workspace for ideation, validation and portfolio ops.",
-    heroEyebrow: "For venture studios",
-    heroH1: "Run ideas like a research desk, not a notebook.",
+    hubOutcome: "One workspace for ideation, validation and spin-out.",
+    heroEyebrow: "Venture studio operating platform",
+    heroH1: "Run theses like a research desk — not a notebook.",
     heroSub:
-      "Studios run the full stack — ideation, validation, build, spin-out. DcernX gives you a single workspace where every thesis, experiment and portfolio company is comparable and defensible.",
+      "Studios run the whole stack: ideation, validation, build, spin-out. DcernX puts every thesis, experiment and portfolio company in one workspace — comparable and defensible.",
     pains: [
       {
         title: "Thesis sprawl",
-        body: "Each partner runs their own validation in their own format. Comparing ideas across the studio means rebuilding context every time.",
+        body: "Every partner validates in their own format. Comparing ideas means rebuilding context from scratch.",
       },
       {
-        title: "Co-founder matching gaps",
-        body: "Operator pipelines live in personal LinkedIn DMs. When an idea is ready, you scramble to find the right founder — often too late.",
+        title: "Operator pipeline gaps",
+        body: "Co-founder leads sit in personal LinkedIn DMs. When an idea is ready, the right founder is already gone.",
       },
       {
-        title: "Spin-out chaos",
-        body: "When a studio company raises externally, you rebuild the whole story for investors from scratch — losing months of validation work.",
+        title: "Spin-out from zero",
+        body: "When a studio company raises externally, you rebuild the investor story — losing months of validation work.",
       },
     ],
     outcomes: [
@@ -133,19 +133,19 @@ export const SEGMENTS: Segment[] = [
     capabilities: [
       { title: "Thesis workspace", body: "Capture, score and compare internal ideas with the same rigour as external deals." },
       { title: "Operator pipeline", body: "Track co-founder candidates with notes, signals and matched theses in one place." },
-      { title: "Validation library", body: "Every market scan, expert call and prototype linked to the thesis it supports — reusable forever." },
-      { title: "Spin-out memos", body: "Generate external-investor-grade decks and memos from your studio's own validation in one click." },
+      { title: "Validation library", body: "Every market scan, expert call and prototype linked to its thesis — reusable forever." },
+      { title: "Spin-out memos", body: "Generate external-investor-grade decks and memos from your own validation, in one click." },
     ],
     calc: { applicationsPerMonth: 30, hoursPerInitialReview: 6, analystRate: 150 },
     testimonial: {
-      quote: "We used to rebuild every spin-out's investor story from zero. With DcernX, the validation work we did at the thesis stage flows straight into the seed memo — saving us six to eight weeks per spin-out.",
+      quote: "We used to rebuild every spin-out's investor story from zero. Now the validation we did at thesis stage flows straight into the seed memo — six to eight weeks saved per spin-out.",
       author: "Managing Partner (confidential)",
       role: "Venture studio, 6 active builds per year",
     },
-    seoTitle: "Venture Studio Operating Platform — DcernX",
+    seoTitle: "Venture Studio Software & Operating Platform — DcernX",
     seoDescription:
-      "Idea validation, operator pipelines and portfolio ops for venture studios. One workspace from thesis to spin-out, with reusable evidence.",
-    keywords: "venture studio software, startup studio platform, idea validation, operator pipeline, spin-out memo",
+      "Thesis validation, operator pipelines and spin-out memos for venture studios. One workspace from idea to seed — with reusable evidence.",
+    keywords: "venture studio software, startup studio platform, idea validation software, operator pipeline, spin-out memo, co-founder matching",
   },
   {
     slug: "vcs",

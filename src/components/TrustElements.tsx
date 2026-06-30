@@ -34,7 +34,7 @@ export const ProofBar = () => (
         ))}
       </div>
       <p className="mt-4 text-[10px] text-foreground/40 max-w-2xl">
-        Firm types shown — customer identities held in confidence at NDA stage.
+        Early design partners and reference customers.
       </p>
     </div>
   </section>

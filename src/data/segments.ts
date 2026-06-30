@@ -153,24 +153,24 @@ export const SEGMENTS: Segment[] = [
     shortName: "VCs",
     buyer: "Partner / Principal",
     icon: Building2,
-    hubPain: "Deals buried in inboxes. IC memos written the night before.",
+    hubPain: "Deals die in inboxes. IC memos written the night before.",
     hubOutcome: "10× analyst throughput with audit-ready memos.",
-    heroEyebrow: "For venture capital",
-    heroH1: "Stop letting deals die in personal inboxes.",
+    heroEyebrow: "Venture capital software & AI due diligence",
+    heroH1: "Stop letting deals die in partner inboxes.",
     heroSub:
-      "Cold inbound, warm intros and partner notes scatter across Gmail, Slack and Notion. DcernX makes every deal a structured record with a defensible memo — before IC, not the night before.",
+      "Cold inbound, warm intros and partner notes scatter across Gmail, Slack and Notion. DcernX makes every deal a structured record with a defensible IC memo — before IC, not the night before.",
     pains: [
       {
         title: "Inbox-driven deal flow",
-        body: "Inbound lives in individual partner inboxes. When deals get hot, no one has the full history — and the ones that go cold simply disappear.",
+        body: "Inbound lives in personal inboxes. When deals heat up, no one has the full history — and cold ones simply vanish.",
       },
       {
-        title: "Last-minute IC memos",
-        body: "Analysts pull all-nighters before every IC. The memo gets written; the underlying evidence rarely survives the meeting.",
+        title: "Night-before IC memos",
+        body: "Associates pull all-nighters before every IC. The memo gets written; the underlying evidence rarely survives the meeting.",
       },
       {
         title: "LP updates from scratch",
-        body: "Every quarter you reconstruct portfolio activity from emails and Slack. Real-time visibility into your own pipeline is missing.",
+        body: "Every quarter you reconstruct pipeline and portfolio activity from email and Slack. Real-time visibility is missing.",
       },
     ],
     outcomes: [
@@ -180,20 +180,20 @@ export const SEGMENTS: Segment[] = [
     ],
     capabilities: [
       { title: "Pipeline as a record", body: "Every deal — inbound, intro, outbound — becomes a structured profile with full history attached." },
-      { title: "Agentic primary analysis", body: "Strategy, market, competition, team, financials and regulatory researched in minutes, with citations." },
-      { title: "IC-ready memos", body: "One-click export of investment memos with embedded evidence, scoring and partner commentary." },
-      { title: "LP-ready visibility", body: "Pipeline, portfolio and decisions reportable in real time — no quarterly scramble." },
+      { title: "Agentic AI due diligence", body: "Strategy, market, competition, team, financials and regulatory researched in minutes — with citations." },
+      { title: "IC-ready memos", body: "One-click investment memos with embedded evidence, scoring and partner commentary." },
+      { title: "LP-ready visibility", body: "Pipeline, portfolio and decisions reportable in real time. No quarterly scramble." },
     ],
     calc: { applicationsPerMonth: 150, hoursPerInitialReview: 4, analystRate: 200 },
     testimonial: {
-      quote: "Our analysts now walk into IC with sourced evidence behind every claim instead of a memo written at 2am. We're reviewing roughly 8× more deals per partner without adding headcount.",
+      quote: "Our analysts now walk into IC with sourced evidence behind every claim — not a memo written at 2am. We're reviewing roughly 8× more deals per partner without adding headcount.",
       author: "General Partner (confidential)",
       role: "Pre-seed / seed fund, EU + UK",
     },
-    seoTitle: "AI Due Diligence Software for Venture Capital — DcernX",
+    seoTitle: "Venture Capital Software & AI Due Diligence — DcernX",
     seoDescription:
-      "Deal flow CRM, agentic due diligence and IC-ready memos for VCs. 10× analyst throughput on early-stage deals with cited evidence.",
-    keywords: "venture capital software, deal flow crm, vc due diligence, ic memo, early stage investor platform",
+      "Deal flow CRM, AI due diligence and IC-ready memos for venture capital. 10× analyst throughput on early-stage deals with cited evidence.",
+    keywords: "venture capital software, vc crm, deal flow software, vc due diligence, ai due diligence, ic memo software, investor crm, early stage investor platform",
   },
   {
     slug: "angels",

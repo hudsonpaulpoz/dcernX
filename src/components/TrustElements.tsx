@@ -141,35 +141,74 @@ export const TestimonialStrip = ({
   </section>
 );
 
+const FOUNDERS = [
+  {
+    initial: "H",
+    name: "Hudson Paul",
+    role: "Founder & CEO",
+    linkedin: "https://www.linkedin.com/in/hudsonpaul1/",
+  },
+  {
+    initial: "L",
+    name: "Luke Anglin",
+    role: "Co-founder",
+    linkedin: "https://www.linkedin.com/in/lukeanglin/",
+  },
+  {
+    initial: "C",
+    name: "Christian Kumar",
+    role: "Co-founder",
+    linkedin: "https://www.linkedin.com/in/christiankumar/",
+  },
+];
+
 export const FounderCard = () => (
-  <div className="border border-border/40 bg-background p-6 md:p-8 max-w-2xl mx-auto text-left flex flex-col sm:flex-row gap-5 items-start">
-    <div className="h-14 w-14 shrink-0 border border-foreground/20 flex items-center justify-center text-base font-light tabular-nums tracking-wider">
-      H
+  <div className="border border-border/40 bg-background p-6 md:p-8 max-w-3xl mx-auto text-left">
+    <div className="text-[10px] uppercase tracking-[0.22em] text-foreground/50 mb-2">The team</div>
+    <h3 className="text-lg font-medium">Built by operators, not vendors.</h3>
+    <p className="mt-2 text-sm text-foreground/70 leading-relaxed">
+      We built DcernX because we'd watched too many private-capital decisions get made on conviction alone.
+      If you're evaluating us for your team, write to us directly — we read every message.
+    </p>
+    <div className="mt-6 grid sm:grid-cols-3 gap-px bg-border/40">
+      {FOUNDERS.map((f) => (
+        <div key={f.name} className="bg-background p-4 flex items-start gap-3">
+          <div className="h-10 w-10 shrink-0 border border-foreground/20 flex items-center justify-center text-sm font-light tracking-wider">
+            {f.initial}
+          </div>
+          <div className="flex-1 min-w-0">
+            <div className="text-sm font-medium truncate">{f.name}</div>
+            <div className="text-[11px] text-foreground/50">{f.role}</div>
+            <a
+              href={f.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-1.5 inline-flex items-center gap-1 text-[11px] text-foreground/60 hover:text-foreground"
+              aria-label={`${f.name} on LinkedIn`}
+            >
+              <Linkedin className="h-3 w-3" /> LinkedIn
+            </a>
+          </div>
+        </div>
+      ))}
     </div>
-    <div className="flex-1">
-      <div className="text-sm font-medium">Hudson · Founder, DcernX</div>
-      <div className="text-[11px] text-foreground/50 mt-0.5">P101 Limited · London</div>
-      <p className="mt-3 text-sm text-foreground/70 leading-relaxed">
-        I built DcernX because I'd watched too many private-capital decisions get made on conviction alone.
-        If you're evaluating us for your team, write to me directly — I read every message.
-      </p>
-      <div className="mt-4 flex flex-wrap gap-3">
-        <a
-          href="mailto:hudson@p101limited.com"
-          className="text-xs inline-flex items-center gap-1 border-b border-foreground/30 hover:border-foreground pb-0.5"
-        >
-          hudson@p101limited.com <ArrowRight className="h-3 w-3" />
-        </a>
-        <a
-          href={DEMO_URL}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-xs inline-flex items-center gap-1 border-b border-foreground/30 hover:border-foreground pb-0.5"
-        >
-          Book 30 min with me <ArrowRight className="h-3 w-3" />
-        </a>
-      </div>
+    <div className="mt-6 flex flex-wrap gap-4">
+      <a
+        href="mailto:hudson@p101limited.com"
+        className="text-xs inline-flex items-center gap-1 border-b border-foreground/30 hover:border-foreground pb-0.5"
+      >
+        hudson@p101limited.com <ArrowRight className="h-3 w-3" />
+      </a>
+      <a
+        href={DEMO_URL}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-xs inline-flex items-center gap-1 border-b border-foreground/30 hover:border-foreground pb-0.5"
+      >
+        Book 30 min with the team <ArrowRight className="h-3 w-3" />
+      </a>
     </div>
+    <div className="mt-4 text-[10px] text-foreground/40">P101 Limited · London (UK company no. 17063831)</div>
   </div>
 );
 

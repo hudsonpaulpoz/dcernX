@@ -4,6 +4,15 @@ import { Seo } from "@/components/Seo";
 import { MarketingNav, MarketingFooter, WAITLIST_URL } from "@/components/MarketingNav";
 import { InvestorCalculator } from "@/components/InvestorCalculator";
 import { CursorSpotlight } from "@/components/CursorSpotlight";
+import {
+  HeroTrustLine,
+  ProofBar,
+  SecuritySection,
+  MethodologyStrip,
+  TestimonialStrip,
+  FounderCard,
+  StickyCtaBar,
+} from "@/components/TrustElements";
 import { SEGMENTS } from "@/data/segments";
 
 const FAQS = [
@@ -118,21 +127,29 @@ const Landing = () => {
         </p>
         <div className="mt-10 flex flex-wrap gap-3">
           <a
-            href={WAITLIST_URL}
+            href="https://app.dcernx.com/forms/survey/nn714s7d45cqdn9qw0m6jx042s89mgym"
             target="_blank"
             rel="noopener noreferrer"
             className="h-11 px-6 inline-flex items-center gap-2 bg-foreground text-background text-sm hover:opacity-90 transition-opacity"
           >
-            Book a demo <ArrowRight className="h-3.5 w-3.5" />
+            Run my first deal <ArrowRight className="h-3.5 w-3.5" />
           </a>
           <a
-            href="#how"
+            href={WAITLIST_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             className="h-11 px-6 inline-flex items-center text-sm border border-foreground/20 hover:border-foreground/60 transition-colors"
           >
-            See how it works
+            Book a demo
           </a>
         </div>
+        <div className="mt-3 text-[11px] text-foreground/45">
+          Free · No credit card · Your deal stays yours.
+        </div>
+        <HeroTrustLine />
       </section>
+
+      <ProofBar />
 
       {/* AGITATE — softened stats */}
       <section className="border-t border-border/40">
@@ -266,6 +283,15 @@ const Landing = () => {
       </CursorSpotlight>
 
 
+      {/* TESTIMONIALS — homepage */}
+      <TestimonialStrip
+        items={[
+          SEGMENTS.find((s) => s.slug === "vcs")!.testimonial,
+          SEGMENTS.find((s) => s.slug === "family-offices")!.testimonial,
+          SEGMENTS.find((s) => s.slug === "accelerators")!.testimonial,
+        ]}
+      />
+
       {/* DESIRE — sample report mockup */}
       <section className="border-t border-border/40">
         <div className="max-w-5xl mx-auto px-6 py-20">
@@ -276,6 +302,9 @@ const Landing = () => {
           <ReportMockup />
         </div>
       </section>
+
+      {/* METHODOLOGY — why trust the output */}
+      <MethodologyStrip />
 
       {/* ROI */}
       <section className="border-t border-border/40">
@@ -323,6 +352,9 @@ const Landing = () => {
         </div>
       </section>
 
+      {/* SECURITY & TRUST */}
+      <SecuritySection />
+
       {/* FAQ */}
       <section className="border-t border-border/40">
         <div className="max-w-3xl mx-auto px-6 py-20">
@@ -344,33 +376,42 @@ const Landing = () => {
 
       {/* ACTION */}
       <section className="border-t border-border/40">
-        <div className="max-w-3xl mx-auto px-6 py-24 text-center">
-          <h2 className="text-4xl md:text-5xl font-light tracking-tight">
-            Make every decision defensible.
-          </h2>
-          <p className="mt-4 text-sm text-foreground/65">
-            See DcernX run on your own pipeline — not a sandbox.
-          </p>
-          <div className="mt-8 flex flex-wrap gap-3 justify-center">
-            <a
-              href={WAITLIST_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="h-11 px-6 inline-flex items-center gap-2 bg-foreground text-background text-sm hover:opacity-90 transition-opacity"
-            >
-              Book a demo <ArrowRight className="h-3.5 w-3.5" />
-            </a>
-            <a
-              href="mailto:hudson@p101limited.com"
-              className="h-11 px-6 inline-flex items-center text-sm border border-foreground/20 hover:border-foreground/60 transition-colors"
-            >
-              Email Hudson
-            </a>
+        <div className="max-w-3xl mx-auto px-6 py-24">
+          <div className="text-center">
+            <h2 className="text-4xl md:text-5xl font-light tracking-tight">
+              Make every decision defensible.
+            </h2>
+            <p className="mt-4 text-sm text-foreground/65">
+              See DcernX run on your own pipeline — not a sandbox. 30 minutes. Live deals.
+            </p>
+            <div className="mt-8 flex flex-wrap gap-3 justify-center">
+              <a
+                href={WAITLIST_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="h-11 px-6 inline-flex items-center gap-2 bg-foreground text-background text-sm hover:opacity-90 transition-opacity"
+              >
+                Book a demo <ArrowRight className="h-3.5 w-3.5" />
+              </a>
+              <a
+                href="https://app.dcernx.com/forms/survey/nn714s7d45cqdn9qw0m6jx042s89mgym"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="h-11 px-6 inline-flex items-center text-sm border border-foreground/20 hover:border-foreground/60 transition-colors"
+              >
+                Run a deal — free
+              </a>
+            </div>
+          </div>
+          <div className="mt-14">
+            <FounderCard />
           </div>
         </div>
       </section>
 
+      <StickyCtaBar />
       <MarketingFooter />
+
     </div>
   );
 };

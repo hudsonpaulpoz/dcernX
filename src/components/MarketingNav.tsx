@@ -3,6 +3,7 @@ import { StackedLogo } from "@/components/StackedLogo";
 import { MarketingThemeToggle } from "@/components/MarketingThemeToggle";
 
 const WAITLIST_URL = "https://app.dcernx.com/forms/survey/nn7e5a797kjqh6exhrgdp69e3x88egz8";
+const RUN_DEAL_URL = "https://app.dcernx.com/forms/survey/nn714s7d45cqdn9qw0m6jx042s89mgym";
 
 export const MarketingNav = () => (
   <header className="sticky top-0 z-40 border-b border-border/40 bg-background/80 backdrop-blur">
@@ -21,10 +22,18 @@ export const MarketingNav = () => (
       <div className="flex items-center gap-2">
         <MarketingThemeToggle />
         <a
+          href={RUN_DEAL_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hidden sm:inline-flex h-8 px-3 items-center text-xs text-foreground/70 hover:text-foreground"
+        >
+          Run a deal — free
+        </a>
+        <a
           href={WAITLIST_URL}
           target="_blank"
           rel="noopener noreferrer"
-          className="h-8 px-3 inline-flex items-center text-xs border border-foreground/20 hover:border-foreground/60 transition-colors"
+          className="h-8 px-3 inline-flex items-center text-xs bg-foreground text-background hover:opacity-90 transition-opacity"
         >
           Book a demo
         </a>

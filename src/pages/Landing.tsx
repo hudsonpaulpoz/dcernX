@@ -253,7 +253,7 @@ const Landing = () => {
         <div className="max-w-5xl mx-auto px-6 py-20">
           <div className="text-[10px] uppercase tracking-[0.22em] text-foreground/50 mb-3">What lands in your workspace</div>
           <h2 className="text-3xl md:text-4xl font-light tracking-tight max-w-3xl mb-10">
-            Every deal becomes a defensible record.
+            Every deal, a defensible record.
           </h2>
           <ReportMockup />
         </div>
@@ -273,9 +273,9 @@ const Landing = () => {
       {/* COMPARISON */}
       <section className="border-t border-border/40">
         <div className="max-w-5xl mx-auto px-6 py-20">
-          <div className="text-[10px] uppercase tracking-[0.22em] text-foreground/50 mb-3">Compared with the status quo</div>
+          <div className="text-[10px] uppercase tracking-[0.22em] text-foreground/50 mb-3">Status quo vs. DcernX</div>
           <h2 className="text-3xl md:text-4xl font-light tracking-tight max-w-3xl mb-10">
-            Spreadsheets, inboxes and memory vs. an operating layer.
+            Spreadsheets and inboxes — or an operating layer built for capital.
           </h2>
           <div className="border border-border/40">
             <div className="grid grid-cols-3 text-xs uppercase tracking-wider text-foreground/50 border-b border-border/40">

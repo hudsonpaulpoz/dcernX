@@ -161,6 +161,12 @@ const FOUNDERS = [
     role: "Co-founder",
     linkedin: "https://www.linkedin.com/in/christiankumar/",
   },
+  {
+    initial: "J",
+    name: "John Swaroop",
+    role: "Co-founder",
+    linkedin: "https://www.linkedin.com/in/john-swaroop-4389961b7/",
+  },
 ];
 
 export const FounderCard = () => (
@@ -171,14 +177,22 @@ export const FounderCard = () => (
       We built DcernX because we'd watched too many private-capital decisions get made on conviction alone.
       If you're evaluating us for your team, write to us directly — we read every message.
     </p>
-    <div className="mt-6 grid sm:grid-cols-3 gap-px bg-border/40">
+    <div className="mt-6 grid grid-cols-2 lg:grid-cols-4 gap-px bg-border/40">
       {FOUNDERS.map((f) => (
         <div key={f.name} className="bg-background p-4 flex items-start gap-3">
           <div className="h-10 w-10 shrink-0 border border-foreground/20 flex items-center justify-center text-sm font-light tracking-wider">
             {f.initial}
           </div>
           <div className="flex-1 min-w-0">
-            <div className="text-sm font-medium truncate">{f.name}</div>
+            <a
+              href={f.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm font-medium truncate hover:underline"
+              aria-label={`${f.name} on LinkedIn`}
+            >
+              {f.name}
+            </a>
             <div className="text-[11px] text-foreground/50">{f.role}</div>
             <a
               href={f.linkedin}

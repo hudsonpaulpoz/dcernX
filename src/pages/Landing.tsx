@@ -17,7 +17,7 @@ const FAQS = [
   },
   {
     q: "What does the AI due diligence cover?",
-    a: "Twelve research tracks per deal: strategy, market, competition, team, financials, regulatory, negative media, ESG and risk. Every claim is sourced, timestamped and reviewable.",
+    a: "Twelve research tracks per deal: strategy, market, competition, team, financials, regulatory, negative media, ESG and risk. Every claim is sourced from ~1,500 web, filing and news checkpoints, timestamped and reviewable.",
   },
   {
     q: "How fast is a report?",

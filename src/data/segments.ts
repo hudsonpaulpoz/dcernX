@@ -251,22 +251,22 @@ export const SEGMENTS: Segment[] = [
     icon: Landmark,
     hubPain: "Direct deals demand fund-grade governance you don't staff for.",
     hubOutcome: "Fiduciary-ready records on every private opportunity.",
-    heroEyebrow: "For family offices",
+    heroEyebrow: "Family office software for direct investing",
     heroH1: "Direct investing with fiduciary-grade records.",
     heroSub:
-      "Direct private deals need the same defensibility as a fund — without a fund's headcount. DcernX gives every opportunity a complete, auditable record the next generation can stand behind.",
+      "Direct private deals need the defensibility of a fund — without a fund's headcount. DcernX gives every opportunity an auditable record the next generation can stand behind.",
     pains: [
       {
         title: "Lean team, fund-sized expectations",
-        body: "One or two investment professionals are expected to evaluate dozens of direct opportunities a year with no staffing slack.",
+        body: "One or two investment professionals evaluate dozens of direct opportunities a year — with no staffing slack.",
       },
       {
         title: "Governance gaps",
-        body: "Decisions sit in inboxes and partner memory. When a deal is questioned a year later, the evidence trail is missing.",
+        body: "Decisions live in inboxes and partner memory. When a deal is questioned a year later, the evidence trail is gone.",
       },
       {
         title: "Multi-generational handoff",
-        body: "Knowledge about why you backed (or passed on) opportunities lives in one head. Succession turns it into guesswork.",
+        body: "Knowledge about why you backed (or passed on) deals lives in one head. Succession turns it into guesswork.",
       },
     ],
     outcomes: [
@@ -275,21 +275,21 @@ export const SEGMENTS: Segment[] = [
       { metric: "Defensible", label: "decisions, evidenced and timestamped" },
     ],
     capabilities: [
-      { title: "Private opportunity intake", body: "Direct deals, fund commitments and co-invests all captured the same way." },
+      { title: "Private opportunity intake", body: "Direct deals, fund commitments and co-invests captured the same way." },
       { title: "Diligence brief library", body: "Every opportunity carries its own evidenced brief — searchable across years and generations." },
       { title: "Governance trail", body: "Decisions, dissenting views and underlying evidence preserved as a single record." },
-      { title: "Multi-entity visibility", body: "View activity across trusts, vehicles and members without cross-contaminating data." },
+      { title: "Multi-entity visibility", body: "Activity across trusts, vehicles and members — without cross-contaminating data." },
     ],
     calc: { applicationsPerMonth: 20, hoursPerInitialReview: 5, analystRate: 300 },
     testimonial: {
-      quote: "For the first time, every direct investment has the same defensible record a fund would produce — without us scaling the team. The next generation will be able to read why we did every deal.",
+      quote: "For the first time, every direct investment has the same defensible record a fund would produce — without scaling the team. The next generation will be able to read why we did every deal.",
       author: "Chief Investment Officer (confidential)",
       role: "Single-family office, multi-asset",
     },
-    seoTitle: "Family Office Investment Governance Platform — DcernX",
+    seoTitle: "Family Office Software for Direct Investing — DcernX",
     seoDescription:
-      "Direct deal intake, agentic diligence and fiduciary-grade records for single and multi-family offices. Defensible private investing for lean teams.",
-    keywords: "family office software, family office investment platform, direct investing, private deal governance, family office cio tools",
+      "AI due diligence and fiduciary-grade records for single and multi-family offices. Defensible direct investing for lean investment teams.",
+    keywords: "family office software, family office investment platform, family office cio tools, direct investing software, private deal governance, investor crm",
   },
   {
     slug: "pe-funds",

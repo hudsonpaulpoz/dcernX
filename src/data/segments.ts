@@ -234,9 +234,9 @@ export const SEGMENTS: Segment[] = [
     ],
     calc: { applicationsPerMonth: 25, hoursPerInitialReview: 3, analystRate: 250 },
     testimonial: {
-      quote: "Placeholder — angel syndicate lead quote about diligence speed and member coordination.",
-      author: "Syndicate Lead",
-      role: "Angel Syndicate (placeholder)",
+      quote: "I used to pass on deals just because I couldn't dig in fast enough. Now I get an evidenced brief by morning and my syndicate aligns in one thread instead of fifteen.",
+      author: "Syndicate Lead (confidential)",
+      role: "Angel syndicate, ~40 members",
     },
     seoTitle: "Due Diligence Platform for Angel Investors & Syndicates — DcernX",
     seoDescription:

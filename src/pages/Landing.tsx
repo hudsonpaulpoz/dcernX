@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Check, Minus } from "lucide-react";
+import { ArrowRight, Check, Minus, User, AlertCircle, CheckCircle } from "lucide-react";
 import { Seo } from "@/components/Seo";
 import { MarketingNav, MarketingFooter, WAITLIST_URL } from "@/components/MarketingNav";
 import { InvestorCalculator } from "@/components/InvestorCalculator";
@@ -159,13 +159,31 @@ const Landing = () => {
                   to={`/segments/${s.slug}`}
                   className="group bg-background p-6 hover:bg-foreground/[0.03] transition-colors"
                 >
-                  <div className="flex items-center gap-2 mb-4">
-                    <Icon className="h-4 w-4 text-foreground/60" />
+                  <div className="flex items-center gap-2 mb-2">
+                    <User className="h-3 w-3 text-foreground/40" />
+                    <span className="text-[10px] uppercase tracking-wider text-foreground/50">ICP</span>
                     <span className="text-xs text-foreground/60">{s.buyer}</span>
                   </div>
-                  <div className="text-base font-medium mb-2">{s.name}</div>
-                  <p className="text-xs text-foreground/65 leading-relaxed mb-4">{s.hubPain}</p>
-                  <div className="text-xs text-foreground/80 leading-relaxed">{s.hubOutcome}</div>
+                  <div className="flex items-start gap-2 mb-4">
+                    <Icon className="h-4 w-4 text-foreground/60 mt-0.5" />
+                    <div className="text-base font-medium leading-tight">{s.name}</div>
+                  </div>
+                  <div className="space-y-3">
+                    <div className="flex items-start gap-2">
+                      <AlertCircle className="h-3.5 w-3.5 text-foreground/40 mt-0.5" />
+                      <div>
+                        <div className="text-[10px] uppercase tracking-wider text-foreground/50 mb-0.5">Problem</div>
+                        <p className="text-xs text-foreground/65 leading-relaxed">{s.hubPain}</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-2">
+                      <CheckCircle className="h-3.5 w-3.5 text-foreground/40 mt-0.5" />
+                      <div>
+                        <div className="text-[10px] uppercase tracking-wider text-foreground/50 mb-0.5">Solution</div>
+                        <div className="text-xs text-foreground/80 leading-relaxed">{s.hubOutcome}</div>
+                      </div>
+                    </div>
+                  </div>
                   <div className="mt-4 inline-flex items-center gap-1 text-xs text-foreground/50 group-hover:text-foreground transition-colors">
                     Read about DcernX for {s.name} <ArrowRight className="h-3 w-3" aria-hidden="true" />
                   </div>

@@ -128,8 +128,8 @@ export const SEGMENTS: Segment[] = [
     outcomes: [
       { metric: "1 source", label: "of truth across every thesis" },
       { metric: "Days", label: "to a fully validated brief" },
-      { metric: "Spin-out ready", body: "Investor-grade memos generated from your validation work", label: "Investor-grade memos from existing validation" } as never,
-    ].slice(0, 3) as { metric: string; label: string }[],
+      { metric: "Spin-out ready", label: "investor-grade memos from existing validation" },
+    ],
     capabilities: [
       { title: "Thesis workspace", body: "Capture, score and compare internal ideas with the same rigour as external deals." },
       { title: "Operator pipeline", body: "Track co-founder candidates with notes, signals and matched theses in one place." },

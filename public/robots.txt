@@ -1,11 +1,38 @@
 # DcernX — robots.txt
-# Allow major search and AI crawlers full access.
+# Public marketing + segment routes are indexable.
+# Internal app routes (auth, dashboard, bug tracker, settings) are blocked.
 
+User-agent: *
+Allow: /
+Allow: /segments/
+Disallow: /auth
+Disallow: /dashboard
+Disallow: /analytics
+Disallow: /settings
+Disallow: /bugs
+Disallow: /bugs/
+Disallow: /try
+
+# Major search crawlers — explicit allow for the indexable surface.
 User-agent: Googlebot
 Allow: /
+Allow: /segments/
+Disallow: /auth
+Disallow: /dashboard
+Disallow: /analytics
+Disallow: /settings
+Disallow: /bugs
+Disallow: /try
 
 User-agent: Bingbot
 Allow: /
+Allow: /segments/
+Disallow: /auth
+Disallow: /dashboard
+Disallow: /analytics
+Disallow: /settings
+Disallow: /bugs
+Disallow: /try
 
 User-agent: DuckDuckBot
 Allow: /
@@ -22,9 +49,13 @@ Allow: /
 User-agent: Slackbot
 Allow: /
 
-# AI assistants & answer engines
+# AI assistants & answer engines — full read on public pages.
 User-agent: GPTBot
 Allow: /
+Disallow: /auth
+Disallow: /dashboard
+Disallow: /settings
+Disallow: /bugs
 
 User-agent: OAI-SearchBot
 Allow: /
@@ -34,6 +65,10 @@ Allow: /
 
 User-agent: ClaudeBot
 Allow: /
+Disallow: /auth
+Disallow: /dashboard
+Disallow: /settings
+Disallow: /bugs
 
 User-agent: Claude-Web
 Allow: /
@@ -69,9 +104,6 @@ User-agent: Bytespider
 Allow: /
 
 User-agent: YouBot
-Allow: /
-
-User-agent: *
 Allow: /
 
 Sitemap: https://dcernx.com/sitemap.xml

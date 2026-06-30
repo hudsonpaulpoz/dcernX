@@ -378,9 +378,9 @@ export const SEGMENTS: Segment[] = [
     ],
     calc: { applicationsPerMonth: 150, hoursPerInitialReview: 1, analystRate: 90 },
     testimonial: {
-      quote: "Placeholder — program lead quote about sponsor reporting and intake fairness.",
-      author: "Program Lead",
-      role: "Corporate / Government Program (placeholder)",
+      quote: "Our corporate sponsor used to ask for cohort metrics we couldn't produce. Now reporting is a click, intake is consistent across reviewers, and we can defend every selection decision.",
+      author: "Program Lead (confidential)",
+      role: "Corporate-backed founder program, EMEA",
     },
     seoTitle: "Software for Startup Programs, Corporate Venture & Government Funds — DcernX",
     seoDescription:

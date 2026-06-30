@@ -169,6 +169,11 @@ const FOUNDERS = [
   },
 ];
 
+const absoluteLinkedInUrl = (url: string) => {
+  const cleanedUrl = url.trim().replace(/^https?:\/\//, "");
+  return `https://${cleanedUrl}`;
+};
+
 export const FounderCard = () => (
   <div className="border border-border/40 bg-background p-6 md:p-8 max-w-3xl mx-auto text-left">
     <div className="text-[10px] uppercase tracking-[0.22em] text-foreground/50 mb-2">The team</div>
@@ -185,7 +190,7 @@ export const FounderCard = () => (
           </div>
           <div className="flex-1 min-w-0">
             <a
-              href={f.linkedin}
+              href={absoluteLinkedInUrl(f.linkedin)}
               target="_blank"
               rel="noopener noreferrer"
               className="text-sm font-medium truncate hover:underline"
@@ -195,7 +200,7 @@ export const FounderCard = () => (
             </a>
             <div className="text-[11px] text-foreground/50">{f.role}</div>
             <a
-              href={f.linkedin}
+              href={absoluteLinkedInUrl(f.linkedin)}
               target="_blank"
               rel="noopener noreferrer"
               className="mt-1.5 inline-flex items-center gap-1 text-[11px] text-foreground/60 hover:text-foreground"

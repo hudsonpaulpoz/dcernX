@@ -352,6 +352,9 @@ const Landing = () => {
         </div>
       </section>
 
+      {/* SECURITY & TRUST */}
+      <SecuritySection />
+
       {/* FAQ */}
       <section className="border-t border-border/40">
         <div className="max-w-3xl mx-auto px-6 py-20">
@@ -373,33 +376,42 @@ const Landing = () => {
 
       {/* ACTION */}
       <section className="border-t border-border/40">
-        <div className="max-w-3xl mx-auto px-6 py-24 text-center">
-          <h2 className="text-4xl md:text-5xl font-light tracking-tight">
-            Make every decision defensible.
-          </h2>
-          <p className="mt-4 text-sm text-foreground/65">
-            See DcernX run on your own pipeline — not a sandbox.
-          </p>
-          <div className="mt-8 flex flex-wrap gap-3 justify-center">
-            <a
-              href={WAITLIST_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="h-11 px-6 inline-flex items-center gap-2 bg-foreground text-background text-sm hover:opacity-90 transition-opacity"
-            >
-              Book a demo <ArrowRight className="h-3.5 w-3.5" />
-            </a>
-            <a
-              href="mailto:hudson@p101limited.com"
-              className="h-11 px-6 inline-flex items-center text-sm border border-foreground/20 hover:border-foreground/60 transition-colors"
-            >
-              Email Hudson
-            </a>
+        <div className="max-w-3xl mx-auto px-6 py-24">
+          <div className="text-center">
+            <h2 className="text-4xl md:text-5xl font-light tracking-tight">
+              Make every decision defensible.
+            </h2>
+            <p className="mt-4 text-sm text-foreground/65">
+              See DcernX run on your own pipeline — not a sandbox. 30 minutes. Live deals.
+            </p>
+            <div className="mt-8 flex flex-wrap gap-3 justify-center">
+              <a
+                href={WAITLIST_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="h-11 px-6 inline-flex items-center gap-2 bg-foreground text-background text-sm hover:opacity-90 transition-opacity"
+              >
+                Book a demo <ArrowRight className="h-3.5 w-3.5" />
+              </a>
+              <a
+                href="https://app.dcernx.com/forms/survey/nn714s7d45cqdn9qw0m6jx042s89mgym"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="h-11 px-6 inline-flex items-center text-sm border border-foreground/20 hover:border-foreground/60 transition-colors"
+              >
+                Run a deal — free
+              </a>
+            </div>
+          </div>
+          <div className="mt-14">
+            <FounderCard />
           </div>
         </div>
       </section>
 
+      <StickyCtaBar />
       <MarketingFooter />
+
     </div>
   );
 };

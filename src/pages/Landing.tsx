@@ -8,79 +8,79 @@ import { SEGMENTS } from "@/data/segments";
 
 const FAQS = [
   {
-    q: "Who is DcernX for?",
-    a: "Private investment teams: venture capital, accelerators, venture studios, angel syndicates, family offices, private equity and startup programs — anyone evaluating private opportunities and accountable for the decisions.",
+    q: "Who uses DcernX?",
+    a: "Investment teams that move private capital: VCs, accelerators, venture studios, angel syndicates, family offices, PE funds and startup programs. If you're accountable for the decision, this is built for you.",
   },
   {
-    q: "How is this different from a CRM?",
-    a: "A CRM stores contacts. DcernX is an operating layer: structured intake, agentic primary research, IC-ready memos and audit-grade decision records — purpose-built for private capital, not retrofitted from a sales tool.",
+    q: "How is this different from a deal flow CRM?",
+    a: "A CRM stores contacts. DcernX is the operating layer underneath it: structured intake, agentic AI due diligence, IC-ready memos and an audit trail on every decision — purpose-built for private markets, not a retrofitted sales tool.",
   },
   {
-    q: "What does the agentic due diligence actually cover?",
-    a: "Twelve research tracks per opportunity, including strategy, market, competition, team, financial assumptions, regulatory, negative media and risk. Every claim is sourced and timestamped.",
+    q: "What does the AI due diligence cover?",
+    a: "Twelve research tracks per deal: strategy, market, competition, team, financials, regulatory, negative media, ESG and risk. Every claim is sourced, timestamped and reviewable.",
   },
   {
     q: "How fast is a report?",
-    a: "DcernX produces an initial evidenced brief in roughly 12 minutes from a deck upload — work that typically takes an analyst around 18 hours. Deeper investigations run in parallel as you specify them.",
+    a: "About 12 minutes from deck upload to an IC-ready brief — work that costs an analyst roughly 20 hours. Deeper investigations run in parallel on demand.",
   },
   {
     q: "Is our data safe?",
-    a: "DcernX is operated by P101 Limited (UK, company no. 17063831), GDPR-compliant by design. We act as a data processor on customer data, never sell it, and do not train third-party models on it.",
+    a: "DcernX is operated by P101 Limited (UK, no. 17063831). GDPR-compliant by design. We process your data, never sell it, and never train third-party models on it.",
   },
   {
-    q: "Can we run it on our own deal flow?",
-    a: "Yes. Demos run on real deals from your pipeline so you see exactly how DcernX behaves on your team's work — not a generic sandbox.",
+    q: "Can we trial it on our own pipeline?",
+    a: "Yes. Demos run on live deals from your inbox so you see exactly how DcernX behaves on your team's work — not a sandbox.",
   },
 ];
 
 const FLOW_DEAL = [
   {
     n: "01",
-    t: "Upload the deal",
-    d: "Drop the deck, data room link, founder forms or war-room notes. One structured profile in seconds.",
+    t: "Drop the deck",
+    d: "Deck, data room, founder form or notes. One structured deal profile in seconds.",
   },
   {
     n: "02",
-    t: "Dispatch the swarm",
-    d: "16 specialised agents start work in parallel across strategy, market, competition, team, financials, regulatory and risk.",
+    t: "Agents go to work",
+    d: "16 specialist AI agents run in parallel across strategy, market, competition, team, financials and risk.",
   },
   {
     n: "03",
-    t: "Agentic investigation",
-    d: "Every claim is challenged against external sources — web, filings, news, proprietary data — and cross-checked in source loops.",
+    t: "Claims get challenged",
+    d: "Every assertion cross-checked against web, filings, news and proprietary sources — in evidence loops.",
   },
   {
     n: "04",
-    t: "Get the brief",
-    d: "An IC-ready, evidence-backed report lands in your inbox in ~12 minutes. Every finding cited, every source timestamped.",
+    t: "Brief lands in your inbox",
+    d: "An IC-ready report in ~12 minutes. Every finding cited. Every source timestamped.",
   },
 ];
 
 const FLOW_ORG = [
   {
     n: "01",
-    t: "Talk to us",
-    d: "Book a working session. We map your deal flow, team shape and decision rituals to the right plan.",
+    t: "Working session",
+    d: "We map your pipeline, team and decision rituals — and shape the rollout around them.",
   },
   {
     n: "02",
-    t: "Pick your plan",
-    d: "Seats, agent capacity and storage sized to your team — solo angel, 20-person fund, accelerator cohort, or PE platform.",
+    t: "Right-sized plan",
+    d: "Seats, agents and storage scaled to a solo angel, a 20-person fund or a PE platform.",
   },
   {
     n: "03",
-    t: "Configure your workflows",
+    t: "Your workflows, configured",
     d: "Intake forms, scoring rubrics, IC templates and stage gates tuned to how your team actually decides.",
   },
   {
     n: "04",
-    t: "Wire in your CRM",
-    d: "Connect existing tools or run DcernX as your system of record. Portfolio memory becomes searchable across years.",
+    t: "Connected to your stack",
+    d: "Plug into your existing CRM or run DcernX as the system of record. Portfolio memory becomes searchable.",
   },
   {
     n: "05",
-    t: "Operate on evidence",
-    d: "Every new deal, decision and update is captured, sourced and auditable — from first look to LP report.",
+    t: "Evidence by default",
+    d: "Every deal, decision and update captured, sourced and auditable — from first look to LP report.",
   },
 ];
 
@@ -88,8 +88,8 @@ const Landing = () => {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Seo
-        title="DcernX — The Operating Layer for Private Investment Teams"
-        description="Agentic due diligence and deal flow for VCs, accelerators, venture studios, angels, family offices, PE funds and startup programs. 18 hours of analyst work in 12 minutes — with audit-grade evidence."
+        title="DcernX — AI Due Diligence & Deal Flow for Investors"
+        description="The operating layer for private capital. AI due diligence, deal flow management and IC-ready memos for VCs, family offices, PE, accelerators and angels — 20 analyst hours in 12 minutes, fully evidenced."
         path="/"
         jsonLd={{
           "@context": "https://schema.org",
@@ -106,15 +106,15 @@ const Landing = () => {
       {/* HERO — Attention + Problem */}
       <section className="max-w-5xl mx-auto px-6 pt-24 pb-20">
         <div className="text-[10px] uppercase tracking-[0.22em] text-foreground/50 mb-6">
-          For private investment teams
+          AI due diligence · Deal flow · IC memos
         </div>
         <h1 className="text-5xl md:text-7xl font-light tracking-tight leading-[1.02] max-w-4xl">
           Private capital runs on memory.<br />
-          <span className="text-foreground/55">Make it run on evidence.</span>
+          <span className="text-foreground/55">Run it on evidence instead.</span>
         </h1>
         <p className="mt-8 text-base md:text-lg text-foreground/70 max-w-2xl leading-relaxed">
-          DcernX is the operating layer for VCs, accelerators, studios, angels, family offices, PE funds and startup programs.
-          Structured intake, agentic due diligence, IC-ready memos — and a defensible record of every decision your team has ever made.
+          DcernX is the AI operating layer for VCs, family offices, PE funds, accelerators, studios, angels and startup programs.
+          Structured intake, agentic due diligence, IC-ready memos — and a defensible record of every decision your team ever makes.
         </p>
         <div className="mt-10 flex flex-wrap gap-3">
           <a
@@ -137,9 +137,9 @@ const Landing = () => {
       {/* AGITATE — softened stats */}
       <section className="border-t border-border/40">
         <div className="max-w-5xl mx-auto px-6 py-16 grid md:grid-cols-3 gap-px bg-border/40">
-          <Stat headline="~20 hr" body="Estimated effort per initial review at a typical fund. Industry estimate; varies by stage and depth." />
-          <Stat headline="Majority" body="Of private-market deals lack a defensible audit trail of the diligence behind the decision. Industry estimate." />
-          <Stat headline="12 min" body="DcernX's demonstrated time from deck upload to the first evidenced, IC-ready brief." />
+          <Stat headline="~20 hr" body="Typical analyst time per initial review at a private capital firm. Industry estimate; varies by stage and depth." />
+          <Stat headline="Most" body="Private-market deals lack a defensible audit trail behind the decision. Industry estimate." />
+          <Stat headline="12 min" body="From deck upload to the first IC-ready, evidence-backed brief in DcernX." />
         </div>
       </section>
 
@@ -185,7 +185,7 @@ const Landing = () => {
               Two ways in. One operating layer.
             </h2>
             <p className="text-sm text-foreground/65 max-w-2xl mb-12">
-              Start with a single live deal in minutes, or roll DcernX out across your team as the system of record for every opportunity, decision and update.
+              Pressure-test a single live deal in minutes — or roll DcernX out as the system of record for every opportunity, decision and update your team touches.
             </p>
 
             {/* Flow 1 — instant deal analysis */}
@@ -193,7 +193,7 @@ const Landing = () => {
               <div className="flex items-baseline justify-between mb-6 flex-wrap gap-3">
                 <div>
                   <div className="text-[10px] uppercase tracking-[0.22em] text-foreground/50 mb-2">Path 1 · Run a deal now</div>
-                  <h3 className="text-xl md:text-2xl font-light tracking-tight">A live agentic analysis, in ~12 minutes.</h3>
+                  <h3 className="text-xl md:text-2xl font-light tracking-tight">From deck to IC-ready brief in ~12 minutes.</h3>
                 </div>
                 <a
                   href={WAITLIST_URL}
@@ -220,7 +220,7 @@ const Landing = () => {
               <div className="flex items-baseline justify-between mb-6 flex-wrap gap-3">
                 <div>
                   <div className="text-[10px] uppercase tracking-[0.22em] text-foreground/50 mb-2">Path 2 · DcernX for your team</div>
-                  <h3 className="text-xl md:text-2xl font-light tracking-tight">Make evidence the default for every deal you ever see.</h3>
+                  <h3 className="text-xl md:text-2xl font-light tracking-tight">Make evidence the default on every deal you'll ever see.</h3>
                 </div>
                 <a
                   href="mailto:hudson@p101limited.com"
@@ -241,7 +241,7 @@ const Landing = () => {
             </div>
 
             <p className="mt-8 text-xs text-foreground/50">
-              16 specialised agents running in parallel. Every claim cited; every output reviewable.
+              16 specialist AI agents working in parallel. Every claim cited. Every output reviewable.
             </p>
           </div>
         </section>
@@ -253,7 +253,7 @@ const Landing = () => {
         <div className="max-w-5xl mx-auto px-6 py-20">
           <div className="text-[10px] uppercase tracking-[0.22em] text-foreground/50 mb-3">What lands in your workspace</div>
           <h2 className="text-3xl md:text-4xl font-light tracking-tight max-w-3xl mb-10">
-            Every deal becomes a defensible record.
+            Every deal, a defensible record.
           </h2>
           <ReportMockup />
         </div>
@@ -273,9 +273,9 @@ const Landing = () => {
       {/* COMPARISON */}
       <section className="border-t border-border/40">
         <div className="max-w-5xl mx-auto px-6 py-20">
-          <div className="text-[10px] uppercase tracking-[0.22em] text-foreground/50 mb-3">Compared with the status quo</div>
+          <div className="text-[10px] uppercase tracking-[0.22em] text-foreground/50 mb-3">Status quo vs. DcernX</div>
           <h2 className="text-3xl md:text-4xl font-light tracking-tight max-w-3xl mb-10">
-            Spreadsheets, inboxes and memory vs. an operating layer.
+            Spreadsheets and inboxes — or an operating layer built for capital.
           </h2>
           <div className="border border-border/40">
             <div className="grid grid-cols-3 text-xs uppercase tracking-wider text-foreground/50 border-b border-border/40">
@@ -331,7 +331,7 @@ const Landing = () => {
             Make every decision defensible.
           </h2>
           <p className="mt-4 text-sm text-foreground/65">
-            See DcernX run on your own deal flow.
+            See DcernX run on your own pipeline — not a sandbox.
           </p>
           <div className="mt-8 flex flex-wrap gap-3 justify-center">
             <a

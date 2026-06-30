@@ -345,47 +345,47 @@ export const SEGMENTS: Segment[] = [
     shortName: "Startup Programs",
     buyer: "Program Lead",
     icon: GraduationCap,
-    hubPain: "Sponsors demand reporting your tooling can't produce.",
+    hubPain: "Sponsors want metrics your tooling can't produce.",
     hubOutcome: "Fair, defensible programs with reporting built in.",
-    heroEyebrow: "For corporate, government & university programs",
+    heroEyebrow: "Software for corporate, government & university programs",
     heroH1: "Run founder programs sponsors actually trust.",
     heroSub:
-      "Corporate venture, government and university programs have the budget but not the systems. DcernX gives you fair intake, consistent evaluation and reporting your sponsors can stand behind.",
+      "Corporate venture, government and university programs have budget — not systems. DcernX delivers fair intake, consistent evaluation and reporting your sponsors can stand behind.",
     pains: [
       {
         title: "Inconsistent evaluation",
-        body: "Different reviewers, different rubrics, different outcomes. Defending why one founder got in and another didn't is uncomfortable.",
+        body: "Different reviewers, rubrics and outcomes. Defending why one founder got in and another didn't is uncomfortable.",
       },
       {
-        title: "Sponsor reporting on demand",
-        body: "Corporates, ministries and university boards want metrics nobody's tracking. Each report is a custom data project.",
+        title: "Reporting on demand",
+        body: "Corporates, ministries and boards want metrics nobody's tracking. Every report becomes a custom data project.",
       },
       {
         title: "Fragmented founder data",
-        body: "Cohorts move through the program but their data lives in spreadsheets that go stale the moment the program ends.",
+        body: "Cohorts move through your program; their data lives in spreadsheets that go stale the day it ends.",
       },
     ],
     outcomes: [
       { metric: "Same rubric", label: "applied to every applicant" },
-      { metric: "Sponsor reports", label: "one-click, anytime" },
+      { metric: "1 click", label: "to live sponsor reports" },
       { metric: "Multi-year", label: "view of every cohort and founder" },
     ],
     capabilities: [
-      { title: "Fair intake", body: "Open calls handled with consistent forms, scoring and evidence trails — defensible if challenged." },
-      { title: "Cohort management", body: "Track founders through every stage of your program with structured milestones, not free-text notes." },
-      { title: "Sponsor dashboards", body: "Pre-built reports for corporate partners, ministries and university boards — refreshed live." },
-      { title: "Longitudinal data", body: "Outcomes captured year over year, so program impact is provable not anecdotal." },
+      { title: "Fair intake", body: "Open calls with consistent forms, scoring and evidence trails — defensible if challenged." },
+      { title: "Cohort management", body: "Track founders through every program stage with structured milestones, not free-text notes." },
+      { title: "Sponsor dashboards", body: "Pre-built reports for corporate partners, ministries and boards — refreshed live." },
+      { title: "Longitudinal data", body: "Outcomes captured year over year, so program impact is provable — not anecdotal." },
     ],
     calc: { applicationsPerMonth: 150, hoursPerInitialReview: 1, analystRate: 90 },
     testimonial: {
-      quote: "Our corporate sponsor used to ask for cohort metrics we couldn't produce. Now reporting is a click, intake is consistent across reviewers, and we can defend every selection decision.",
+      quote: "Our corporate sponsor used to ask for cohort metrics we couldn't produce. Now reporting is a click, intake is consistent across reviewers, and we can defend every selection.",
       author: "Program Lead (confidential)",
       role: "Corporate-backed founder program, EMEA",
     },
-    seoTitle: "Software for Startup Programs, Corporate Venture & Government Funds — DcernX",
+    seoTitle: "Startup Program Software — Corporate, Government & University | DcernX",
     seoDescription:
-      "Fair intake, consistent evaluation and sponsor-ready reporting for corporate venture, government funds and university startup programs.",
-    keywords: "startup program software, corporate venture platform, government startup fund, university accelerator, founder program management",
+      "Fair intake, consistent scoring and sponsor-ready reporting for corporate venture, government funds and university startup programs.",
+    keywords: "startup program software, corporate venture platform, government startup fund, university accelerator, founder program management, application screening software",
   },
 ];
 

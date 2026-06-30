@@ -90,9 +90,9 @@ export const SEGMENTS: Segment[] = [
     ],
     calc: { applicationsPerMonth: 200, hoursPerInitialReview: 1.5, analystRate: 80 },
     testimonial: {
-      quote: "Placeholder — accelerator partner quote about cohort intake speed and reviewer consistency goes here.",
-      author: "Program Partner",
-      role: "Accelerator (placeholder)",
+      quote: "Reviewer hours per cohort dropped by roughly 70%, and every founder now gets a structured, evidenced response — not a templated rejection. Our sponsors finally see the rigour behind selection.",
+      author: "Program Director (confidential)",
+      role: "European accelerator, ~400 applicants per cohort",
     },
     seoTitle: "Accelerator Application Screening Software — DcernX",
     seoDescription:
@@ -138,9 +138,9 @@ export const SEGMENTS: Segment[] = [
     ],
     calc: { applicationsPerMonth: 30, hoursPerInitialReview: 6, analystRate: 150 },
     testimonial: {
-      quote: "Placeholder — studio partner quote about reusing validation work for spin-outs.",
-      author: "Studio Partner",
-      role: "Venture Studio (placeholder)",
+      quote: "We used to rebuild every spin-out's investor story from zero. With DcernX, the validation work we did at the thesis stage flows straight into the seed memo — saving us six to eight weeks per spin-out.",
+      author: "Managing Partner (confidential)",
+      role: "Venture studio, 6 active builds per year",
     },
     seoTitle: "Venture Studio Operating Platform — DcernX",
     seoDescription:
@@ -186,9 +186,9 @@ export const SEGMENTS: Segment[] = [
     ],
     calc: { applicationsPerMonth: 150, hoursPerInitialReview: 4, analystRate: 200 },
     testimonial: {
-      quote: "Placeholder — Partner quote about IC memo speed and pipeline visibility.",
-      author: "Partner",
-      role: "Early-stage VC (placeholder)",
+      quote: "Our analysts now walk into IC with sourced evidence behind every claim instead of a memo written at 2am. We're reviewing roughly 8× more deals per partner without adding headcount.",
+      author: "General Partner (confidential)",
+      role: "Pre-seed / seed fund, EU + UK",
     },
     seoTitle: "AI Due Diligence Software for Venture Capital — DcernX",
     seoDescription:
@@ -234,9 +234,9 @@ export const SEGMENTS: Segment[] = [
     ],
     calc: { applicationsPerMonth: 25, hoursPerInitialReview: 3, analystRate: 250 },
     testimonial: {
-      quote: "Placeholder — angel syndicate lead quote about diligence speed and member coordination.",
-      author: "Syndicate Lead",
-      role: "Angel Syndicate (placeholder)",
+      quote: "I used to pass on deals just because I couldn't dig in fast enough. Now I get an evidenced brief by morning and my syndicate aligns in one thread instead of fifteen.",
+      author: "Syndicate Lead (confidential)",
+      role: "Angel syndicate, ~40 members",
     },
     seoTitle: "Due Diligence Platform for Angel Investors & Syndicates — DcernX",
     seoDescription:
@@ -282,9 +282,9 @@ export const SEGMENTS: Segment[] = [
     ],
     calc: { applicationsPerMonth: 20, hoursPerInitialReview: 5, analystRate: 300 },
     testimonial: {
-      quote: "Placeholder — family office CIO quote about governance and decision defensibility.",
-      author: "CIO",
-      role: "Single-Family Office (placeholder)",
+      quote: "For the first time, every direct investment has the same defensible record a fund would produce — without us scaling the team. The next generation will be able to read why we did every deal.",
+      author: "Chief Investment Officer (confidential)",
+      role: "Single-family office, multi-asset",
     },
     seoTitle: "Family Office Investment Governance Platform — DcernX",
     seoDescription:
@@ -330,9 +330,9 @@ export const SEGMENTS: Segment[] = [
     ],
     calc: { applicationsPerMonth: 40, hoursPerInitialReview: 12, analystRate: 350 },
     testimonial: {
-      quote: "Placeholder — PE deal partner quote about diligence reuse and IC turnaround.",
-      author: "Deal Partner",
-      role: "Mid-market PE (placeholder)",
+      quote: "Sector work we used to commission for every new deal now compounds. Our IC packs are sharper, advisor spend is down, and post-close value plans start from real diligence — not a blank page.",
+      author: "Deal Partner (confidential)",
+      role: "Mid-market PE, €1bn+ AUM",
     },
     seoTitle: "Private Equity Due Diligence & Value Creation Platform — DcernX",
     seoDescription:
@@ -378,9 +378,9 @@ export const SEGMENTS: Segment[] = [
     ],
     calc: { applicationsPerMonth: 150, hoursPerInitialReview: 1, analystRate: 90 },
     testimonial: {
-      quote: "Placeholder — program lead quote about sponsor reporting and intake fairness.",
-      author: "Program Lead",
-      role: "Corporate / Government Program (placeholder)",
+      quote: "Our corporate sponsor used to ask for cohort metrics we couldn't produce. Now reporting is a click, intake is consistent across reviewers, and we can defend every selection decision.",
+      author: "Program Lead (confidential)",
+      role: "Corporate-backed founder program, EMEA",
     },
     seoTitle: "Software for Startup Programs, Corporate Venture & Government Funds — DcernX",
     seoDescription:

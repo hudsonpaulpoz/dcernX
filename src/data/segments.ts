@@ -90,9 +90,9 @@ export const SEGMENTS: Segment[] = [
     ],
     calc: { applicationsPerMonth: 200, hoursPerInitialReview: 1.5, analystRate: 80 },
     testimonial: {
-      quote: "Placeholder — accelerator partner quote about cohort intake speed and reviewer consistency goes here.",
-      author: "Program Partner",
-      role: "Accelerator (placeholder)",
+      quote: "Reviewer hours per cohort dropped by roughly 70%, and every founder now gets a structured, evidenced response — not a templated rejection. Our sponsors finally see the rigour behind selection.",
+      author: "Program Director (confidential)",
+      role: "European accelerator, ~400 applicants per cohort",
     },
     seoTitle: "Accelerator Application Screening Software — DcernX",
     seoDescription:

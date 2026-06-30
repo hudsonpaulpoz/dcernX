@@ -11,7 +11,7 @@ export const StackedLogo = ({
 }) => (
   <img
     src={logoMark}
-    alt="DcernX"
+    alt="DcernX Logo"
     width={size}
     height={size}
     className={`select-none dark:invert ${className}`}

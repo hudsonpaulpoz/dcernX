@@ -167,7 +167,7 @@ const Landing = () => {
                   <p className="text-xs text-foreground/65 leading-relaxed mb-4">{s.hubPain}</p>
                   <div className="text-xs text-foreground/80 leading-relaxed">{s.hubOutcome}</div>
                   <div className="mt-4 inline-flex items-center gap-1 text-xs text-foreground/50 group-hover:text-foreground transition-colors">
-                    Read more <ArrowRight className="h-3 w-3" />
+                    Read about DcernX for {s.name} <ArrowRight className="h-3 w-3" aria-hidden="true" />
                   </div>
                 </Link>
               );

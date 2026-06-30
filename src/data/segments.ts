@@ -96,7 +96,7 @@ export const SEGMENTS: Segment[] = [
     },
     seoTitle: "Accelerator Application Screening Software — DcernX",
     seoDescription:
-      "Cohort intake, scoring and alumni tracking for accelerators and incubators. Triage hundreds of founder applications in hours with audit-ready evidence. Built for teams in Europe, the US, India and Singapore.",
+      "Cohort intake, scoring and alumni tracking for accelerators. Triage hundreds of founder applications in hours with cited evidence.",
     keywords: "accelerator software, cohort intake, application screening, incubator platform, founder evaluation",
   },
   {
@@ -144,7 +144,7 @@ export const SEGMENTS: Segment[] = [
     },
     seoTitle: "Venture Studio Operating Platform — DcernX",
     seoDescription:
-      "Idea validation, operator pipelines and portfolio ops for venture studios. One workspace from thesis to spin-out, with reusable evidence at every step. Built for teams in Europe, the US, India and Singapore.",
+      "Idea validation, operator pipelines and portfolio ops for venture studios. One workspace from thesis to spin-out, with reusable evidence.",
     keywords: "venture studio software, startup studio platform, idea validation, operator pipeline, spin-out memo",
   },
   {
@@ -192,7 +192,7 @@ export const SEGMENTS: Segment[] = [
     },
     seoTitle: "AI Due Diligence Software for Venture Capital — DcernX",
     seoDescription:
-      "Deal flow CRM, agentic due diligence and IC-ready memos for VCs. 10× analyst throughput on pre-revenue and early-stage deals — with audit-ready evidence. Built for teams in Europe, the US, India and Singapore.",
+      "Deal flow CRM, agentic due diligence and IC-ready memos for VCs. 10× analyst throughput on early-stage deals with cited evidence.",
     keywords: "venture capital software, deal flow crm, vc due diligence, ic memo, early stage investor platform",
   },
   {
@@ -240,7 +240,7 @@ export const SEGMENTS: Segment[] = [
     },
     seoTitle: "Due Diligence Platform for Angel Investors & Syndicates — DcernX",
     seoDescription:
-      "Institutional-grade diligence on angel time. Triage deals, coordinate your syndicate and build a searchable personal deal history — in one workspace. Built for teams in Europe, the US, India and Singapore.",
+      "Institutional-grade diligence on angel time. Triage deals, run your syndicate and keep a searchable personal deal history in one workspace.",
     keywords: "angel investor software, syndicate platform, angel due diligence, syndicate crm, angel investing tools",
   },
   {
@@ -288,7 +288,7 @@ export const SEGMENTS: Segment[] = [
     },
     seoTitle: "Family Office Investment Governance Platform — DcernX",
     seoDescription:
-      "Direct deal intake, agentic diligence and fiduciary-grade records for single and multi-family offices. Defensible private investing for lean investment teams. Built for teams in Europe, the US, India and Singapore.",
+      "Direct deal intake, agentic diligence and fiduciary-grade records for single and multi-family offices. Defensible private investing for lean teams.",
     keywords: "family office software, family office investment platform, direct investing, private deal governance, family office cio tools",
   },
   {
@@ -336,7 +336,7 @@ export const SEGMENTS: Segment[] = [
     },
     seoTitle: "Private Equity Due Diligence & Value Creation Platform — DcernX",
     seoDescription:
-      "Parallel diligence streams, sector research vaults and post-close continuity for private equity. Make diligence a compounding asset across your fund. Built for teams in Europe, the US, India and Singapore.",
+      "Parallel diligence streams, sector research vaults and post-close continuity for PE. Make diligence a compounding asset across your fund.",
     keywords: "private equity software, pe due diligence, ic memo software, value creation platform, sector intelligence",
   },
   {
@@ -384,7 +384,7 @@ export const SEGMENTS: Segment[] = [
     },
     seoTitle: "Software for Startup Programs, Corporate Venture & Government Funds — DcernX",
     seoDescription:
-      "Fair intake, consistent evaluation and sponsor-ready reporting for corporate venture, government-backed funds and university startup programs. Built for teams in Europe, the US, India and Singapore.",
+      "Fair intake, consistent evaluation and sponsor-ready reporting for corporate venture, government funds and university startup programs.",
     keywords: "startup program software, corporate venture platform, government startup fund, university accelerator, founder program management",
   },
 ];

@@ -177,7 +177,7 @@ export const FounderCard = () => (
       We built DcernX because we'd watched too many private-capital decisions get made on conviction alone.
       If you're evaluating us for your team, write to us directly — we read every message.
     </p>
-    <div className="mt-6 grid sm:grid-cols-3 gap-px bg-border/40">
+    <div className="mt-6 grid grid-cols-2 lg:grid-cols-4 gap-px bg-border/40">
       {FOUNDERS.map((f) => (
         <div key={f.name} className="bg-background p-4 flex items-start gap-3">
           <div className="h-10 w-10 shrink-0 border border-foreground/20 flex items-center justify-center text-sm font-light tracking-wider">

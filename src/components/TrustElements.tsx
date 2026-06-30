@@ -6,7 +6,7 @@ export const DEMO_URL = "https://app.dcernx.com/forms/survey/nn7e5a797kjqh6exhrg
 
 export const HeroTrustLine = () => (
   <p className="mt-6 text-[11px] text-foreground/50 leading-relaxed max-w-2xl">
-    Operated by P101 Limited (UK) · GDPR-compliant by design · Your data never trains third-party models · ~1,500 evidence checkpoints per deal.
+    Operated by P101 Limited (UK) · GDPR-compliant by design · Your data is processed by an open-source private AI model — never used to train third-party models · ~1,500 evidence checkpoints per deal.
   </p>
 );
 
@@ -48,8 +48,8 @@ const TRUST_TILES = [
   },
   {
     icon: Lock,
-    title: "Your data, never trained on",
-    body: "We never sell your data, and never use it to train third-party models. Ever.",
+    title: "Open-source private AI",
+    body: "Inference runs on an open-source model in a private, controlled environment. Your data is never used to train third-party models.",
   },
   {
     icon: FileCheck,
@@ -89,8 +89,8 @@ export const SecuritySection = () => (
 
 const METHOD = [
   { t: "Evidence loops", d: "Every claim verified against multiple independent sources before it lands in a memo." },
-  { t: "Cited sources", d: "Each finding links back to the filing, article or data point it came from. Timestamped." },
-  { t: "Human-reviewable", d: "No black box. Your team can audit, edit and override every line before IC." },
+  { t: "Open-source private AI", d: "Inference runs on an open-source model in a private environment. No third-party model training. No black box." },
+  { t: "Human-reviewable", d: "Your team can audit, edit and override every line before IC." },
 ];
 
 export const MethodologyStrip = () => (

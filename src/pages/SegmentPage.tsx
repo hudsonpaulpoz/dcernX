@@ -219,6 +219,7 @@ const SegmentPage = () => {
         </div>
       </section>
 
+      <StickyCtaBar />
       <MarketingFooter />
     </div>
   );

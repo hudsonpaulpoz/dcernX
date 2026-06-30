@@ -47,7 +47,7 @@ const FLOW_DEAL = [
   {
     n: "03",
     t: "Claims get challenged",
-    d: "Every assertion cross-checked against web, filings, news and proprietary sources — in evidence loops.",
+    d: "Every assertion cross-checked against ~1,500 web, filings, news and proprietary checkpoints — in evidence loops.",
   },
   {
     n: "04",

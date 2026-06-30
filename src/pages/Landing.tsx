@@ -331,7 +331,7 @@ const Landing = () => {
             Make every decision defensible.
           </h2>
           <p className="mt-4 text-sm text-foreground/65">
-            See DcernX run on your own deal flow.
+            See DcernX run on your own pipeline — not a sandbox.
           </p>
           <div className="mt-8 flex flex-wrap gap-3 justify-center">
             <a

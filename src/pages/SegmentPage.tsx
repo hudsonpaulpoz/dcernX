@@ -4,6 +4,7 @@ import { Seo } from "@/components/Seo";
 import { MarketingNav, MarketingFooter, WAITLIST_URL } from "@/components/MarketingNav";
 import { InvestorCalculator } from "@/components/InvestorCalculator";
 import { CursorSpotlight } from "@/components/CursorSpotlight";
+import { SecurityTiles, FounderCard, StickyCtaBar } from "@/components/TrustElements";
 import { getSegment, SEGMENTS } from "@/data/segments";
 
 const SegmentPage = () => {
@@ -152,23 +153,51 @@ const SegmentPage = () => {
         </div>
       </section>
 
+      {/* SECURITY & TRUST */}
+      <section className="border-t border-border/40">
+        <div className="max-w-5xl mx-auto px-6 py-16">
+          <div className="text-[10px] uppercase tracking-[0.22em] text-foreground/50 mb-6">
+            Security & trust
+          </div>
+          <SecurityTiles compact />
+        </div>
+      </section>
+
       {/* ACTION */}
       <section className="border-t border-border/40">
-        <div className="max-w-3xl mx-auto px-6 py-24 text-center">
-          <h2 className="text-3xl md:text-4xl font-light tracking-tight">
-            Ready to run {segment.name.toLowerCase()} like an operating layer?
-          </h2>
-          <p className="mt-4 text-sm text-foreground/65">
-            We'll walk you through DcernX on your own deal flow — no slideware.
-          </p>
-          <a
-            href={WAITLIST_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-8 h-11 px-6 inline-flex items-center gap-2 bg-foreground text-background text-sm hover:opacity-90 transition-opacity"
-          >
-            Book a demo <ArrowRight className="h-3.5 w-3.5" />
-          </a>
+        <div className="max-w-3xl mx-auto px-6 py-24">
+          <div className="text-center">
+            <h2 className="text-3xl md:text-4xl font-light tracking-tight">
+              Ready to run {segment.name.toLowerCase()} like an operating layer?
+            </h2>
+            <p className="mt-4 text-sm text-foreground/65">
+              We'll walk you through DcernX on your own deal flow — no slideware. 30 minutes.
+            </p>
+            <div className="mt-8 flex flex-wrap gap-3 justify-center">
+              <a
+                href={WAITLIST_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="h-11 px-6 inline-flex items-center gap-2 bg-foreground text-background text-sm hover:opacity-90 transition-opacity"
+              >
+                Book a demo <ArrowRight className="h-3.5 w-3.5" />
+              </a>
+              <a
+                href="https://app.dcernx.com/forms/survey/nn714s7d45cqdn9qw0m6jx042s89mgym"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="h-11 px-6 inline-flex items-center text-sm border border-foreground/20 hover:border-foreground/60 transition-colors"
+              >
+                Run a deal — free
+              </a>
+            </div>
+            <div className="mt-3 text-[11px] text-foreground/45">
+              Free · No credit card · Your deal stays yours.
+            </div>
+          </div>
+          <div className="mt-14">
+            <FounderCard />
+          </div>
         </div>
       </section>
 

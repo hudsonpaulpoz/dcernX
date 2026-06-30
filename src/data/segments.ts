@@ -176,7 +176,7 @@ export const SEGMENTS: Segment[] = [
     outcomes: [
       { metric: "10×", label: "deals reviewed per analyst" },
       { metric: "12 min", label: "from deck upload to first IC-ready brief" },
-      { metric: "200+", label: "sources cited per report" },
+      { metric: "1,500+", label: "sources cross-checked per report" },
     ],
     capabilities: [
       { title: "Pipeline as a record", body: "Every deal — inbound, intro, outbound — becomes a structured profile with full history attached." },

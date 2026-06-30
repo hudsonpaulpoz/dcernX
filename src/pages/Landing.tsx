@@ -88,8 +88,8 @@ const Landing = () => {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Seo
-        title="DcernX — The Operating Layer for Private Investment Teams"
-        description="Agentic due diligence and deal flow for VCs, accelerators, venture studios, angels, family offices, PE funds and startup programs. 18 hours of analyst work in 12 minutes — with audit-grade evidence."
+        title="DcernX — AI Due Diligence & Deal Flow for Investors"
+        description="The operating layer for private capital. AI due diligence, deal flow management and IC-ready memos for VCs, family offices, PE, accelerators and angels — 20 analyst hours in 12 minutes, fully evidenced."
         path="/"
         jsonLd={{
           "@context": "https://schema.org",
@@ -106,15 +106,15 @@ const Landing = () => {
       {/* HERO — Attention + Problem */}
       <section className="max-w-5xl mx-auto px-6 pt-24 pb-20">
         <div className="text-[10px] uppercase tracking-[0.22em] text-foreground/50 mb-6">
-          For private investment teams
+          AI due diligence · Deal flow · IC memos
         </div>
         <h1 className="text-5xl md:text-7xl font-light tracking-tight leading-[1.02] max-w-4xl">
           Private capital runs on memory.<br />
-          <span className="text-foreground/55">Make it run on evidence.</span>
+          <span className="text-foreground/55">Run it on evidence instead.</span>
         </h1>
         <p className="mt-8 text-base md:text-lg text-foreground/70 max-w-2xl leading-relaxed">
-          DcernX is the operating layer for VCs, accelerators, studios, angels, family offices, PE funds and startup programs.
-          Structured intake, agentic due diligence, IC-ready memos — and a defensible record of every decision your team has ever made.
+          DcernX is the AI operating layer for VCs, family offices, PE funds, accelerators, studios, angels and startup programs.
+          Structured intake, agentic due diligence, IC-ready memos — and a defensible record of every decision your team ever makes.
         </p>
         <div className="mt-10 flex flex-wrap gap-3">
           <a
@@ -137,9 +137,9 @@ const Landing = () => {
       {/* AGITATE — softened stats */}
       <section className="border-t border-border/40">
         <div className="max-w-5xl mx-auto px-6 py-16 grid md:grid-cols-3 gap-px bg-border/40">
-          <Stat headline="~20 hr" body="Estimated effort per initial review at a typical fund. Industry estimate; varies by stage and depth." />
-          <Stat headline="Majority" body="Of private-market deals lack a defensible audit trail of the diligence behind the decision. Industry estimate." />
-          <Stat headline="12 min" body="DcernX's demonstrated time from deck upload to the first evidenced, IC-ready brief." />
+          <Stat headline="~20 hr" body="Typical analyst time per initial review at a private capital firm. Industry estimate; varies by stage and depth." />
+          <Stat headline="Most" body="Private-market deals lack a defensible audit trail behind the decision. Industry estimate." />
+          <Stat headline="12 min" body="From deck upload to the first IC-ready, evidence-backed brief in DcernX." />
         </div>
       </section>
 

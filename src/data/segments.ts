@@ -297,20 +297,20 @@ export const SEGMENTS: Segment[] = [
     shortName: "PE Funds",
     buyer: "Deal Partner / Operating Partner",
     icon: Briefcase,
-    hubPain: "Diligence is expensive, slow, and never reused.",
+    hubPain: "Diligence is expensive, slow and thrown away post-IC.",
     hubOutcome: "Compound diligence across deals and value creation.",
-    heroEyebrow: "For private equity",
+    heroEyebrow: "Private equity software & AI due diligence",
     heroH1: "Run diligence at scale. Reuse it forever.",
     heroSub:
-      "Every deal triggers another six-figure diligence project — the output of which is mostly thrown away after IC. DcernX makes diligence a compounding asset across your fund.",
+      "Every deal triggers another six-figure diligence project — most of which is binned after IC. DcernX makes diligence a compounding asset across your fund.",
     pains: [
       {
         title: "Expensive per-deal diligence",
-        body: "External advisors rebuild the same market and competitor work for every deal. Spend goes up; institutional memory doesn't.",
+        body: "Advisors rebuild the same market and competitor work for every deal. Spend climbs; institutional memory doesn't.",
       },
       {
         title: "Pre-IC bottlenecks",
-        body: "Materials are stitched together by associates the week of IC. Partners review final drafts with little time to challenge.",
+        body: "Associates stitch materials together the week of IC. Partners review finals with no time to challenge.",
       },
       {
         title: "Post-close drift",
@@ -323,21 +323,21 @@ export const SEGMENTS: Segment[] = [
       { metric: "Continuous", label: "diligence into value-creation tracking" },
     ],
     capabilities: [
-      { title: "Sector research vaults", body: "Build and maintain living sector intelligence — reused on every deal in that vertical." },
-      { title: "Parallel diligence streams", body: "Commercial, financial, regulatory and ESG streams run in one workspace with shared evidence." },
+      { title: "Sector research vaults", body: "Living sector intelligence — reused on every deal in that vertical." },
+      { title: "Parallel diligence streams", body: "Commercial, financial, regulatory and ESG run in one workspace with shared evidence." },
       { title: "IC-ready memos", body: "Partner-grade memos generated from underlying evidence, not the other way around." },
-      { title: "Post-close continuity", body: "Diligence assumptions carry forward into operating partner dashboards and value-creation plans." },
+      { title: "Post-close continuity", body: "Diligence assumptions carry forward into operating-partner dashboards and value-creation plans." },
     ],
     calc: { applicationsPerMonth: 40, hoursPerInitialReview: 12, analystRate: 350 },
     testimonial: {
-      quote: "Sector work we used to commission for every new deal now compounds. Our IC packs are sharper, advisor spend is down, and post-close value plans start from real diligence — not a blank page.",
+      quote: "Sector work we used to commission for every new deal now compounds. IC packs are sharper, advisor spend is down, and post-close value plans start from real diligence — not a blank page.",
       author: "Deal Partner (confidential)",
       role: "Mid-market PE, €1bn+ AUM",
     },
-    seoTitle: "Private Equity Due Diligence & Value Creation Platform — DcernX",
+    seoTitle: "Private Equity Software & PE Due Diligence Platform — DcernX",
     seoDescription:
-      "Parallel diligence streams, sector research vaults and post-close continuity for PE. Make diligence a compounding asset across your fund.",
-    keywords: "private equity software, pe due diligence, ic memo software, value creation platform, sector intelligence",
+      "AI due diligence, sector research vaults and post-close continuity for private equity. Make diligence a compounding asset across your fund.",
+    keywords: "private equity software, pe due diligence, ic memo software, value creation platform, sector intelligence, ai due diligence, deal management software",
   },
   {
     slug: "startup-programs",

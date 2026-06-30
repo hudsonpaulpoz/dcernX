@@ -17,7 +17,7 @@ const FAQS = [
   },
   {
     q: "What does the AI due diligence cover?",
-    a: "Twelve research tracks per deal: strategy, market, competition, team, financials, regulatory, negative media, ESG and risk. Every claim is sourced, timestamped and reviewable.",
+    a: "Twelve research tracks per deal: strategy, market, competition, team, financials, regulatory, negative media, ESG and risk. Every claim is sourced from ~1,500 web, filing and news checkpoints, timestamped and reviewable.",
   },
   {
     q: "How fast is a report?",
@@ -47,7 +47,7 @@ const FLOW_DEAL = [
   {
     n: "03",
     t: "Claims get challenged",
-    d: "Every assertion cross-checked against web, filings, news and proprietary sources — in evidence loops.",
+    d: "Every assertion cross-checked against ~1,500 web, filings, news and proprietary checkpoints — in evidence loops.",
   },
   {
     n: "04",
@@ -259,7 +259,7 @@ const Landing = () => {
             </div>
 
             <p className="mt-8 text-xs text-foreground/50">
-              16 specialist AI agents working in parallel. Every claim cited. Every output reviewable.
+              16 specialist AI agents working in parallel across ~1,500 checkpoints per deal. Every claim cited. Every output reviewable.
             </p>
           </div>
         </section>

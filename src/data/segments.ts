@@ -176,11 +176,11 @@ export const SEGMENTS: Segment[] = [
     outcomes: [
       { metric: "10×", label: "deals reviewed per analyst" },
       { metric: "12 min", label: "from deck upload to first IC-ready brief" },
-      { metric: "200+", label: "sources cited per report" },
+      { metric: "1,500+", label: "sources cross-checked per report" },
     ],
     capabilities: [
       { title: "Pipeline as a record", body: "Every deal — inbound, intro, outbound — becomes a structured profile with full history attached." },
-      { title: "Agentic AI due diligence", body: "Strategy, market, competition, team, financials and regulatory researched in minutes — with citations." },
+      { title: "Agentic AI due diligence", body: "Strategy, market, competition, team, financials and regulatory researched across ~1,500 checkpoints — with citations." },
       { title: "IC-ready memos", body: "One-click investment memos with embedded evidence, scoring and partner commentary." },
       { title: "LP-ready visibility", body: "Pipeline, portfolio and decisions reportable in real time. No quarterly scramble." },
     ],

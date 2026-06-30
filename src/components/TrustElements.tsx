@@ -89,7 +89,8 @@ export const SecuritySection = () => (
 
 const METHOD = [
   { t: "Evidence loops", d: "Every claim verified against multiple independent sources before it lands in a memo." },
-  { t: "Open-source private AI", d: "Inference runs on an open-source model in a private environment. No third-party model training. No black box." },
+  { t: "Cited sources", d: "Each finding links back to the filing, article or data point it came from. Timestamped." },
+  { t: "Open-source private AI", d: "Inference runs on an open-source model in a private, controlled environment. No third-party training. No black box." },
   { t: "Human-reviewable", d: "Your team can audit, edit and override every line before IC." },
 ];
 
@@ -99,7 +100,7 @@ export const MethodologyStrip = () => (
       <div className="text-[10px] uppercase tracking-[0.22em] text-foreground/50 mb-6">
         Why investors trust the output
       </div>
-      <div className="grid md:grid-cols-3 gap-px bg-border/40">
+      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-px bg-border/40">
         {METHOD.map((m) => (
           <div key={m.t} className="bg-background p-5">
             <div className="text-sm font-medium mb-1">{m.t}</div>

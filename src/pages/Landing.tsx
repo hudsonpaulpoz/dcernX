@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Check, Minus } from "lucide-react";
+import { ArrowRight, Check, Minus, User, AlertCircle, CheckCircle } from "lucide-react";
 import { Seo } from "@/components/Seo";
 import { MarketingNav, MarketingFooter, WAITLIST_URL } from "@/components/MarketingNav";
 import { InvestorCalculator } from "@/components/InvestorCalculator";

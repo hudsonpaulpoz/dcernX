@@ -161,6 +161,12 @@ const FOUNDERS = [
     role: "Co-founder",
     linkedin: "https://www.linkedin.com/in/christiankumar/",
   },
+  {
+    initial: "J",
+    name: "John Swaroop",
+    role: "Co-founder",
+    linkedin: "https://www.linkedin.com/in/john-swaroop-4389961b7/",
+  },
 ];
 
 export const FounderCard = () => (

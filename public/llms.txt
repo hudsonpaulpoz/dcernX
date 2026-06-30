@@ -1,6 +1,6 @@
 # DcernX
 
-> DcernX is the operating layer for private investment teams — venture capital, accelerators, venture studios, angel syndicates, family offices, private equity funds and startup programs. It combines structured intake, agentic due diligence and audit-grade decision records in one workspace.
+> DcernX is the operating layer for private investment teams — venture capital, accelerators, venture studios, angel syndicates, family offices, private equity funds and startup programs. It combines structured intake, agentic due diligence and audit-grade decision records in one workspace. Built for investment teams across Europe, the United States, India and Singapore.
 
 DcernX is built by P101 Limited (UK, company no. 17063831). The platform turns ~20 hours of analyst diligence into ~12 minutes of agentic research per opportunity, with every claim cited and every decision evidenced.
 

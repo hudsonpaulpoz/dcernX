@@ -19,15 +19,31 @@ const SegmentPage = () => {
         title={segment.seoTitle}
         description={segment.seoDescription}
         path={`/segments/${segment.slug}`}
-        jsonLd={{
-          "@context": "https://schema.org",
-          "@type": "Service",
-          name: `DcernX for ${segment.name}`,
-          description: segment.seoDescription,
-          provider: { "@type": "Organization", name: "P101 Limited" },
-          areaServed: "Global",
-          audience: { "@type": "Audience", audienceType: segment.name },
-        }}
+        jsonLd={[
+          {
+            "@context": "https://schema.org",
+            "@type": "Service",
+            name: `DcernX for ${segment.name}`,
+            description: segment.seoDescription,
+            provider: { "@type": "Organization", name: "P101 Limited", url: "https://dcernx.com/" },
+            areaServed: [
+              { "@type": "Place", name: "Europe" },
+              { "@type": "Country", name: "United Kingdom" },
+              { "@type": "Country", name: "United States" },
+              { "@type": "Country", name: "India" },
+              { "@type": "Country", name: "Singapore" },
+            ],
+            audience: { "@type": "Audience", audienceType: segment.name },
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Home", item: "https://dcernx.com/" },
+              { "@type": "ListItem", position: 2, name: segment.name, item: `https://dcernx.com/segments/${segment.slug}` },
+            ],
+          },
+        ]}
       />
       <MarketingNav />
 

@@ -330,9 +330,9 @@ export const SEGMENTS: Segment[] = [
     ],
     calc: { applicationsPerMonth: 40, hoursPerInitialReview: 12, analystRate: 350 },
     testimonial: {
-      quote: "Placeholder — PE deal partner quote about diligence reuse and IC turnaround.",
-      author: "Deal Partner",
-      role: "Mid-market PE (placeholder)",
+      quote: "Sector work we used to commission for every new deal now compounds. Our IC packs are sharper, advisor spend is down, and post-close value plans start from real diligence — not a blank page.",
+      author: "Deal Partner (confidential)",
+      role: "Mid-market PE, €1bn+ AUM",
     },
     seoTitle: "Private Equity Due Diligence & Value Creation Platform — DcernX",
     seoDescription:

@@ -259,7 +259,7 @@ const Landing = () => {
             </div>
 
             <p className="mt-8 text-xs text-foreground/50">
-              16 specialist AI agents working in parallel. Every claim cited. Every output reviewable.
+              16 specialist AI agents working in parallel across ~1,500 checkpoints per deal. Every claim cited. Every output reviewable.
             </p>
           </div>
         </section>

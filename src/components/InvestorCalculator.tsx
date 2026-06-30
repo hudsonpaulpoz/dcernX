@@ -1,6 +1,4 @@
 import { useState } from "react";
-import { Mail } from "lucide-react";
-import { SavingsReportDialog, type SavingsInputs } from "./SavingsReportDialog";
 
 interface Props {
   applicationsPerMonth?: number;
@@ -20,7 +18,6 @@ export const InvestorCalculator = ({
   const [apps, setApps] = useState(a0);
   const [hrs, setHrs] = useState(h0);
   const [rate, setRate] = useState(r0);
-  const [dialogOpen, setDialogOpen] = useState(false);
 
   const DCX_MINUTES = 12;
   const currentHrs = apps * hrs;
@@ -29,11 +26,6 @@ export const InvestorCalculator = ({
   const dcxCost = dcxHrs * rate;
   const savedHrs = Math.max(0, currentHrs - dcxHrs);
   const savedCost = Math.max(0, currentCost - dcxCost);
-
-  const inputs: SavingsInputs = {
-    apps, hrs, rate, currentHrs, currentCost, dcxHrs, dcxCost, savedHrs, savedCost,
-    dcxMinutes: DCX_MINUTES,
-  };
 
   return (
     <div className="border border-foreground/10 p-6 md:p-8 bg-foreground/[0.02]">
@@ -55,26 +47,9 @@ export const InvestorCalculator = ({
         <Stat label="With DcernX" value={`$${Math.round(dcxCost).toLocaleString()}`} dim />
         <Stat label="You save" value={`$${Math.round(savedCost).toLocaleString()}`} highlight />
       </div>
-
-      <div className="mt-6 pt-6 border-t border-foreground/10 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-        <p className="text-[11px] text-foreground/50 max-w-md leading-relaxed">
-          Want this on paper? We'll send a branded PDF with your numbers, the full breakdown and the math behind every line.
-        </p>
-        <button
-          type="button"
-          onClick={() => setDialogOpen(true)}
-          className="h-11 px-5 inline-flex items-center justify-center gap-2 bg-foreground text-background text-sm hover:opacity-90 transition-opacity shrink-0"
-        >
-          <Mail className="h-3.5 w-3.5" />
-          Email me the report
-        </button>
-      </div>
-
       <p className="mt-4 text-[10px] text-foreground/40">
         Estimate based on DcernX's demonstrated ~12 minutes per report. Actual savings vary by deal type and review depth.
       </p>
-
-      <SavingsReportDialog open={dialogOpen} onOpenChange={setDialogOpen} inputs={inputs} />
     </div>
   );
 };

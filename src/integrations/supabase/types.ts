@@ -334,36 +334,6 @@ export type Database = {
         }
         Relationships: []
       }
-      lead_captures: {
-        Row: {
-          company: string | null
-          created_at: string
-          email: string
-          id: string
-          name: string
-          payload: Json | null
-          source: string
-        }
-        Insert: {
-          company?: string | null
-          created_at?: string
-          email: string
-          id?: string
-          name: string
-          payload?: Json | null
-          source?: string
-        }
-        Update: {
-          company?: string | null
-          created_at?: string
-          email?: string
-          id?: string
-          name?: string
-          payload?: Json | null
-          source?: string
-        }
-        Relationships: []
-      }
       notification_preferences: {
         Row: {
           created_at: string

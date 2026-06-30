@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { ArrowRight, Shield, FileCheck, Lock, ScrollText, X } from "lucide-react";
+import { ArrowRight, Shield, FileCheck, Lock, ScrollText, X, Linkedin } from "lucide-react";
 
 export const RUN_DEAL_URL = "https://app.dcernx.com/forms/survey/nn714s7d45cqdn9qw0m6jx042s89mgym";
 export const DEMO_URL = "https://app.dcernx.com/forms/survey/nn7e5a797kjqh6exhrgdp69e3x88egz8";

@@ -7,6 +7,7 @@ import { Label } from "@/components/ui/label";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Loader2 } from "lucide-react";
 import { StackedLogo } from "@/components/StackedLogo";
+import { Seo } from "@/components/Seo";
 import { useToast } from "@/hooks/use-toast";
 import { lovable } from "@/integrations/lovable/index";
 
@@ -76,6 +77,12 @@ export default function Auth() {
 
   return (
     <div className="flex min-h-screen items-center justify-center bg-background p-4">
+      <Seo
+        title="Sign in — DcernX"
+        description="Sign in to DcernX to access deal flow, agentic due diligence and IC-ready memos."
+        path="/auth"
+        noindex
+      />
       <div className="w-full max-w-[420px] border border-border rounded-md p-8 space-y-6">
         {/* Logo */}
         <div className="flex flex-col items-start gap-3">

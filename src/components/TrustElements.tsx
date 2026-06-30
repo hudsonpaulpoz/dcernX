@@ -11,12 +11,10 @@ export const HeroTrustLine = () => (
 );
 
 const CHIPS = [
-  "Tier-1 European VC",
-  "Singapore family office",
-  "US accelerator",
-  "EU venture studio",
-  "India angel syndicate",
-  "Mid-market PE",
+  "Capital Kinetics",
+  "MedTech Makers Labs",
+  "Sentinel Asset Management",
+  "Arthaverse",
 ];
 
 export const ProofBar = () => (

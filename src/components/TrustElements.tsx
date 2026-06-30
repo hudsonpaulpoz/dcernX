@@ -184,7 +184,15 @@ export const FounderCard = () => (
             {f.initial}
           </div>
           <div className="flex-1 min-w-0">
-            <div className="text-sm font-medium truncate">{f.name}</div>
+            <a
+              href={f.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm font-medium truncate hover:underline"
+              aria-label={`${f.name} on LinkedIn`}
+            >
+              {f.name}
+            </a>
             <div className="text-[11px] text-foreground/50">{f.role}</div>
             <a
               href={f.linkedin}

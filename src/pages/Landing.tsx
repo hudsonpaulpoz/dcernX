@@ -214,7 +214,7 @@ const Landing = () => {
                   <h3 className="text-xl md:text-2xl font-light tracking-tight">From deck to IC-ready brief in ~12 minutes.</h3>
                 </div>
                 <a
-                  href={WAITLIST_URL}
+                  href="https://app.dcernx.com/forms/survey/nn714s7d45cqdn9qw0m6jx042s89mgym"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-xs text-foreground/70 hover:text-foreground inline-flex items-center gap-1 border-b border-foreground/20 hover:border-foreground pb-0.5"

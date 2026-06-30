@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { StackedLogo } from "@/components/StackedLogo";
 import { MarketingThemeToggle } from "@/components/MarketingThemeToggle";
 
-const WAITLIST_URL = "https://wms.xylor.ai/forms/survey/nn787mfqd1abpvq69e9te4vx598744gp";
+const WAITLIST_URL = "https://app.dcernx.com/forms/survey/nn7e5a797kjqh6exhrgdp69e3x88egz8";
 
 export const MarketingNav = () => (
   <header className="sticky top-0 z-40 border-b border-border/40 bg-background/80 backdrop-blur">

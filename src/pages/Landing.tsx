@@ -176,29 +176,77 @@ const Landing = () => {
         </div>
       </section>
 
-      {/* SOLVE — how it works pipeline */}
+      {/* SOLVE — two ways to use DcernX */}
       <CursorSpotlight>
         <section id="how" className="border-t border-border/40">
           <div className="max-w-5xl mx-auto px-6 py-20">
             <div className="text-[10px] uppercase tracking-[0.22em] text-foreground/50 mb-3">How DcernX works</div>
-            <h2 className="text-3xl md:text-4xl font-light tracking-tight max-w-3xl mb-10">
-              Eight steps from raw opportunity to IC-ready brief.
+            <h2 className="text-3xl md:text-4xl font-light tracking-tight max-w-3xl mb-4">
+              Two ways in. One operating layer.
             </h2>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-border/40">
-              {PIPELINE.map((s) => (
-                <div key={s.n} className="bg-background p-5">
-                  <div className="text-[10px] text-foreground/40 tabular-nums mb-2">{s.n}</div>
-                  <div className="text-sm font-medium mb-1">{s.t}</div>
-                  <div className="text-xs text-foreground/60 leading-relaxed">{s.d}</div>
+            <p className="text-sm text-foreground/65 max-w-2xl mb-12">
+              Start with a single live deal in minutes, or roll DcernX out across your team as the system of record for every opportunity, decision and update.
+            </p>
+
+            {/* Flow 1 — instant deal analysis */}
+            <div className="mb-14">
+              <div className="flex items-baseline justify-between mb-6 flex-wrap gap-3">
+                <div>
+                  <div className="text-[10px] uppercase tracking-[0.22em] text-foreground/50 mb-2">Path 1 · Run a deal now</div>
+                  <h3 className="text-xl md:text-2xl font-light tracking-tight">A live agentic analysis, in ~12 minutes.</h3>
                 </div>
-              ))}
+                <a
+                  href={WAITLIST_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-xs text-foreground/70 hover:text-foreground inline-flex items-center gap-1 border-b border-foreground/20 hover:border-foreground pb-0.5"
+                >
+                  Run my first deal <ArrowRight className="h-3 w-3" />
+                </a>
+              </div>
+              <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-border/40">
+                {FLOW_DEAL.map((s) => (
+                  <div key={s.n} className="bg-background p-5">
+                    <div className="text-[10px] text-foreground/40 tabular-nums mb-2">{s.n}</div>
+                    <div className="text-sm font-medium mb-1">{s.t}</div>
+                    <div className="text-xs text-foreground/60 leading-relaxed">{s.d}</div>
+                  </div>
+                ))}
+              </div>
             </div>
-            <p className="mt-6 text-xs text-foreground/50">
+
+            {/* Flow 2 — adopt across the org */}
+            <div>
+              <div className="flex items-baseline justify-between mb-6 flex-wrap gap-3">
+                <div>
+                  <div className="text-[10px] uppercase tracking-[0.22em] text-foreground/50 mb-2">Path 2 · DcernX for your team</div>
+                  <h3 className="text-xl md:text-2xl font-light tracking-tight">Make evidence the default for every deal you ever see.</h3>
+                </div>
+                <a
+                  href="mailto:hudson@p101limited.com"
+                  className="text-xs text-foreground/70 hover:text-foreground inline-flex items-center gap-1 border-b border-foreground/20 hover:border-foreground pb-0.5"
+                >
+                  Talk to Hudson <ArrowRight className="h-3 w-3" />
+                </a>
+              </div>
+              <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-px bg-border/40">
+                {FLOW_ORG.map((s) => (
+                  <div key={s.n} className="bg-background p-5">
+                    <div className="text-[10px] text-foreground/40 tabular-nums mb-2">{s.n}</div>
+                    <div className="text-sm font-medium mb-1">{s.t}</div>
+                    <div className="text-xs text-foreground/60 leading-relaxed">{s.d}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <p className="mt-8 text-xs text-foreground/50">
               16 specialised agents running in parallel. Every claim cited; every output reviewable.
             </p>
           </div>
         </section>
       </CursorSpotlight>
+
 
       {/* DESIRE — sample report mockup */}
       <section className="border-t border-border/40">

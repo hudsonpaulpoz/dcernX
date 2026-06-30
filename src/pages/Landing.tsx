@@ -34,7 +34,7 @@ const FAQS = [
   },
   {
     q: "Is our data safe?",
-    a: "DcernX is operated by P101 Limited (UK, no. 17063831). GDPR-compliant by design. We process your data, never sell it, and never train third-party models on it.",
+    a: "Yes. DcernX is operated by P101 Limited (UK, no. 17063831). We run an open-source private AI model in a controlled environment, encrypt data in transit and at rest, and never use your data to train third-party models. GDPR-compliant by design.",
   },
   {
     q: "Can we trial it on our own pipeline?",
@@ -276,7 +276,7 @@ const Landing = () => {
             </div>
 
             <p className="mt-8 text-xs text-foreground/50">
-              16 specialist AI agents working in parallel across ~1,500 checkpoints per deal. Every claim cited. Every output reviewable.
+              16 specialist AI agents working in parallel across ~1,500 checkpoints per deal. Powered by an open-source private AI model. Every claim cited. Every output reviewable.
             </p>
           </div>
         </section>

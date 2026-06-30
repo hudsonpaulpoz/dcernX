@@ -67,7 +67,7 @@ const privacySections: Section[] = [
   {
     heading: "7. AI processing",
     body: [
-      `Where customers use AI features within the Service, prompts and the relevant Customer Data are sent to our sub-processors for inference. Customer Data submitted to AI features is not used to train foundation models, and outputs are returned only to the originating workspace.`,
+      `Where customers use AI features within the Service, prompts and the relevant Customer Data are processed by an open-source private AI model operated in a controlled environment by ${COMPANY.name} or its vetted infrastructure sub-processors. Customer Data submitted to AI features is not used to train foundation models, and outputs are returned only to the originating workspace.`,
     ],
   },
   {
@@ -243,8 +243,8 @@ const fairUseSections: Section[] = [
   {
     heading: "3. Inference environment and data handling",
     body: [
-      `Free analyses are produced using a gatekept public inference model operated by our sub-processors. While we apply reasonable safeguards, inputs submitted in the free tier should be treated as suitable for a shared inference environment. You are solely responsible for the materials you submit on the free tier, for ensuring you have the rights to share them, and for redacting any confidential, regulated, personal or special-category data prior to submission.`,
-      `Paid plans are provisioned on private inference with advanced data-privacy guardrails, including tenant isolation, encryption in transit and at rest, no-training contractual commitments with model providers, configurable data-residency, and audit logging. Specific guarantees applicable to your plan are set out in your order form and Data Processing Addendum.`,
+      `Free analyses are produced using an open-source private AI model operated in a controlled environment. While we apply reasonable safeguards, inputs submitted in the free tier should be treated as suitable for a shared inference environment. You are solely responsible for the materials you submit on the free tier, for ensuring you have the rights to share them, and for redacting any confidential, regulated, personal or special-category data prior to submission.`,
+      `Paid plans are provisioned on private inference with advanced data-privacy guardrails, including tenant isolation, encryption in transit and at rest, no-training contractual commitments, configurable data-residency, and audit logging. Specific guarantees applicable to your plan are set out in your order form and Data Processing Addendum.`,
       `Across both tiers, ${COMPANY.name} does not use Customer Data to train foundation models and does not sell Customer Data.`,
     ],
   },

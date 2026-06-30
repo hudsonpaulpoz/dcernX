@@ -220,7 +220,7 @@ const Landing = () => {
               <div className="flex items-baseline justify-between mb-6 flex-wrap gap-3">
                 <div>
                   <div className="text-[10px] uppercase tracking-[0.22em] text-foreground/50 mb-2">Path 2 · DcernX for your team</div>
-                  <h3 className="text-xl md:text-2xl font-light tracking-tight">Make evidence the default for every deal you ever see.</h3>
+                  <h3 className="text-xl md:text-2xl font-light tracking-tight">Make evidence the default on every deal you'll ever see.</h3>
                 </div>
                 <a
                   href="mailto:hudson@p101limited.com"
@@ -241,7 +241,7 @@ const Landing = () => {
             </div>
 
             <p className="mt-8 text-xs text-foreground/50">
-              16 specialised agents running in parallel. Every claim cited; every output reviewable.
+              16 specialist AI agents working in parallel. Every claim cited. Every output reviewable.
             </p>
           </div>
         </section>

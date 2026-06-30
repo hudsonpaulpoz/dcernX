@@ -185,7 +185,7 @@ const Landing = () => {
               Two ways in. One operating layer.
             </h2>
             <p className="text-sm text-foreground/65 max-w-2xl mb-12">
-              Start with a single live deal in minutes, or roll DcernX out across your team as the system of record for every opportunity, decision and update.
+              Pressure-test a single live deal in minutes — or roll DcernX out as the system of record for every opportunity, decision and update your team touches.
             </p>
 
             {/* Flow 1 — instant deal analysis */}
@@ -193,7 +193,7 @@ const Landing = () => {
               <div className="flex items-baseline justify-between mb-6 flex-wrap gap-3">
                 <div>
                   <div className="text-[10px] uppercase tracking-[0.22em] text-foreground/50 mb-2">Path 1 · Run a deal now</div>
-                  <h3 className="text-xl md:text-2xl font-light tracking-tight">A live agentic analysis, in ~12 minutes.</h3>
+                  <h3 className="text-xl md:text-2xl font-light tracking-tight">From deck to IC-ready brief in ~12 minutes.</h3>
                 </div>
                 <a
                   href={WAITLIST_URL}

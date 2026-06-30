@@ -4,6 +4,15 @@ import { Seo } from "@/components/Seo";
 import { MarketingNav, MarketingFooter, WAITLIST_URL } from "@/components/MarketingNav";
 import { InvestorCalculator } from "@/components/InvestorCalculator";
 import { CursorSpotlight } from "@/components/CursorSpotlight";
+import {
+  HeroTrustLine,
+  ProofBar,
+  SecuritySection,
+  MethodologyStrip,
+  TestimonialStrip,
+  FounderCard,
+  StickyCtaBar,
+} from "@/components/TrustElements";
 import { SEGMENTS } from "@/data/segments";
 
 const FAQS = [
@@ -118,21 +127,29 @@ const Landing = () => {
         </p>
         <div className="mt-10 flex flex-wrap gap-3">
           <a
-            href={WAITLIST_URL}
+            href="https://app.dcernx.com/forms/survey/nn714s7d45cqdn9qw0m6jx042s89mgym"
             target="_blank"
             rel="noopener noreferrer"
             className="h-11 px-6 inline-flex items-center gap-2 bg-foreground text-background text-sm hover:opacity-90 transition-opacity"
           >
-            Book a demo <ArrowRight className="h-3.5 w-3.5" />
+            Run my first deal <ArrowRight className="h-3.5 w-3.5" />
           </a>
           <a
-            href="#how"
+            href={WAITLIST_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             className="h-11 px-6 inline-flex items-center text-sm border border-foreground/20 hover:border-foreground/60 transition-colors"
           >
-            See how it works
+            Book a demo
           </a>
         </div>
+        <div className="mt-3 text-[11px] text-foreground/45">
+          Free · No credit card · Your deal stays yours.
+        </div>
+        <HeroTrustLine />
       </section>
+
+      <ProofBar />
 
       {/* AGITATE — softened stats */}
       <section className="border-t border-border/40">

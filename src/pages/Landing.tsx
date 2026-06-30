@@ -283,6 +283,15 @@ const Landing = () => {
       </CursorSpotlight>
 
 
+      {/* TESTIMONIALS — homepage */}
+      <TestimonialStrip
+        items={[
+          SEGMENTS.find((s) => s.slug === "vcs")!.testimonial,
+          SEGMENTS.find((s) => s.slug === "family-offices")!.testimonial,
+          SEGMENTS.find((s) => s.slug === "accelerators")!.testimonial,
+        ]}
+      />
+
       {/* DESIRE — sample report mockup */}
       <section className="border-t border-border/40">
         <div className="max-w-5xl mx-auto px-6 py-20">
@@ -293,6 +302,9 @@ const Landing = () => {
           <ReportMockup />
         </div>
       </section>
+
+      {/* METHODOLOGY — why trust the output */}
+      <MethodologyStrip />
 
       {/* ROI */}
       <section className="border-t border-border/40">

@@ -186,9 +186,9 @@ export const SEGMENTS: Segment[] = [
     ],
     calc: { applicationsPerMonth: 150, hoursPerInitialReview: 4, analystRate: 200 },
     testimonial: {
-      quote: "Placeholder — Partner quote about IC memo speed and pipeline visibility.",
-      author: "Partner",
-      role: "Early-stage VC (placeholder)",
+      quote: "Our analysts now walk into IC with sourced evidence behind every claim instead of a memo written at 2am. We're reviewing roughly 8× more deals per partner without adding headcount.",
+      author: "General Partner (confidential)",
+      role: "Pre-seed / seed fund, EU + UK",
     },
     seoTitle: "AI Due Diligence Software for Venture Capital — DcernX",
     seoDescription:
